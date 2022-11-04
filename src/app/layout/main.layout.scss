@@ -1,0 +1,37 @@
+header {
+  @apply w-full;
+  @apply bg-gradient-to-b from-qatar-500 via-qatar-500 to-qatar-600 drop-shadow-2xl;
+  @apply h-16 min-h-16 flex mb-4;
+
+  > span {
+    @apply m-auto uppercase text-4xl text-slate-200;
+  }
+}
+
+footer {
+  @apply fixed bottom-0 z-100;
+  @apply w-screen;
+  @apply bg-gradient-to-b from-slate-200 via-slate-200 to-slate-300;
+  @apply h-20 flex gap-[1px] pt-[1px];
+
+  > .item {
+    @apply bg-gradient-to-b from-slate-50 via-slate-50 to-slate-100;
+    @apply flex flex-1 pb-2 md:pb-0 md:text-lg;
+
+    &:hover {
+      @apply bg-gradient-to-b from-slate-200 via-slate-200 to-slate-300 text-black;
+    }
+
+    &.active {
+      @apply bg-gradient-to-b from-qatar-500 via-qatar-500 to-qatar-600 text-slate-100;
+    }
+
+    > .icon {
+      @apply m-auto flex flex-col text-center;
+
+      > fa-icon {
+        @apply mx-auto;
+      }
+    }
+  }
+}

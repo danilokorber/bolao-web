@@ -1,0 +1,66 @@
+<div *ngIf="this.profile">
+  <div
+    class="mx-auto flex flex-col p-4"
+    *transloco="let t; lang: this.language"
+  >
+    <img
+      accountPictureFallback
+      *ngIf="this.profile.picture"
+      class="mx-auto h-32 w-32 md:h-40 md:w-40 rounded-full shadow-2xl mb-4"
+      [src]="this.profile.picture"
+      [alt]="profile.firstName + ' ' + profile.lastName"
+      referrerpolicy="no-referrer"
+    />
+    <div class="mx-auto text-3xl md:text-5xl">
+      {{profile.firstName}} {{profile.lastName}}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+      <nz-card [nzTitle]="t('account.language')">
+        <div class="flex flex-row gap-2 w-full h-full">
+          <div
+            class="rounded-full h-30 w-30 p-1 flex border-4"
+            [class.border-qatar-500]="language == 'en'"
+            [class.hover:border-qatar-200]="language != 'en'"
+          >
+            <flag
+              class="m-auto cursor-pointer w-24 h-24"
+              country="gb"
+              format="round"
+              size="32"
+              (click)="select('en')"
+            ></flag>
+          </div>
+
+          <div
+            class="rounded-full h-30 w-30 p-1 flex border-4"
+            [class.border-qatar-500]="language == 'de'"
+            [class.hover:border-qatar-200]="language != 'de'"
+          >
+            <flag
+              class="m-auto cursor-pointer w-24 h-24"
+              country="de"
+              format="round"
+              size="32"
+              (click)="select('de')"
+            ></flag>
+          </div>
+
+          <div
+            class="rounded-full h-30 w-30 p-1 flex border-4"
+            [class.border-qatar-500]="language == 'pt'"
+            [class.hover:border-qatar-200]="language != 'pt'"
+          >
+            <flag
+              class="m-auto cursor-pointer w-24 h-24"
+              country="br"
+              format="round"
+              size="32"
+              (click)="select('pt')"
+            ></flag>
+          </div>
+        </div>
+      </nz-card>
+    </div>
+  </div>
+</div>

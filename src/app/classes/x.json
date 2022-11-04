@@ -1,0 +1,57 @@
+{
+  "exp": 1664242656,
+  "iat": 1664207241,
+  "auth_time": 1664206656,
+  "jti": "1366e88e-1639-4da9-a502-d84240ecb9ff",
+  "iss": "https://auth.easyware.io/realms/bolao",
+  "aud": ["realm-management", "account"],
+  "sub": "d5ad9086-4292-49aa-a2b4-8967d455d364",
+  "typ": "Bearer",
+  "azp": "web",
+  "nonce": "cc90c2a5-81df-4078-adeb-655da2947434",
+  "session_state": "fc097c42-91fa-429e-a6c4-bc90ef840c8e",
+  "allowed-origins": ["https://localhost", "*", "https://localhost:8080"],
+  "realm_access": {
+    "roles": ["offline_access", "admin", "uma_authorization", "user"]
+  },
+  "resource_access": {
+    "realm-management": {
+      "roles": [
+        "view-realm",
+        "view-identity-providers",
+        "manage-identity-providers",
+        "impersonation",
+        "realm-admin",
+        "create-client",
+        "manage-users",
+        "query-realms",
+        "view-authorization",
+        "query-clients",
+        "query-users",
+        "manage-events",
+        "manage-realm",
+        "view-events",
+        "view-users",
+        "view-clients",
+        "manage-authorization",
+        "manage-clients",
+        "query-groups"
+      ]
+    },
+    "account": {
+      "roles": ["manage-account", "manage-account-links", "view-profile"]
+    }
+  },
+  "scope": "openid profile email",
+  "sid": "fc097c42-91fa-429e-a6c4-bc90ef840c8e",
+  "upn": "danilo@korber.com.br",
+  "email_verified": false,
+  "address": {},
+  "name": "Danilo Körber",
+  "groups": ["offline_access", "admin", "uma_authorization", "user"],
+  "preferred_username": "danilo@korber.com.br",
+  "given_name": "Danilo",
+  "family_name": "Körber",
+  "email": "danilo@korber.com.br",
+  "picture": "https://lh3.googleusercontent.com/a-/ACNPEu_yHcB1Dd9V_Mi5CKsCH_hkB5EpF3FcS26CeXqAXg=s96-c"
+}

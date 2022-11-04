@@ -1,0 +1,54 @@
+<div class="flex flex-row gap-2 text-lg cursor-pointer" (click)="showModal()">
+  <img [src]="bet.user.picture" class="rounded-full w-8 h-8 my-auto" />
+  <div
+    class="my-auto flex-1 truncate"
+    [title]="(bet.user.firstName + ' ' + bet.user.lastName).toUpperCase()"
+    [class.text-red-500]="bet.user.id == this.userId"
+  >
+    {{ (bet.user.firstName + " " + bet.user.lastName).toUpperCase() }}
+  </div>
+  <div class="my-auto w-16 text-center font-bold text-2xl">
+    {{ bet.scoreHome + " : " + bet.scoreAway }}
+  </div>
+  <div
+    class="my-auto w-12 text-center font-bold text-xl rounded-full bg-opacity-40"
+    [class]="'bg-rainbow-' + bet.points + '00'"
+  >
+    {{ bet.points }}
+  </div>
+  <div class="my-auto w-32 text-right">
+    {{
+      (
+        bet.betPlacedOn | date: "dd-MMM HH:mm:ss":undefined:language
+      )?.toUpperCase()
+    }}
+  </div>
+  <div class="bg-rainbow-2000"></div>
+</div>
+
+<nz-modal
+  [(nzVisible)]="isVisible"
+  [nzCentered]="true"
+  [nzFooter]="null"
+  (nzOnCancel)="handleCancel()"
+>
+  <ng-container *nzModalContent>
+    <div class="flex flex-col">
+      <div class="flex flex-row gap-4">
+        <img
+          accountPictureFallback
+          [src]="bet.user.picture"
+          class="rounded-full w-16 h-16 my-auto"
+        />
+        <div class="flex-1 flex flex-col">
+          <div class="text-3xl font-semibold">
+            {{ bet.user.firstName }} {{ bet.user.lastName }}
+          </div>
+          <div class="text-lg">{{ bet.points }} points</div>
+        </div>
+      </div>
+
+      <div class="flex-1">More infos</div>
+    </div>
+  </ng-container>
+</nz-modal>

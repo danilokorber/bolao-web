@@ -1,0 +1,93 @@
+<div class="p-4" *transloco="let t; lang: this.language">
+  <div *ngIf="liveMatches.length > 0">
+    <h1 class="mt-6">{{ t('dashboard.live') }}</h1>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+    >
+      <match-card
+        *ngFor="let match of liveMatches"
+        [match]="match"
+      ></match-card>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6" *ngIf="wcStarted">
+    <nz-card [nzTitle]="t('dashboard.leaders')" [nzExtra]="rankingMore">
+      <div class="flex flex-col gap-2 w-full h-full">
+        <div
+          class="w-full flex flex-row gap-2 text-xl"
+          [title]="ranking[0].user.firstName + ' ' + ranking[0].user.lastName"
+        >
+          <span class="truncate flex-1 text-left">
+            {{ ranking[0].user.firstName }}
+          </span>
+          <div
+            class="my-auto w-12 text-center text-xl rounded-full bg-gold-400"
+          >
+            {{ ranking[0].points }}
+          </div>
+        </div>
+
+        <div
+          class="w-full flex flex-row gap-2 text-xl"
+          [title]="ranking[1].user.firstName + ' ' + ranking[1].user.lastName"
+        >
+          <span class="truncate flex-1 text-left">
+            {{ ranking[1].user.firstName }}
+          </span>
+          <div
+            class="my-auto w-12 text-center text-xl rounded-full bg-slate-300"
+          >
+            {{ ranking[1].points }}
+          </div>
+        </div>
+
+        <div
+          class="w-full flex flex-row gap-2 text-xl"
+          [title]="ranking[2].user.firstName + ' ' + ranking[2].user.lastName"
+        >
+          <span class="truncate flex-1 text-left">
+            {{ ranking[2].user.firstName }}
+          </span>
+          <div
+            class="my-auto w-12 text-center text-xl rounded-full bg-gold-700"
+          >
+            {{ ranking[2].points }}
+          </div>
+        </div>
+      </div>
+    </nz-card>
+
+    <nz-card [nzTitle]="t('dashboard.position')">
+      <div class="flex w-full h-full">
+        <span class="m-auto text-8xl text-qatar-500 font-black">
+          {{ position?.position }}
+        </span>
+      </div>
+    </nz-card>
+
+    <ng-template #rankingMore>
+      <a routerLink="/ranking">{{ t('dashboard.details') }}</a>
+    </ng-template>
+
+    <nz-card [nzTitle]="t('dashboard.points')">
+      <div class="flex w-full h-full">
+        <span class="m-auto text-8xl text-qatar-500 font-black">
+          {{ position?.ranking?.points }}
+        </span>
+      </div>
+    </nz-card>
+  </div>
+
+  <div *ngIf="nextMatches.length > 0">
+    <h1 class="mt-6">{{ t('dashboard.nextMatches') }}</h1>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+    >
+      <match-card
+        *ngFor="let match of nextMatches"
+        [match]="match"
+      ></match-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<nz-layout class="bg-qatar-500">
+  <nz-sider nzCollapsible class="bg-qatar-500 h-screen" nzCollapsed="true">
+    <div class="logo"></div>
+    <ul
+      nz-menu
+      nzMode="inline"
+      class="mt-16 bg-qatar-500 text-slate-50"
+      style="font-size: 1.25rem"
+      (nzClick)="click($event)"
+      *transloco="let t; lang: this.language"
+    >
+      <li nz-menu-item [nzMatchRouter]="true" routerLink="/dashboard">
+        <fa-icon [icon]="iconDashboard" nz-icon size="lg"></fa-icon>
+        <span>{{ t("menu.dashboard") }}</span>
+      </li>
+      <li nz-menu-item [nzMatchRouter]="true" routerLink="/matches">
+        <fa-icon [icon]="iconMatches" nz-icon size="lg"></fa-icon>
+        <span>{{ t("menu.matches") }}</span>
+      </li>
+      <li nz-menu-item [nzMatchRouter]="true" routerLink="/ranking">
+        <fa-icon [icon]="iconRanking" nz-icon size="lg"></fa-icon>
+        <span>{{ t("menu.ranking") }}</span>
+      </li>
+      <li nz-menu-item [nzMatchRouter]="true" routerLink="/rules">
+        <fa-icon [icon]="iconRules" nz-icon size="lg"></fa-icon>
+        <span>{{ t("menu.rules") }}</span>
+      </li>
+      <li nz-menu-item [nzMatchRouter]="true" routerLink="/account">
+        <fa-icon [icon]="iconAccount" nz-icon size="lg"></fa-icon>
+        <span>{{ t("menu.account") }}</span>
+      </li>
+      <li
+        nz-menu-item
+        [nzMatchRouter]="true"
+        routerLink="/administration"
+        *ngIf="isAdmin"
+      >
+        <fa-icon [icon]="iconAdmin" nz-icon size="lg"></fa-icon>
+        <span>{{ t("menu.admin") }}</span>
+      </li>
+      <li nz-menu-item (click)="logout()">
+        <fa-icon [icon]="iconLogout" nz-icon size="lg"></fa-icon>
+        <span>{{ t("menu.logout") }}</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

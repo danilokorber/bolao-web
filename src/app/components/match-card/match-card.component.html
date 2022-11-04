@@ -1,0 +1,143 @@
+<div *transloco="let t; lang: this.language">
+  <nz-card
+    class="hover:drop-shadow-xl"
+    [nzCover]="coverTemplate"
+    [nzActions]="isMatchStarted ? [actionMore] : [actionSave]"
+  >
+    <nz-card-meta
+      [nzTitle]="titleTemplate"
+      [nzDescription]="bodyTemplate"
+    ></nz-card-meta>
+  </nz-card>
+
+  <ng-template #titleTemplate>
+    <div class="text-lg">
+      {{ t("match." + groupName(match.groupId)) }}
+      <div class="font-light float-right">
+        {{ match.venue.name }} ({{ match.venue.city }})
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #bodyTemplate>
+    <div *ngIf="!isMatchStarted" class="flex flex-col gap-2">
+      <span class="text-xl mx-auto">{{ t("match.betTitle") }}</span>
+      <form
+        [formGroup]="formBet"
+        (ngSubmit)="saveBet()"
+        (keyup.enter)="saveBet()"
+        class="flex flex-col gap-2 text-2xl"
+      >
+        <div class="mx-auto flex gap-1">
+          <input
+            class="mx-auto w-12 outline-none text-center border border-qatar-500 rounded p-2"
+            formControlName="scoreHome"
+          />
+          <span class="m-auto">:</span>
+          <input
+            class="mx-auto w-12 outline-none text-center border border-qatar-500 rounded p-2"
+            formControlName="scoreAway"
+          />
+        </div>
+      </form>
+    </div>
+    <div *ngIf="isMatchStarted" class="flex flex-col gap-2">
+      <span class="text-xl mx-auto">
+        <div
+          class="my-auto w-12 text-center text-white font-bold text-xl rounded-full"
+          [class]="this.bg"
+        >
+          {{ this.bet?.points ?? 0 }}
+        </div>
+      </span>
+      <div class="mx-auto flex gap-1 text-4xl text-slate-700">
+        <div class="mx-auto w-12 outline-none text-center p-2">
+          {{ this.bet?.scoreHome ?? "-" }}
+        </div>
+        <span class="m-auto">:</span>
+        <div class="mx-auto w-12 outline-none text-center p-2">
+          {{ this.bet?.scoreAway ?? "-" }}
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #coverTemplate>
+    <div class="w-full h-32 overflow-hidden relative flex" [class]="this.bg">
+      <flag
+        [country]="match.home.shortName || ''"
+        format="round"
+        size="172"
+        class="absolute drop-shadow-2xl"
+        style="left: -32px; top: -22px"
+      ></flag>
+      <flag
+        [country]="match.away.shortName || ''"
+        format="round"
+        size="172"
+        class="absolute drop-shadow-2xl"
+        style="right: 140px; top: -22px"
+      ></flag>
+      <div class="m-auto flex flex-col text-center z-100">
+        <div class="text-2xl">
+          <div>{{ fullTeamName("home") }}</div>
+        </div>
+        <div class="font-bold text-xl" [class.text-4xl]="isMatchStarted">
+          {{
+            isMatchStarted
+              ? match.scoreHome + " : " + match.scoreAway
+              : (match.kickoff | date: "dd.MM HH:mm") ?? match.kickoff
+          }}
+        </div>
+        <div class="text-2xl">
+          <div>{{ fullTeamName("away") }}</div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #actionSave>
+    <div
+      [class.bg-qatar-500]="this.formBet.dirty && this.formBet.valid"
+      [class.text-slate-50]="this.formBet.dirty && this.formBet.valid"
+      (click)="saveBet()"
+    >
+      <fa-icon [icon]="iconSave"></fa-icon>
+    </div>
+  </ng-template>
+
+  <ng-template #actionMore>
+    <div (click)="this.displayBets()">
+      <fa-icon [icon]="iconMore"></fa-icon>
+    </div>
+  </ng-template>
+
+  <nz-modal
+    [(nzVisible)]="isDisplayingBets"
+    (nzOnCancel)="isDisplayingBets = false"
+    (nzOnOk)="isDisplayingBets = false"
+    [nzCentered]="true"
+    [nzFooter]="null"
+  >
+    <ng-container *nzModalContent>
+      <div class="h-120 flex text-center" *ngIf="this.isLoadingBets">
+        <fa-icon
+          class="m-auto"
+          [icon]="iconLoading"
+          [spin]="true"
+          [size]="'4x'"
+        ></fa-icon>
+      </div>
+      <div
+        class="h-120 mt-6 overflow-y-scroll flex flex-col gap-2"
+        *ngIf="!this.isLoadingBets"
+      >
+        <bet-summary
+          *ngFor="let bet of this.allBets"
+          [bet]="bet"
+          [language]="language"
+        ></bet-summary>
+      </div>
+    </ng-container>
+  </nz-modal>
+</div>

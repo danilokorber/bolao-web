@@ -1,0 +1,90 @@
+<div class="wrapper">
+  <div class="w-full absolute top-12 flex flex-row px-6 cursor-default">
+    <!-- PREFERENCES -->
+    <div class="number" [class.active]="this.isFullyLoaded">
+      {{ this.hasDefinedPreferences ? '✔' : '1' }}
+    </div>
+
+    <!-- ACCEPT DATA PRIVACY -->
+    <div class="line"><div></div></div>
+    <div
+      class="number"
+      [class.active]="this.isFullyLoaded && this.hasDefinedPreferences"
+    >
+      {{ this.hasAcceptedDataPrivacy ? '✔' : '2' }}
+    </div>
+
+    <!-- ACCEPT TERMS AND CONDITIONS -->
+    <div class="line"><div></div></div>
+    <div
+      class="number"
+      [class.active]="this.isFullyLoaded && this.hasAcceptedDataPrivacy && this.hasDefinedPreferences"
+    >
+      {{ this.hasAcceptedTerms ? '✔' : '3' }}
+    </div>
+
+    <!-- BONUS BETS -->
+    <div class="line"><div></div></div>
+    <div
+      class="number"
+      [class.active]="this.isFullyLoaded && this.hasAcceptedDataPrivacy && this.hasDefinedPreferences && hasAcceptedTerms"
+    >
+      {{ this.hasBonusBets ? '✔' : '4' }}
+    </div>
+
+    <!-- PAYMENT -->
+    <div class="line"><div></div></div>
+    <div
+      class="number"
+      [class.active]="this.isFullyLoaded && this.hasAcceptedDataPrivacy && this.hasDefinedPreferences && hasAcceptedTerms && hasBonusBets"
+    >
+      {{ this.hasPayed ? '✔' : '5' }}
+    </div>
+  </div>
+
+  <div class="m-auto" *ngIf="!this.isFullyLoaded || this.isLoading">
+    <fa-icon [icon]="faLoading" [spin]="true" [size]="'6x'"></fa-icon>
+  </div>
+
+  <div
+    class="m-auto w-11/12 lg:w-4/6 2xl:w-1/2 bg-slate-200 text-slate-800 rounded-lg"
+    *ngIf="this.isFullyLoaded && !this.hasDefinedPreferences"
+  >
+    <authorizing-preferences></authorizing-preferences>
+  </div>
+
+  <div
+    class="m-auto w-11/12 lg:w-4/6 2xl:w-1/2 bg-slate-200 text-slate-800 rounded-lg"
+    *ngIf="this.isFullyLoaded && this.hasDefinedPreferences && !this.hasAcceptedDataPrivacy"
+  >
+    <authorizing-data-privacy></authorizing-data-privacy>
+  </div>
+
+  <div
+    class="m-auto w-11/12 lg:w-4/6 2xl:w-1/2 bg-slate-200 text-slate-800 rounded-lg"
+    *ngIf="this.isFullyLoaded && this.hasAcceptedDataPrivacy && this.hasDefinedPreferences && !this.hasAcceptedTerms"
+  >
+    <authorizing-rules></authorizing-rules>
+  </div>
+
+  <div
+    class="m-auto w-11/12 lg:w-4/6 2xl:w-1/2 bg-slate-200 text-slate-800 rounded-lg"
+    *ngIf="this.isFullyLoaded && this.hasAcceptedDataPrivacy && this.hasDefinedPreferences && this.hasAcceptedTerms && !this.hasBonusBets"
+  >
+    <authorizing-bonus-bets></authorizing-bonus-bets>
+  </div>
+
+  <div
+    class="m-auto w-11/12 lg:w-4/6 2xl:w-1/2 bg-slate-200 text-slate-800 rounded-lg"
+    *ngIf="this.isFullyLoaded && this.hasAcceptedDataPrivacy && this.hasDefinedPreferences && this.hasAcceptedTerms && this.hasBonusBets && !this.hasPayed"
+    [class.invisible]="this.isLoading"
+  >
+    <authorizing-payment
+      (onSkip)="skipPayment = $event"
+      (onConfirm)="paymentConfirmed()"
+      (onStart)="this.isLoading = true"
+      (onCancel)="this.isLoading = false"
+      (onError)="this.isLoading = false"
+    ></authorizing-payment>
+  </div>
+</div>

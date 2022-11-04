@@ -1,0 +1,52 @@
+details {
+  @apply mb-6;
+}
+
+summary {
+  @apply bg-slate-100 text-qatar-500;
+  @apply border border-qatar-500;
+  @apply px-4 py-2 text-2xl font-semibold;
+  @apply cursor-pointer;
+}
+
+details[open] {
+  @apply mb-0;
+}
+
+details[open] summary {
+  @apply bg-qatar-500 text-slate-100 font-bold mb-2;
+}
+
+.group-button {
+  @apply bg-slate-100 border border-qatar-200 text-qatar-500;
+  @apply px-2 py-1 text-lg text-center;
+
+  &.active {
+    @apply bg-qatar-500 border border-qatar-900 text-slate-100 font-bold;
+  }
+}
+
+.matches-container {
+  @apply overscroll-none overflow-auto flex flex-col;
+
+  @media (max-width: 1023px) {
+    height: calc(100vh - 5rem);
+  }
+  @media (min-width: 1024px) {
+    height: calc(100vh - 5rem);
+
+    &::-webkit-scrollbar {
+      @apply w-0.5 h-0.5;
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply rounded-none bg-gray-300;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      @apply bg-gray-400;
+    }
+    &::-webkit-scrollbar-track {
+      @apply rounded-none;
+      box-shadow: inset 0px 0px 0px 0px #f0f0f0;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+<bolao-bg-video></bolao-bg-video>
+
+<div
+  class="sm:w-screen lg:w-96 lg:mx-auto h-screen flex flex-col text-center p-8 gap-2"
+>
+  <div
+    class="flex flex-col text-slate-100"
+    style="text-shadow: 2px 2px #303030"
+  >
+    <div class="text-2xl flex font-extra-light justify-between">
+      <div>T</div>
+      <div>I</div>
+      <div>P</div>
+      <div>P</div>
+      <div>S</div>
+      <div>P</div>
+      <div>I</div>
+      <div>E</div>
+      <div>L</div>
+    </div>
+    <div class="text-6xl flex font-black justify-between">
+      <div>W</div>
+      <div>M</div>
+      <div></div>
+      <div></div>
+      <div>2</div>
+      <div>0</div>
+      <div>2</div>
+      <div>2</div>
+    </div>
+  </div>
+  <div class="flex-1"></div>
+  <bolao-button
+    class="btn-facebook"
+    (click)="logonWith(provider.FACEBOOK)"
+    *ngIf="!isManualLogin"
+  >
+    <fa-icon [icon]="iconFacebook" class="mr-2"></fa-icon>
+    Facebook
+  </bolao-button>
+  <bolao-button
+    class="btn-google"
+    (click)="logonWith(provider.GOOGLE)"
+    *ngIf="!isManualLogin"
+  >
+    <fa-icon [icon]="iconGoogle" class="mr-2"></fa-icon>
+    Google
+  </bolao-button>
+  <div class="flex flex-row gap-2">
+    <bolao-button
+      class="btn-twitter flex-1"
+      (click)="logonWith(provider.TWITTER)"
+      *ngIf="!isManualLogin"
+    >
+      <fa-icon [icon]="iconTwitter"></fa-icon>
+    </bolao-button>
+    <bolao-button
+      class="btn-microsoft flex-1"
+      (click)="logonWith(provider.MICROSOFT)"
+      *ngIf="!isManualLogin"
+    >
+      <fa-icon [icon]="iconMicrosoft"></fa-icon>
+    </bolao-button>
+    <bolao-button
+      class="btn-github flex-1"
+      (click)="logonWith(provider.GITHUB)"
+      *ngIf="!isManualLogin"
+    >
+      <fa-icon [icon]="iconGithub"></fa-icon>
+    </bolao-button>
+  </div>
+  <bolao-button (click)="this.isManualLogin = true">
+    <fa-icon [icon]="iconPassword" class="mr-2"></fa-icon>
+    Email / Passwort
+  </bolao-button>
+  <form
+    *ngIf="isManualLogin"
+    [formGroup]="loginForm"
+    (ngSubmit)="next()"
+    class="border border-gray-900 bg-gray-900 -mt-4 pt-4 pb-2 px-2 flex flex-col gap-1"
+  >
+    <input formControlName="mail" placeholder="Email" />
+    <input formControlName="password" placeholder="Passwort" type="password" />
+    <div class="flex flex-row gap-1 mt-2">
+      <bolao-button class="btn-cancel" (click)="this.isManualLogin = false">
+        Abbrechen
+      </bolao-button>
+      <bolao-button class="btn-next flex-1" [disabled]="isFormInvalid"
+        >Weiter</bolao-button
+      >
+    </div>
+  </form>
+  <bolao-signature></bolao-signature>
+</div>

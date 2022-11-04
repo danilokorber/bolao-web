@@ -1,0 +1,110 @@
+<div class="flex flex-col p-4" *transloco="let t; lang: this.language">
+  <div class="flex flex-row gap-x-2 py-1">
+    <div class="w-8 my-auto">&nbsp;</div>
+    <div class="mx-4 my-auto w-10 text-right font-bold text-xl"></div>
+    <div class="my-auto flex-1 font-bold text-xl">{{ t("ranking.name") }}</div>
+    <div class="my-auto w-12 text-center font-bold text-xl">
+      {{ t("ranking.points") }}
+    </div>
+    <div
+      class="ml-4 my-auto w-12 text-center font-bold text-xl hidden md:block"
+    >
+      20
+    </div>
+    <div class="my-auto w-12 text-center font-bold text-xl hidden md:block">
+      10
+    </div>
+    <div class="my-auto w-12 text-center font-bold text-xl hidden md:block">
+      7
+    </div>
+    <div class="my-auto w-12 text-center font-bold text-xl hidden md:block">
+      4
+    </div>
+    <div class="my-auto w-12 text-center font-bold text-xl hidden md:block">
+      2
+    </div>
+    <div class="my-auto w-12 text-center font-bold text-xl hidden md:block">
+      1
+    </div>
+    <div class="my-auto w-12 text-center font-bold text-xl hidden md:block">
+      0
+    </div>
+  </div>
+
+  <ranking-item
+    *ngFor="let r of this.ranking; let i = index"
+    [rankingInfo]="r"
+    [position]="i"
+  ></ranking-item>
+
+  <!-- <details *ngFor="let r of this.ranking; let i = index">
+    <summary>
+      <div
+        class="flex flex-row gap-x-2 p-1.5 cursor-pointer"
+        [class.hover:bg-slate-100]="i > 2"
+        (click)="this.showBetsOfUser(r.user.id)"
+      >
+        <img [src]="r.user.picture" class="rounded-full w-8 h-8 my-auto" />
+        <div
+          class="mx-4 my-auto w-10 text-center text-xl font-bold rounded-full"
+          [class.text-red-500]="r.user.id == this.userId"
+          [class.bg-gold-400]="i == 0"
+          [class.bg-slate-300]="i == 1"
+          [class.bg-gold-700]="i == 2"
+        >
+          {{ i + 1 }}
+        </div>
+        <div
+          [class.text-red-500]="r.user.id == this.userId"
+          class="my-auto flex-1 truncate font-bold text-xl"
+          [title]="(r.user.firstName + ' ' + r.user.lastName).toUpperCase()"
+        >
+          {{ (r.user.firstName + " " + r.user.lastName).toUpperCase() }}
+        </div>
+        <div
+          class="my-auto w-12 text-center text-xl rounded-full bg-slate-800 text-slate-50"
+          [class.bg-red-500]="r.user.id == this.userId"
+        >
+          {{ r.points }}
+        </div>
+        <div
+          class="ml-4 my-auto w-12 text-center font-bold text-xl rounded-full bg-opacity-40 bg-rainbow-2000 hidden md:block"
+        >
+          {{ occurences(r.bets, 20) }}
+        </div>
+        <div
+          class="my-auto w-12 text-center font-bold text-xl rounded-full bg-opacity-40 bg-rainbow-1000 hidden md:block"
+        >
+          {{ occurences(r.bets, 10) }}
+        </div>
+        <div
+          class="my-auto w-12 text-center font-bold text-xl rounded-full bg-opacity-40 bg-rainbow-700 hidden md:block"
+        >
+          {{ occurences(r.bets, 7) }}
+        </div>
+        <div
+          class="my-auto w-12 text-center font-bold text-xl rounded-full bg-opacity-40 bg-rainbow-400 hidden md:block"
+        >
+          {{ occurences(r.bets, 4) }}
+        </div>
+        <div
+          class="my-auto w-12 text-center font-bold text-xl rounded-full bg-opacity-40 bg-rainbow-200 hidden md:block"
+        >
+          {{ occurences(r.bets, 2) }}
+        </div>
+        <div
+          class="my-auto w-12 text-center font-bold text-xl rounded-full bg-opacity-40 bg-rainbow-100 hidden md:block"
+        >
+          {{ occurences(r.bets, 1) }}
+        </div>
+        <div
+          class="my-auto w-12 text-center font-bold text-xl rounded-full bg-opacity-40 bg-rainbow-50 hidden md:block"
+        >
+          {{ occurences(r.bets, 0) }}
+        </div>
+      </div>
+    </summary>
+
+    <div class="flex flex-row pl-32"></div>
+  </details> -->
+</div>

@@ -1,0 +1,47 @@
+{
+  "buttons": {
+    "continue": "continue",
+    "ok": "ok",
+    "cancel": "cancel",
+    "skip": "skip"
+  },
+  "bonusBets": {
+    "title": "Bonus bets"
+  },
+  "payment": {
+    "title": "Payment"
+  },
+  "dashboard": {
+    "nextMatches": "Next matches"
+  },
+  "ranking": {
+    "name": "Nome",
+    "points": "Pts"
+  },
+  "account": {},
+  "matches": {
+    "finishedMatches": "Finished matches"
+  },
+  "match": {
+    "match": "Match",
+    "groupA": "Group A",
+    "groupB": "Group B",
+    "groupC": "Group C",
+    "groupD": "Group D",
+    "groupE": "Group E",
+    "groupF": "Group F",
+    "groupG": "Group G",
+    "groupH": "Group H",
+    "roundOf16": "Round of 16",
+    "quarter": "Quarter finals",
+    "semi": "Semifinals",
+    "final": "Finals",
+    "bet": "Bet",
+    "change": "Change",
+    "betTitle": "Place your bet",
+    "save": "Save",
+    "cancel": "Cancel",
+    "moreInfo": "More info",
+    "points": "points"
+  }
+}

@@ -1,0 +1,56 @@
+<div class="flex flex-col h-screen w-screen mx-auto">
+  <header><span>{{ title }}</span></header>
+
+  <div class="flex flex-col flex-1 px-2 pb-20">
+    <router-outlet></router-outlet>
+  </div>
+
+  <footer>
+    <a class="item" routerLink="/dashboard" routerLinkActive="active">
+      <div class="icon">
+        <fa-icon [icon]="iconDashboard"></fa-icon>
+        Dashboard
+      </div>
+    </a>
+
+    <a class="item" routerLink="/matches" routerLinkActive="active">
+      <div class="icon">
+        <fa-icon [icon]="iconMatches"></fa-icon>
+        Spiele
+      </div>
+    </a>
+
+    <a class="item" routerLink="/ranking" routerLinkActive="active">
+      <div class="icon">
+        <fa-icon [icon]="iconRanking"></fa-icon>
+        Ranking
+      </div>
+    </a>
+
+    <a class="item" routerLink="/account" routerLinkActive="active">
+      <div class="icon">
+        <fa-icon [icon]="iconAccount"></fa-icon>
+        Konto
+      </div>
+    </a>
+
+    <a
+      class="item"
+      routerLink="/administration"
+      routerLinkActive="active"
+      *ngIf="isAdmin"
+    >
+      <div class="icon">
+        <fa-icon [icon]="iconAdmin"></fa-icon>
+        Verwaltung
+      </div>
+    </a>
+
+    <div class="item">
+      <button class="icon" (click)="logout()">
+        <fa-icon [icon]="iconExit"></fa-icon>
+        Abmelden
+      </button>
+    </div>
+  </footer>
+</div>

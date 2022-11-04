@@ -1,0 +1,294 @@
+<div
+  class="mb-1.5 flex flex-row bg-opacity-40 cursor-pointer"
+  [class]="this.bg"
+  [class.shadow-lg]="!isMatchStarted"
+  [class.hover:shadow-2xl]="!isMatchStarted"
+  [class.hover:bg-opacity-50]="!isMatchStarted"
+  (click)="openDrawer()"
+  *transloco="let t; lang: this.language"
+>
+  <div *ngIf="isLargeLayout" class="my-auto h-full flex-1 flex flex-col">
+    <div class="mx-auto pt-1 text-qatar-500">
+      {{ t("match.match") }} {{ match.id }} -
+      {{ (match.kickoff | date: "dd.MM HH:mm") ?? match.kickoff }} -
+      {{ t("match." + groupName(match.groupId)) }} - {{ match.venue.name }} ({{
+        match.venue.city
+      }})
+    </div>
+
+    <div class="my-auto h-full flex flex-row font-semibold uppercase text-2xl">
+      <!-- MATCH -->
+      <div class="flex-1 my-auto text-right px-2">
+        <div class="hidden md:block">{{ fullTeamName("home") }}</div>
+        <div class="block md:hidden text-xl sm:text-2xl">
+          {{ match.home.shortName }}
+        </div>
+      </div>
+
+      <flag
+        class="my-auto mt-[0.22rem] drop-shadow-md"
+        [country]="match.home.shortName || ''"
+        format="round"
+        size="32"
+      ></flag>
+
+      <div class="my-auto text-right pl-4 pr-2 text-4xl min-w-[2.5rem] block">
+        {{ match.scoreHome ?? "" }}
+      </div>
+      <div class="my-auto text-right">:</div>
+      <div class="my-auto text-left pr-4 pl-2 text-4xl min-w-[2.5rem] block">
+        {{ match.scoreAway ?? "" }}
+      </div>
+
+      <flag
+        class="my-auto mt-[0.22rem] drop-shadow-md"
+        [country]="match.away.shortName || ''"
+        format="round"
+        size="32"
+      ></flag>
+
+      <div class="flex-1 my-auto text-left px-2">
+        <div class="hidden md:block">{{ fullTeamName("away") }}</div>
+        <div class="block md:hidden text-xl sm:text-2xl">
+          {{ match.away.shortName }}
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto pb-1 text-qatar-500 flex flex-row text-2xl" *ngIf="bet">
+      <div class="my-auto text-right pl-4 pr-2 min-w-[2.5rem] block">
+        {{ bet && bet.scoreHome }}
+      </div>
+      <div class="my-auto text-right">:</div>
+      <div class="my-auto text-left pr-4 pl-2 min-w-[2.5rem] block">
+        {{ bet && bet.scoreAway }}
+      </div>
+    </div>
+
+    <div
+      class="mx-auto pb-1 text-qatar-500 flex flex-row text-2xl"
+      *ngIf="!bet && isMatchStarted"
+    >
+      ?
+    </div>
+
+    <div
+      class="mx-auto pb-1 text-qatar-500 flex flex-row"
+      *ngIf="!isMatchStarted"
+    >
+      <div class="my-auto text-right uppercase">{{ t("match.bet") }}</div>
+    </div>
+
+    <div
+      class="h-1 mt-1 grid grid-cols-7 gap-0.5"
+      *ngIf="isMatchStarted"
+      nz-tooltip
+      [nzTooltipTitle]="
+        bet ? bet.points + ' ' + t('match.points') : '0 ' + t('match.points')
+      "
+    >
+      <div class="h-full bg-rainbow-50"></div>
+      <div
+        class="h-full bg-slate-200"
+        [class.bg-rainbow-100]="bet && bet.points > 0"
+      ></div>
+      <div
+        class="h-full bg-slate-200"
+        [class.bg-rainbow-200]="bet && bet.points > 1"
+      ></div>
+      <div
+        class="h-full bg-slate-200"
+        [class.bg-rainbow-400]="bet && bet.points > 3"
+      ></div>
+      <div
+        class="h-full bg-slate-200"
+        [class.bg-rainbow-700]="bet && bet.points > 6"
+      ></div>
+      <div
+        class="h-full bg-slate-200"
+        [class.bg-rainbow-1000]="bet && bet.points > 9"
+      ></div>
+      <div
+        class="h-full bg-slate-200"
+        [class.bg-rainbow-2000]="bet && bet.points > 19"
+      ></div>
+    </div>
+  </div>
+
+  <div *ngIf="isCompactLayout" class="my-auto h-full flex-1 flex flex-row p-2">
+    <div class="my-auto text-slate-800">
+      {{
+        (match.kickoff | date: "dd.MM HH:mm":undefined:language) ??
+          match.kickoff
+      }}<br />
+      {{ t("match." + groupName(match.groupId)) }}
+    </div>
+
+    <div class="my-auto flex-1 flex flex-row">
+      <div class="flex-1 m-auto text-right text-3xl px-2 hidden md:flex">
+        <div class="hidden lg:block flex-1">
+          {{ fullTeamName("home") }}
+        </div>
+        <div class="block lg:hidden flex-1 text-xl sm:text-2xl">
+          {{ match.home.shortName }}
+        </div>
+      </div>
+
+      <flag
+        class="my-auto drop-shadow-md flex-1 md:flex-none float-right"
+        [country]="match.home.shortName || ''"
+        format="round"
+        size="32"
+      ></flag>
+
+      <div class="my-auto text-right pl-4 pr-2 text-4xl w-8 block">
+        {{ match.scoreHome ?? "" }}
+      </div>
+      <div class="my-auto text-center w-4">:</div>
+      <div class="my-auto text-left pr-4 pl-2 text-4xl w-8 block">
+        {{ match.scoreAway ?? "" }}
+      </div>
+
+      <flag
+        class="my-auto drop-shadow-md flex-1 md:flex-none"
+        [country]="match.away.shortName || ''"
+        format="round"
+        size="32"
+      ></flag>
+
+      <div class="flex-1 m-auto text-left text-3xl px-2 hidden md:flex">
+        <div class="hidden lg:block flex-1">{{ fullTeamName("away") }}</div>
+        <div class="block lg:hidden flex-1 text-xl sm:text-2xl">
+          {{ match.away.shortName }}
+        </div>
+      </div>
+    </div>
+
+    <div class="my-auto w-20 pb-1 text-qatar-500 flex flex-row text-2xl">
+      <div
+        class="my-auto text-right pl-4 pr-2 min-w-[2.5rem] block"
+        *ngIf="bet"
+      >
+        {{ bet && bet.scoreHome }}
+      </div>
+      <div class="my-auto text-right" *ngIf="bet">:</div>
+      <div class="my-auto text-left pr-4 pl-2 min-w-[2.5rem] block" *ngIf="bet">
+        {{ bet && bet.scoreAway }}
+      </div>
+    </div>
+
+    <div class="w-20 flex">
+      <div
+        *ngIf="isMatchStarted"
+        class="ml-4 m-auto w-12 text-center font-bold text-xl rounded-full hidden md:block"
+        [class]="
+          'bg-rainbow-' +
+          (bet ? (bet.points == 0 ? 50 : bet.points + '00') : 50)
+        "
+      >
+        {{ bet ? bet.points : 0 }}
+      </div>
+
+      <div
+        *ngIf="!isMatchStarted"
+        class="m-auto text-qatar-500 text-center px-4 uppercase"
+      >
+        {{ bet ? t("match.change") : t("match.bet") }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<nz-drawer
+  [nzClosable]="true"
+  [nzOffsetX]="isBetsOpen ? 180 : 0"
+  [nzWidth]="this.innerWidth <= 640 ? this.innerWidth : 512"
+  [nzVisible]="isDrawerOpen"
+  [nzTitle]="matchScore"
+  (nzOnClose)="closeDrawer()"
+  *transloco="let t; lang: this.language"
+>
+  <ng-container *nzDrawerContent>
+    <div *ngIf="!isMatchStarted" class="flex flex-col gap-2">
+      <span class="text-xl mx-auto">{{ t("match.betTitle") }}</span>
+      <form
+        [formGroup]="formBet"
+        (ngSubmit)="saveBet()"
+        class="flex flex-col gap-2 text-2xl"
+      >
+        <div class="mx-auto flex gap-1">
+          <input
+            class="mx-auto w-12 outline-none text-center border border-qatar-500 rounded p-2"
+            formControlName="scoreHome"
+          />
+          <span class="m-auto">:</span>
+          <input
+            class="mx-auto w-12 outline-none text-center border border-qatar-500 rounded p-2"
+            formControlName="scoreAway"
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-std"
+          [disabled]="this.formBet.invalid"
+        >
+          {{ t("match.save") }}
+        </button>
+        <button type="button" class="btn btn-out" (click)="cancelDrawer()">
+          {{ t("match.cancel") }}
+        </button>
+      </form>
+    </div>
+    <div *ngIf="isMatchStarted" class="flex flex-col gap-2">
+      <div class="m-auto" *ngIf="this.isLoadingBets">
+        <fa-icon [icon]="faLoading" [spin]="true" [size]="'4x'"></fa-icon>
+      </div>
+      <div class="m-auto w-116 flex flex-col gap-2" *ngIf="!this.isLoadingBets">
+        <bet-summary
+          *ngFor="let bet of this.allBets"
+          [bet]="bet"
+          [language]="language"
+        ></bet-summary>
+      </div>
+    </div>
+  </ng-container>
+</nz-drawer>
+
+<ng-template #matchScore>
+  <div class="flex flex-row font-semibold uppercase w-full">
+    <!-- MATCH -->
+    <div class="flex-1 my-auto text-right px-2">
+      <div class="block text-xl">
+        {{ match.home.shortName }}
+      </div>
+    </div>
+
+    <flag
+      class="my-auto mt-[0.22rem] drop-shadow-md"
+      [country]="match.home.shortName || ''"
+      format="round"
+      size="32"
+    ></flag>
+
+    <div class="my-auto text-right pl-4 pr-2 text-4xl min-w-[2.5rem] block">
+      {{ match.scoreHome ?? "" }}
+    </div>
+    <div class="my-auto text-right">:</div>
+    <div class="my-auto text-left pr-4 pl-2 text-4xl min-w-[2.5rem] block">
+      {{ match.scoreAway ?? "" }}
+    </div>
+
+    <flag
+      class="my-auto mt-[0.22rem] drop-shadow-md"
+      [country]="match.away.shortName || ''"
+      format="round"
+      size="32"
+    ></flag>
+
+    <div class="flex-1 my-auto text-left px-2">
+      <div class="block text-xl">
+        {{ match.away.shortName }}
+      </div>
+    </div>
+  </div>
+</ng-template>

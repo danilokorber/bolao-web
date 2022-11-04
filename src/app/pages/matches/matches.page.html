@@ -1,0 +1,44 @@
+<div
+  class="matches-container col-span-2 p-4"
+  *transloco="let t; lang: this.language"
+>
+  <details>
+    <summary>{{ t("matches.finishedMatches") }}</summary>
+
+    <div
+      *ngFor="let day of matches | pastOrFuture:0"
+      class="mb-4 grid grid-cols-1 md:"
+      [id]="'day' + dateToString(day.date)"
+    >
+      <div class="text-qatar-500 text-2xl font-semibold mb-2 text-center">
+        {{ day.date | date: "EEEE, dd.MM.yyyy":undefined:language }}
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+      >
+        <match-card
+          *ngFor="let match of day.matches"
+          [match]="match"
+        ></match-card>
+      </div>
+    </div>
+  </details>
+
+  <div
+    *ngFor="let day of matches | pastOrFuture:1"
+    class="mb-4 grid grid-cols-1 md:"
+    [id]="'day' + dateToString(day.date)"
+  >
+    <div class="text-qatar-500 text-2xl font-semibold mb-2 text-center">
+      {{ day.date | date: "EEEE, dd.MM.yyyy":undefined:language }}
+    </div>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+    >
+      <match-card
+        *ngFor="let match of day.matches"
+        [match]="match"
+      ></match-card>
+    </div>
+  </div>
+</div>

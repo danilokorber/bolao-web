@@ -1,0 +1,15 @@
+<div class="flex flex-col p-4" *transloco="let t; lang: this.language">
+  <div
+    markdown
+    [src]="'/assets/docs/data-privacy.' + language + '.md'"
+    class="h-128 overflow-y-scroll"
+  ></div>
+  <div class="text-right border-t border-slate-400 pt-4">
+    <button class="btn btn-out" (click)="cancel()">
+      {{ t("buttons.cancel") }}
+    </button>
+    <button class="btn btn-std" (click)="acceptDataPrivacy()">
+      {{ t("buttons.continue") }}
+    </button>
+  </div>
+</div>

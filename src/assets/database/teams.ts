@@ -1,0 +1,238 @@
+// export interface Team {
+//   id: string;
+//   name: {
+//     en: string;
+//     de: string;
+//     pt: string;
+//   };
+//   shortName: string;
+//   group: string;
+//   groupOrder: number;
+// }
+
+// export const teams: Team[] = [
+//   {
+//     id: 'A1',
+//     name: { en: 'Qatar', de: 'Katar', pt: 'Catar' },
+//     shortName: 'QAT',
+//     group: 'A',
+//     groupOrder: 1,
+//   },
+//   {
+//     id: 'A2',
+//     name: { en: 'Ecuador', de: 'Ecuador', pt: 'Equador' },
+//     shortName: 'ECU',
+//     group: 'A',
+//     groupOrder: 2,
+//   },
+//   {
+//     id: 'A3',
+//     name: { en: 'Senegal', de: 'Senegal', pt: 'Senegal' },
+//     shortName: 'SEN',
+//     group: 'A',
+//     groupOrder: 3,
+//   },
+//   {
+//     id: 'A4',
+//     name: { en: 'Netherlands', de: 'Niederlande', pt: 'Holanda' },
+//     shortName: 'HOL',
+//     group: 'A',
+//     groupOrder: 4,
+//   },
+//   {
+//     id: 'B1',
+//     name: { en: 'England', de: 'England', pt: 'Inglaterra' },
+//     shortName: 'ENG',
+//     group: 'B',
+//     groupOrder: 1,
+//   },
+//   {
+//     id: 'B2',
+//     name: { en: 'IR Iran', de: 'Iran', pt: 'Irã' },
+//     shortName: 'IRN',
+//     group: 'B',
+//     groupOrder: 2,
+//   },
+//   {
+//     id: 'B3',
+//     name: { en: 'USA', de: 'USA', pt: 'EUA' },
+//     shortName: 'USA',
+//     group: 'B',
+//     groupOrder: 3,
+//   },
+//   {
+//     id: 'B4',
+//     name: { en: 'Euro Playoff', de: 'Euro Playoff', pt: 'Euro Playoff' },
+//     shortName: 'EUR',
+//     group: 'B',
+//     groupOrder: 4,
+//   },
+//   {
+//     id: 'C1',
+//     name: { en: 'Argentina', de: 'Argentinien', pt: 'Argentina' },
+//     shortName: 'ARG',
+//     group: 'C',
+//     groupOrder: 1,
+//   },
+//   {
+//     id: 'C2',
+//     name: { en: 'Saudi Arabia', de: 'Saudi Arabien', pt: 'Arábia Saudita' },
+//     shortName: 'KSA',
+//     group: 'C',
+//     groupOrder: 2,
+//   },
+//   {
+//     id: 'C3',
+//     name: { en: 'Mexico', de: 'Mexico', pt: 'México' },
+//     shortName: 'MEX',
+//     group: 'C',
+//     groupOrder: 3,
+//   },
+//   {
+//     id: 'C4',
+//     name: { en: 'Poland', de: 'Polen', pt: 'Polônia' },
+//     shortName: 'POL',
+//     group: 'C',
+//     groupOrder: 4,
+//   },
+//   {
+//     id: 'D1',
+//     name: { en: 'France', de: 'Frankreich', pt: 'França' },
+//     shortName: 'FRA',
+//     group: 'D',
+//     groupOrder: 1,
+//   },
+//   {
+//     id: 'D2',
+//     name: { en: 'Honduras', de: 'Honduras', pt: 'Honduras' },
+//     shortName: 'HON',
+//     group: 'D',
+//     groupOrder: 2,
+//   },
+//   {
+//     id: 'D3',
+//     name: { en: 'Denmark', de: 'Dänemark', pt: 'Dinamarca' },
+//     shortName: 'DEN',
+//     group: 'D',
+//     groupOrder: 3,
+//   },
+//   {
+//     id: 'D4',
+//     name: { en: 'Tunisia', de: 'Tunesien', pt: 'Tunísia' },
+//     shortName: 'TUN',
+//     group: 'D',
+//     groupOrder: 4,
+//   },
+//   {
+//     id: 'E1',
+//     name: { en: 'Spain', de: 'Spanien', pt: 'Espanha' },
+//     shortName: 'ESP',
+//     group: 'E',
+//     groupOrder: 1,
+//   },
+//   {
+//     id: 'E2',
+//     name: { en: 'IC-Playoff 2', de: 'IC-Playoff 2', pt: 'IC-Playoff 2' },
+//     shortName: 'ICP',
+//     group: 'E',
+//     groupOrder: 2,
+//   },
+//   {
+//     id: 'E3',
+//     name: { en: 'Germany', de: 'Deutschland', pt: 'Alemanha' },
+//     shortName: 'GER',
+//     group: 'E',
+//     groupOrder: 3,
+//   },
+//   {
+//     id: 'E4',
+//     name: { en: 'Japan', de: 'Japan', pt: 'Japão' },
+//     shortName: 'JPN',
+//     group: 'E',
+//     groupOrder: 4,
+//   },
+//   {
+//     id: 'F1',
+//     name: { en: 'Belgium', de: 'Belgien', pt: 'Bélgica' },
+//     shortName: 'BEL',
+//     group: 'F',
+//     groupOrder: 1,
+//   },
+//   {
+//     id: 'F2',
+//     name: { en: 'Canada', de: 'Kanada', pt: 'Canadá' },
+//     shortName: 'CAN',
+//     group: 'F',
+//     groupOrder: 2,
+//   },
+//   {
+//     id: 'F3',
+//     name: { en: 'Morocco', de: 'Marokko', pt: 'Marrocos' },
+//     shortName: 'MAR',
+//     group: 'F',
+//     groupOrder: 3,
+//   },
+//   {
+//     id: 'F4',
+//     name: { en: 'Croatia', de: 'Kroatien', pt: 'Croácia' },
+//     shortName: 'CRO',
+//     group: 'F',
+//     groupOrder: 4,
+//   },
+//   {
+//     id: 'G1',
+//     name: { en: 'Brazil', de: 'Brasilien', pt: 'Brasil' },
+//     shortName: 'BRA',
+//     group: 'G',
+//     groupOrder: 1,
+//   },
+//   {
+//     id: 'G2',
+//     name: { en: 'Serbia', de: 'Serbien', pt: 'Sérvia' },
+//     shortName: 'SRB',
+//     group: 'G',
+//     groupOrder: 2,
+//   },
+//   {
+//     id: 'G3',
+//     name: { en: 'Switzerland', de: 'Schweiz', pt: 'Suíça' },
+//     shortName: 'SWI',
+//     group: 'G',
+//     groupOrder: 3,
+//   },
+//   {
+//     id: 'G4',
+//     name: { en: 'Cameroon', de: 'Kamerun', pt: 'Camarões' },
+//     shortName: 'CAM',
+//     group: 'G',
+//     groupOrder: 4,
+//   },
+//   {
+//     id: 'H1',
+//     name: { en: 'Portugal', de: 'Portugal', pt: 'Portugal' },
+//     shortName: 'POR',
+//     group: 'H',
+//     groupOrder: 1,
+//   },
+//   {
+//     id: 'H2',
+//     name: { en: 'Ghana', de: 'Ghana', pt: 'Gana' },
+//     shortName: 'GHA',
+//     group: 'H',
+//     groupOrder: 2,
+//   },
+//   {
+//     id: 'H3',
+//     name: { en: 'Uruguay', de: 'Uruguay', pt: 'Uruguai' },
+//     shortName: 'URU',
+//     group: 'H',
+//     groupOrder: 3,
+//   },
+//   {
+//     id: 'H4',
+//     name: { en: 'Korea Republic', de: 'Korea', pt: 'Coreia do Sul' },
+//     shortName: 'KOR',
+//     group: 'H',
+//     groupOrder: 4,
+//   },
+// ];

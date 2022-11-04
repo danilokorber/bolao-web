@@ -1,0 +1,22 @@
+.wrapper {
+  @apply flex flex-col h-screen w-screen absolute top-0 left-0 z-1000 overflow-hidden;
+  @apply bg-qatar-700 text-slate-50;
+}
+
+.number {
+  @apply m-auto py-2 px-5;
+  @apply text-2xl font-bold text-slate-400;
+  @apply rounded-full border border-slate-400;
+
+  &.active {
+    @apply border-4 border-slate-50 text-slate-50;
+  }
+}
+
+.line {
+  @apply flex-1 flex px-4;
+
+  > div {
+    @apply border-slate-50 border my-auto w-full;
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "buttons": {
+    "continue": "weiter",
+    "ok": "bestätigen",
+    "cancel": "abbrechen",
+    "skip": "überspringen"
+  },
+  "bonusBets": {
+    "title": "Bonus Tipps"
+  },
+  "payment": {
+    "title": "Kasse"
+  },
+  "dashboard": {
+    "nextMatches": "Nächste Spiele"
+  },
+  "ranking": {
+    "name": "Name",
+    "points": "Pkt"
+  },
+  "account": {},
+  "matches": {
+    "finishedMatches": "Beendete Spiele"
+  },
+  "match": {
+    "match": "Spiel",
+    "groupA": "Gruppe A",
+    "groupB": "Gruppe B",
+    "groupC": "Gruppe C",
+    "groupD": "Gruppe D",
+    "groupE": "Gruppe E",
+    "groupF": "Gruppe F",
+    "groupG": "Gruppe G",
+    "groupH": "Gruppe H",
+    "roundOf16": "Achtelfinale",
+    "quarter": "Viertelfinale",
+    "semi": "Halbfinale",
+    "final": "Finale",
+    "bet": "Tippen",
+    "change": "Ändern",
+    "betTitle": "Trage dein Tipp ein",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "moreInfo": "Mehr info",
+    "points": "Punkte"
+  }
+}

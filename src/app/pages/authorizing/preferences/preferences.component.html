@@ -1,0 +1,25 @@
+<div class="flex flex-col p-4">
+  <div class="text-2xl mb-6">
+    Choose your language / Wähle deine Sprache / Escolha sua língua
+  </div>
+  <div class="font-mono my-4 mx-auto flex flex-row gap-12">
+    <flag
+      class="m-auto drop-shadow-md hover:drop-shadow-xl cursor-pointer w-12 h-12 md:w-24 md:h-24"
+      country="gb"
+      format="round"
+      (click)="select('en')"
+    ></flag>
+    <flag
+      class="m-auto drop-shadow-md hover:drop-shadow-xl cursor-pointer w-12 h-12 md:w-24 md:h-24"
+      country="de"
+      format="round"
+      (click)="select('de')"
+    ></flag>
+    <flag
+      class="m-auto drop-shadow-md hover:drop-shadow-xl cursor-pointer w-12 h-12 md:w-24 md:h-24"
+      country="br"
+      format="round"
+      (click)="select('pt')"
+    ></flag>
+  </div>
+</div>

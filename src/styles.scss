@@ -1,0 +1,113 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "Southam Demo";
+  src: url("./assets/fonts/Southam\ Demo.otf") format("opentype");
+}
+
+body {
+  font-family: "Saira Condensed", sans;
+}
+
+h1 {
+  @apply text-4xl my-4;
+}
+
+table {
+  border-spacing: 5rem;
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+[markdown] {
+  @apply mb-4 text-lg;
+
+  h1 {
+    @apply text-4xl my-4;
+  }
+  h2 {
+    @apply text-3xl my-4;
+  }
+  h3 {
+    @apply text-2xl my-4;
+  }
+  h4 {
+    @apply text-xl my-4;
+  }
+
+  p {
+    @apply mb-2;
+  }
+  table {
+    @apply table-auto border-separate border-spacing-x-2;
+  }
+  ul {
+    @apply list-disc ml-8 mb-2;
+  }
+}
+
+.btn {
+  @apply uppercase text-lg;
+  @apply py-2 px-4 flex-1;
+
+  &.btn-std {
+    @apply border rounded;
+
+    @apply text-slate-100;
+    @apply border-qatar-900 bg-qatar-900;
+    @apply hover:border-qatar-900 hover:bg-qatar-900;
+
+    &:disabled {
+      @apply border-none bg-opacity-20;
+    }
+  }
+
+  &.btn-out {
+    @apply text-qatar-900;
+  }
+
+  &:disabled {
+    @apply text-slate-400;
+  }
+}
+
+.ant-menu-item {
+  :hover {
+    @apply text-slate-50 font-bold;
+  }
+}
+.ant-menu-item-selected {
+  @apply text-qatar-500;
+  :hover {
+    @apply text-qatar-500;
+  }
+}
+.ant-menu-item-selected::after {
+  border-right: 3px solid #861436 !important;
+}
+
+ul.ant-card-actions {
+  li {
+    @apply m-0 h-12 flex;
+
+    span {
+      @apply w-full h-full;
+
+      div {
+        @apply h-full flex;
+
+        fa-icon {
+          @apply m-auto;
+        }
+      }
+    }
+  }
+}

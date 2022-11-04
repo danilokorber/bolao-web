@@ -1,0 +1,66 @@
+{
+  "buttons": {
+    "continue": "continuar",
+    "ok": "ok",
+    "cancel": "cancelar",
+    "skip": "pular"
+  },
+  "menu": {
+    "dashboard": "Painel",
+    "matches": "Jogos",
+    "ranking": "Ranking",
+    "rules": "Regras",
+    "account": "Conta",
+    "admin": "Administraçao",
+    "logout": "Sair"
+  },
+  "bonusBets": {
+    "title": "Apostas bônus"
+  },
+  "payment": {
+    "title": "Pagamento"
+  },
+  "dashboard": {
+    "live": "Ao vivo",
+    "nextMatches": "Próximos jogos",
+    "position": "Meu ranking",
+    "details": "Detalhes",
+    "points": "Meus pontos",
+    "leaders": "Ranking"
+  },
+  "ranking": {
+    "name": "Nome",
+    "points": "Pts"
+  },
+  "account": {
+    "language": "Língua",
+    "finalPlacement": "Colocaçao final",
+    "rankingPosition": "Posição atual",
+    "payment": "Pagamento"
+  },
+  "matches": {
+    "finishedMatches": "Apostas finalizadas"
+  },
+  "match": {
+    "match": "Jogo",
+    "groupA": "Grupo A",
+    "groupB": "Grupo B",
+    "groupC": "Grupo C",
+    "groupD": "Grupo D",
+    "groupE": "Grupo E",
+    "groupF": "Grupo F",
+    "groupG": "Grupo G",
+    "groupH": "Grupo H",
+    "roundOf16": "Oitavas de final",
+    "quarter": "Quartas de final",
+    "semi": "Semifinais",
+    "final": "Finais",
+    "bet": "Palpitar",
+    "change": "Alterar",
+    "betTitle": "Dê seu palpite",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "moreInfo": "Mais informaçoes",
+    "points": "pontos"
+  }
+}
