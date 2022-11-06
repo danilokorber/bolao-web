@@ -115,7 +115,7 @@ pipeline {
 					sh """docker run -d \
 						--network ${props.jenkins.docker.network} \
 						--name ${props.name} \
-            --env REST_API_URL=${props.jenkins.nginx.env.rest_api_url}
+            --env REST_API_URL=${props.jenkins.nginx.env.rest_api_url} \
 						--label-file ${props.jenkins.docker.labels} \
 						${props.jenkins.nexus.imageGroup}/${props.name}"""
 					sh "rm ${props.jenkins.docker.labels}"
