@@ -7,23 +7,23 @@ def randomPort = Math.abs(new Random().nextInt() % 50) + 3001
 
 pipeline {
 	agent {
-        docker {
-            image 'dkorber/java-node:latest'
-            args '-p ' + randomPort + ':' + randomPort + ' -v /var/run/docker.sock:/var/run/docker.sock --name jenkins-' + randomUUID
-        }
+    docker {
+      image 'dkorber/java-node:1.0.0'
+      args '-p ' + randomPort + ':' + randomPort + ' -v /var/run/docker.sock:/var/run/docker.sock --name jenkins-' + randomUUID
     }
+  }
 	environment {
-        CRED_NEXUS = credentials('easywareNexusAdmin')
-		CRED_SONAR = credentials('easywareSonarJenkins')
-    }
+    CRED_NEXUS = credentials('easywareNexusAdmin')
+    CRED_SONAR = credentials('easywareSonarJenkins')
+  }
 
 	stages {
 
 		stage("Prepare environment") {
 			steps{
 				script {
-					// Read application name and version from package.json file
-					props = readJSON file: './package.json'
+					echo "Reading application name and version from package.json file"
+					props = readJSON file: './package.json' // https://plugins.jenkins.io/pipeline-utility-steps/
 
 					echo "applicationName: ${props.name}"
 					echo "applicationVersion: ${props.version}"
