@@ -6,12 +6,12 @@ def randomUUID = UUID.randomUUID().toString()
 def randomPort = Math.abs(new Random().nextInt() % 50) + 3001
 
 pipeline {
-	agent {
-        docker {
-            image 'dkorber/java-node:latest' 
-            args '-p ' + randomPort + ':' + randomPort + ' -v /var/run/docker.sock:/var/run/docker.sock --name jenkins-' + randomUUID
-        }
-    }
+	// agent {
+  //       docker {
+  //           image 'dkorber/java-node:latest'
+  //           args '-p ' + randomPort + ':' + randomPort + ' -v /var/run/docker.sock:/var/run/docker.sock --name jenkins-' + randomUUID
+  //       }
+  //   }
 	environment {
         CRED_NEXUS = credentials('easywareNexusAdmin')
 		CRED_SONAR = credentials('easywareSonarJenkins')
@@ -23,15 +23,15 @@ pipeline {
 			steps{
 				script {
 					// Read application name and version from package.json file
-					props = readJSON file: './package.json'					
-					
+					props = readJSON file: './package.json'
+
 					echo "applicationName: ${props.name}"
 					echo "applicationVersion: ${props.version}"
 					sh "npm config set registry https://${props.jenkins.nexus.hostname}/repository/easyware-npm-group"
 					sh "docker login -u ${CRED_NEXUS_USR} -p ${CRED_NEXUS_PSW} ${props.jenkins.nexus.hostname}:${props.jenkins.nexus.hostedPort}"
 				}
 			}
-		}		
+		}
 
 		stage("Install packages") {
 			steps{
@@ -105,13 +105,13 @@ pipeline {
 		stage("Start docker") {
 			steps{
 				script {
-					sh "docker stop ${props.name} || true && docker rm ${props.name} || true"	
+					sh "docker stop ${props.name} || true && docker rm ${props.name} || true"
 					sh """docker run -d \
 						--network ${props.jenkins.docker.network} \
 						--name ${props.name} \
 						--label-file ${props.jenkins.docker.labels} \
 						${props.jenkins.nexus.imageGroup}/${props.name}"""
-					sh "rm ${props.jenkins.docker.labels}"					
+					sh "rm ${props.jenkins.docker.labels}"
 				}
 			}
 		}
@@ -119,7 +119,7 @@ pipeline {
 		stage("Prune docker") {
 			steps{
 				script {
-					sh "docker system prune -f"		
+					sh "docker system prune -f"
 				}
 			}
 		}
