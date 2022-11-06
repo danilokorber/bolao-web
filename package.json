@@ -34,7 +34,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --output-path=config/dist",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "sonar": "sonar-scanner -Dproject.settings=./config/sonar.properties"
