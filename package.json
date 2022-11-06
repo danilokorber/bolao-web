@@ -21,6 +21,11 @@
       "labels": "./config/dockerLabels.txt",
       "network": "easyware"
     },
+    "nginx": {
+      "env": {
+        "rest_api_url": "https://tippspiel-api.easyware.io"
+      }
+    },
     "sonar": {
       "host": "https://sonar.easyware.io",
       "properties": "./config/sonar.properties"
