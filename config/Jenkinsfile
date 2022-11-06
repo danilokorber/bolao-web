@@ -7,10 +7,10 @@ def randomPort = Math.abs(new Random().nextInt() % 50) + 3001
 
 pipeline {
 	agent {
-        // docker {
-        //     image 'dkorber/java-node:latest'
-        //     args '-p ' + randomPort + ':' + randomPort + ' -v /var/run/docker.sock:/var/run/docker.sock --name jenkins-' + randomUUID
-        // }
+        docker {
+            image 'dkorber/java-node:latest'
+            args '-p ' + randomPort + ':' + randomPort + ' -v /var/run/docker.sock:/var/run/docker.sock --name jenkins-' + randomUUID
+        }
     }
 	environment {
         CRED_NEXUS = credentials('easywareNexusAdmin')
