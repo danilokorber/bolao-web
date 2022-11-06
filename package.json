@@ -23,7 +23,7 @@
     },
     "nginx": {
       "env": {
-        "rest_api_url": "https://tippspiel-api.easyware.io"
+        "api": "https://tippspiel-api.easyware.io"
       }
     },
     "sonar": {
