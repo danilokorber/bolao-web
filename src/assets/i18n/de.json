@@ -5,6 +5,15 @@
     "cancel": "abbrechen",
     "skip": "überspringen"
   },
+  "menu": {
+    "dashboard": "Dashboard",
+    "matches": "Spiele",
+    "ranking": "Ranking",
+    "rules": "Regeln",
+    "account": "Konto",
+    "admin": "Verwaltung",
+    "logout": "Ausloggen"
+  },
   "bonusBets": {
     "title": "Bonus Tipps"
   },
@@ -12,15 +21,25 @@
     "title": "Kasse"
   },
   "dashboard": {
-    "nextMatches": "Nächste Spiele"
+    "live": "Live Spiele",
+    "nextMatches": "Nächste Spiele",
+    "position": "Meine Platzierung",
+    "details": "Details",
+    "points": "Meine Punkte",
+    "leaders": "Leaders"
   },
   "ranking": {
     "name": "Name",
     "points": "Pkt"
   },
-  "account": {},
+  "account": {
+    "language": "Sprache",
+    "finalPlacement": "Final placement",
+    "rankingPosition": "Current position",
+    "payment": "Kasse"
+  },
   "matches": {
-    "finishedMatches": "Beendete Spiele"
+    "finishedMatches": "Beendete Tipps"
   },
   "match": {
     "match": "Spiel",

@@ -5,6 +5,15 @@
     "cancel": "cancel",
     "skip": "skip"
   },
+  "menu": {
+    "dashboard": "Dashboard",
+    "matches": "Matches",
+    "ranking": "Ranking",
+    "rules": "Rules",
+    "account": "Account",
+    "admin": "Administration",
+    "logout": "Logout"
+  },
   "bonusBets": {
     "title": "Bonus bets"
   },
@@ -12,15 +21,25 @@
     "title": "Payment"
   },
   "dashboard": {
-    "nextMatches": "Next matches"
+    "live": "Live matches",
+    "nextMatches": "Next matches",
+    "position": "My position",
+    "details": "Details",
+    "points": "My points",
+    "leaders": "Leaders"
   },
   "ranking": {
-    "name": "Nome",
+    "name": "Name",
     "points": "Pts"
   },
-  "account": {},
+  "account": {
+    "language": "Language",
+    "finalPlacement": "Final placement",
+    "rankingPosition": "Current position",
+    "payment": "Payment"
+  },
   "matches": {
-    "finishedMatches": "Finished matches"
+    "finishedMatches": "Closed bets"
   },
   "match": {
     "match": "Match",
