@@ -4,7 +4,6 @@
 def props
 def randomUUID = UUID.randomUUID().toString()
 def randomPort = Math.abs(new Random().nextInt() % 50) + 3001
-def REST_API_URL = "https://tippspiel-api.easyware.io"
 
 pipeline {
 	agent {
@@ -116,7 +115,7 @@ pipeline {
 					sh """docker run -d \
 						--network ${props.jenkins.docker.network} \
 						--name ${props.name} \
-            --env REST_API_URL=${props.jenkins.nginx.env.rest_api_url} \
+            --env REST_API_URL=${props.jenkins.nginx.env.api} \
 						--label-file ${props.jenkins.docker.labels} \
 						${props.jenkins.nexus.imageGroup}/${props.name}"""
 					sh "rm ${props.jenkins.docker.labels}"
