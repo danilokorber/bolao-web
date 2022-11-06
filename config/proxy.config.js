@@ -1,5 +1,5 @@
 const AGENT = require("agentkeepalive").HttpsAgent;
-const DEFAULT_TARGET = $REST_API_URL || "https://localhost:8080";
+const DEFAULT_TARGET = process.env.REST_API_URL || "https://localhost:8080";
 const PROXY_CONFIG = {
   "/api/*": {
     target: DEFAULT_TARGET,
