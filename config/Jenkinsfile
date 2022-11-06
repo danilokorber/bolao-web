@@ -123,13 +123,13 @@ pipeline {
 			}
 		}
 
-		stage("Prune docker") {
-			steps{
-				script {
-					sh "docker system prune -f"
-				}
-			}
-		}
+		// stage("Prune docker") {
+		// 	steps{
+		// 		script {
+		// 			sh "docker system prune -f"
+		// 		}
+		// 	}
+		// }
 
 	}
 }
