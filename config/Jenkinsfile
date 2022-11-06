@@ -105,7 +105,13 @@ pipeline {
 		stage("Start docker") {
 			steps{
 				script {
-					sh "docker stop ${props.name} || true && docker rm ${props.name} || true"
+
+          try {
+              sh "docker stop ${props.name} || true && docker rm ${props.name} || true"
+          } catch (Exception e) {
+              echo 'Exception occurred: ' + e.toString()
+          }
+
 					sh """docker run -d \
 						--network ${props.jenkins.docker.network} \
 						--name ${props.name} \
