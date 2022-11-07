@@ -14,6 +14,7 @@ import { TesteComponent } from './pages/teste/teste.component';
 import { RankingComponent } from './pages/ranking/ranking.component';
 import { SidebarLayoutComponent } from './layout/sidebar-layout/sidebar-layout.component';
 import { RulesPage } from './pages/rules/rules.component';
+import { GetHelpComponent } from './pages/get-help/get-help.component';
 
 const routes: Routes = [
   { path: 'teste', component: TesteComponent, pathMatch: 'full' },
@@ -66,6 +67,13 @@ const routes: Routes = [
         canActivate: [AdminGuard],
         pathMatch: 'full',
         data: { title: 'Verwaltung' },
+      },
+      {
+        path: 'help',
+        component: GetHelpComponent,
+        canActivate: [AdminGuard],
+        pathMatch: 'full',
+        data: { title: 'Hilfe' },
       },
     ],
   },

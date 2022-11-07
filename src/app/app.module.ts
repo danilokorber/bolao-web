@@ -81,6 +81,7 @@ import { PastOrFuturePipe } from './pipes/past-or-future.pipe';
 import { SidebarLayoutComponent } from './layout/sidebar-layout/sidebar-layout.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { RulesPage } from './pages/rules/rules.component';
+import { GetHelpComponent } from './pages/get-help/get-help.component';
 
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
@@ -112,6 +113,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     PastOrFuturePipe,
     SidebarLayoutComponent,
     RulesPage,
+    GetHelpComponent,
   ],
   imports: [
     BrowserModule,
