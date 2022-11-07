@@ -17,7 +17,6 @@ import { RulesPage } from './pages/rules/rules.component';
 import { GetHelpComponent } from './pages/get-help/get-help.component';
 
 const routes: Routes = [
-  { path: 'teste', component: TesteComponent, pathMatch: 'full' },
   { path: '', component: SplashPage, pathMatch: 'full' },
   { path: 'login', component: SplashPage, pathMatch: 'full' },
   {

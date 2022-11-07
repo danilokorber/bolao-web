@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'bolao-signature',
   template: `
     <a
-      class="signature mt-4"
+      class="signature"
       target="_blank"
       href="https://www.linkedin.com/in/danilokorber/"
       >Danilo Koerber</a

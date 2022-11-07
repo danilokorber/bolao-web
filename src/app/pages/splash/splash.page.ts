@@ -45,6 +45,7 @@ export class SplashPage implements OnInit, OnDestroy {
     ]),
   });
   redirect: string = 'dashboard';
+  language: string = navigator.language.substring(0, 2).toLowerCase();
 
   constructor(
     private keycloak: KeycloakService,

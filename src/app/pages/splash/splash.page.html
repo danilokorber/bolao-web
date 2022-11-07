@@ -7,7 +7,34 @@
     class="flex flex-col text-slate-100"
     style="text-shadow: 2px 2px #303030"
   >
-    <div class="text-2xl flex font-extra-light justify-between">
+    <div
+      *ngIf="this.language != 'pt' && this.language != 'de'"
+      class="text-2xl flex font-extra-light justify-between"
+    >
+      <div>B</div>
+      <div>E</div>
+      <div>T</div>
+      <div></div>
+      <div>G</div>
+      <div>A</div>
+      <div>M</div>
+      <div>E</div>
+    </div>
+    <div
+      *ngIf="this.language == 'pt'"
+      class="text-2xl flex font-extra-light justify-between"
+    >
+      <div>B</div>
+      <div>O</div>
+      <div>L</div>
+      <div>A</div>
+      <div>O</div>
+      <div>L</div>
+    </div>
+    <div
+      *ngIf="this.language == 'de'"
+      class="text-2xl flex font-extra-light justify-between"
+    >
       <div>T</div>
       <div>I</div>
       <div>P</div>
@@ -18,7 +45,20 @@
       <div>E</div>
       <div>L</div>
     </div>
-    <div class="text-6xl flex font-black justify-between">
+
+    <div
+      *ngIf="this.language != 'de'"
+      class="text-6xl flex font-black justify-between"
+    >
+      <div>2</div>
+      <div>0</div>
+      <div>2</div>
+      <div>2</div>
+    </div>
+    <div
+      *ngIf="this.language == 'de'"
+      class="text-6xl flex font-black justify-between"
+    >
       <div>W</div>
       <div>M</div>
       <div></div>
@@ -69,7 +109,7 @@
       <fa-icon [icon]="iconGithub"></fa-icon>
     </bolao-button>
   </div>
-  <bolao-button (click)="this.isManualLogin = true">
+  <bolao-button *ngIf="false" (click)="this.isManualLogin = true">
     <fa-icon [icon]="iconPassword" class="mr-2"></fa-icon>
     Email / Passwort
   </bolao-button>
@@ -90,5 +130,5 @@
       >
     </div>
   </form>
-  <bolao-signature></bolao-signature>
+  <bolao-signature class="mt-4"></bolao-signature>
 </div>

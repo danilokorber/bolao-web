@@ -29,10 +29,6 @@
         <fa-icon [icon]="iconRules" nz-icon size="lg"></fa-icon>
         <span>{{ t("menu.rules") }}</span>
       </li>
-      <li nz-menu-item [nzMatchRouter]="true" routerLink="/help">
-        <fa-icon [icon]="iconHelp" nz-icon size="lg"></fa-icon>
-        <span>{{ t("menu.help") }}</span>
-      </li>
       <li nz-menu-item [nzMatchRouter]="true" routerLink="/account">
         <fa-icon [icon]="iconAccount" nz-icon size="lg"></fa-icon>
         <span>{{ t("menu.account") }}</span>
@@ -45,6 +41,10 @@
       >
         <fa-icon [icon]="iconAdmin" nz-icon size="lg"></fa-icon>
         <span>{{ t("menu.admin") }}</span>
+      </li>
+      <li nz-menu-item [nzMatchRouter]="true" routerLink="/help">
+        <fa-icon [icon]="iconHelp" nz-icon size="lg"></fa-icon>
+        <span>{{ t("menu.help") }}</span>
       </li>
       <li nz-menu-item (click)="logout()">
         <fa-icon [icon]="iconLogout" nz-icon size="lg"></fa-icon>
