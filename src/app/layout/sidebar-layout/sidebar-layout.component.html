@@ -1,5 +1,9 @@
 <nz-layout class="bg-qatar-500">
-  <nz-sider nzCollapsible class="bg-qatar-500 h-screen" nzCollapsed="true">
+  <nz-sider
+    nzCollapsible
+    class="bg-qatar-500 h-screen"
+    [(nzCollapsed)]="isCollapsed"
+  >
     <div class="logo"></div>
     <ul
       nz-menu

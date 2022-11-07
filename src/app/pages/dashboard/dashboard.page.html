@@ -1,4 +1,8 @@
-<div class="p-4" *transloco="let t; lang: this.language">
+<div class="flex flex-col p-4" *transloco="let t; lang: this.language">
+  <div class="m-auto" *ngIf="this.isLoadingMatches">
+    <fa-icon [icon]="faLoading" [spin]="true" [size]="'4x'"></fa-icon>
+  </div>
+
   <div *ngIf="liveMatches.length > 0">
     <h1 class="mt-6">{{ t('dashboard.live') }}</h1>
     <div

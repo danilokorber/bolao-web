@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Auth } from 'src/app/classes/auth';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { Match } from 'src/app/interfaces/match';
 import { Position, Ranking } from 'src/app/interfaces/ranking';
 import { AuthService } from 'src/app/services/auth.service';
@@ -17,6 +18,9 @@ export class DashboardPage implements OnInit, OnDestroy {
     private rankingService: RankingService,
     private authService: AuthService
   ) {}
+
+  isLoadingMatches = true;
+  faLoading: IconDefinition = faSpinner;
 
   private _liveMatches: Match[] = [];
   public get liveMatches(): Match[] {
@@ -70,8 +74,12 @@ export class DashboardPage implements OnInit, OnDestroy {
   }
 
   initNextMatches(): void {
+    this.isLoadingMatches = true;
     this.matchesService.getNext(6).subscribe({
-      next: (m) => (this.nextMatches = m),
+      next: (m) => {
+        this.nextMatches = m;
+        this.isLoadingMatches = false;
+      },
     });
   }
 

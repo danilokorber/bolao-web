@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { faCircleUser } from '@fortawesome/free-regular-svg-icons';
 import {
@@ -25,6 +25,8 @@ export class SidebarLayoutComponent implements OnInit {
   iconAdmin: IconDefinition = faGear;
   iconLogout: IconDefinition = faArrowRightFromBracket;
   iconRules: IconDefinition = faScaleBalanced;
+
+  isCollapsed: boolean = true;
 
   constructor(
     private authService: AuthService,

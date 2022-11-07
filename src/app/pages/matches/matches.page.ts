@@ -4,7 +4,11 @@ import { MatchesService } from 'src/app/services/matches.service';
 import * as _ from 'lodash';
 import { Router } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
-import { faLeftLong } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLeftLong,
+  faSpinner,
+  IconDefinition,
+} from '@fortawesome/free-solid-svg-icons';
 import { Layout } from 'src/app/enums/layout';
 import { Matchday } from 'src/app/interfaces/matchday';
 import { AuthService } from 'src/app/services/auth.service';
@@ -32,6 +36,8 @@ export class MatchesPage implements OnInit {
   ];
 
   _matches: Matchday[] = [];
+  isLoadingMatches = true;
+  faLoading: IconDefinition = faSpinner;
 
   constructor(
     private matchesService: MatchesService,
@@ -44,6 +50,7 @@ export class MatchesPage implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isLoadingMatches = true;
     this.matchesService.get().subscribe((matches) => {
       const grouping = _.groupBy(
         matches,
@@ -75,6 +82,7 @@ export class MatchesPage implements OnInit {
       let anchor = 'day' + now.toISOString().substring(0, 10);
       console.log(anchor);
       this.scroller.scrollToAnchor(anchor);
+      this.isLoadingMatches = false;
     });
   }
 
