@@ -8,6 +8,33 @@
       "resourceGroup": "easyware",
       "cname": "obelix.easyware.io"
     },
+    "urls": [
+      {
+        "host": "tippspiel",
+        "domain": "easyware.io",
+        "service": "bolao1"
+      },
+      {
+        "host": "tippspiel",
+        "domain": "koerber.com.br",
+        "service": "bolao2"
+      },
+      {
+        "host": "bet",
+        "domain": "koerber.com.br",
+        "service": "bolao3"
+      },
+      {
+        "host": "bolao",
+        "domain": "easyware.io",
+        "service": "bolao4"
+      },
+      {
+        "host": "bolao",
+        "domain": "korber.com.br",
+        "service": "bolao5"
+      }
+    ],
     "traefik": {
       "resolver": "easywareresolver"
     },

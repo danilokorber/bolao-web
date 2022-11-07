@@ -95,14 +95,16 @@ pipeline {
 				script{
 					sh "touch ${props.jenkins.docker.labels}"
 					sh "echo 'traefik.enable=true' >> ${props.jenkins.docker.labels}"
-					sh "echo 'traefik.http.routers.${props.name}.entrypoints=websecure' >> ${props.jenkins.docker.labels}"
-					sh "echo 'traefik.http.routers.${props.name}.rule=Host(`${props.jenkins.dns.host}.${props.jenkins.dns.domain}`)' >> ${props.jenkins.docker.labels}"
-					// sh "echo 'traefik.http.routers.${props.name}.rule=Host(`bolao.korber.com.br`)' >> ${props.jenkins.docker.labels}"
-					// sh "echo 'traefik.http.routers.${props.name}.rule=Host(`tippspiel.koerber.com.br`)' >> ${props.jenkins.docker.labels}"
-					// sh "echo 'traefik.http.routers.${props.name}.rule=Host(`bet.koerber.com.br`)' >> ${props.jenkins.docker.labels}"
-					// sh "echo 'traefik.http.routers.${props.name}.rule=Host(`bolao.easyware.io`)' >> ${props.jenkins.docker.labels}"
-					sh "echo 'traefik.http.routers.${props.name}.tls.certresolver=${props.jenkins.traefik.resolver}' >> ${props.jenkins.docker.labels}"
-				}
+					// sh "echo 'traefik.http.routers.${props.name}.entrypoints=websecure' >> ${props.jenkins.docker.labels}"
+					// sh "echo 'traefik.http.routers.${props.name}.rule=Host(`${props.jenkins.dns.host}.${props.jenkins.dns.domain}`)' >> ${props.jenkins.docker.labels}"
+					// sh "echo 'traefik.http.routers.${props.name}.tls.certresolver=${props.jenkins.traefik.resolver}' >> ${props.jenkins.docker.labels}"
+
+          for (int i = 0; i < props.jenkins.urls.size(); ++i) {
+            sh "echo 'traefik.http.routers.${props.jenkins.urls[i].service}.entrypoints=websecure' >> ${props.jenkins.docker.labels}"
+            sh "echo 'traefik.http.routers.${props.jenkins.urls[i].service}.rule=Host(`${props.jenkins.urls[i].host}.${props.jenkins.urls[i].domain}`)' >> ${props.jenkins.docker.labels}"
+            sh "echo 'traefik.http.routers.${props.jenkins.urls[i].service}.tls.certresolver=${props.jenkins.traefik.resolver}' >> ${props.jenkins.docker.labels}"
+          }
+        }
 			}
 		}
 
