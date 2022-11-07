@@ -18,6 +18,7 @@ enum PROVIDER {
   'TWITTER' = 'twitter',
   'MICROSOFT' = 'microsoft',
   'GITHUB' = 'github',
+  'SPOTIFY' = 'spotify',
 }
 
 @Component({
