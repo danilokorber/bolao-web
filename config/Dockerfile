@@ -4,7 +4,7 @@ FROM nginx:latest
 
 # override default configuration
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./security-headers.conf /etc/nginx/security-headers.conf
+COPY ./nginx-security-headers.conf /etc/nginx/security-headers.conf
 
 # using nginx envsubst for environment-variables inside the configuration.
 # the DOLLAR env-var is used as a workaround to still be able to use the $ character
