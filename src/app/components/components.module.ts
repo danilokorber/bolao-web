@@ -7,7 +7,7 @@ import { MatchComponent } from './match/match.component';
 import { NgxFlagsModule } from 'ngx-flags';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+//import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzStepsModule } from 'ng-zorro-antd/steps';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzModalModule } from 'ng-zorro-antd/modal';
@@ -34,7 +34,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     NgxFlagsModule,
     FontAwesomeModule,
     NzToolTipModule,
-    NzDrawerModule,
+    //NzDrawerModule,
     NzStepsModule,
     NzIconModule,
     NzModalModule,

@@ -15,10 +15,71 @@ import { RankingComponent } from './pages/ranking/ranking.component';
 import { SidebarLayoutComponent } from './layout/sidebar-layout/sidebar-layout.component';
 import { RulesPage } from './pages/rules/rules.component';
 import { GetHelpComponent } from './pages/get-help/get-help.component';
+import { MetafrenzyGuard, MetafrenzyModule } from 'ngx-metafrenzy';
 
 const routes: Routes = [
-  { path: '', component: SplashPage, pathMatch: 'full' },
-  { path: 'login', component: SplashPage, pathMatch: 'full' },
+  {
+    path: '',
+    component: SplashPage,
+    pathMatch: 'full',
+    canActivate: [MetafrenzyGuard],
+    data: {
+      metafrenzy: {
+        title: 'FIFA World Cup',
+        tags: [
+          {
+            name: 'og:title',
+            content: 'Danilo Körber - FIFA World Cup bet game',
+          },
+          {
+            name: 'og:description',
+            content: 'Make the World Cup even more exciting!',
+          },
+          {
+            name: 'og:image',
+            content: 'http://bet.koerber.com.br/assets/img/stadium.jpeg',
+          },
+        ],
+        links: [
+          {
+            rel: 'canonical',
+            href: 'http://bet.koerber.com.br/',
+          },
+        ],
+      },
+    },
+  },
+  {
+    path: 'login',
+    component: SplashPage,
+    pathMatch: 'full',
+    canActivate: [MetafrenzyGuard],
+    data: {
+      metafrenzy: {
+        title: 'FIFA World Cup',
+        tags: [
+          {
+            name: 'og:title',
+            content: 'Danilo Körber - FIFA World Cup bet game',
+          },
+          {
+            name: 'og:description',
+            content: 'Make the World Cup even more exciting!',
+          },
+          {
+            name: 'og:image',
+            content: 'http://bet.koerber.com.br/assets/img/stadium.jpeg',
+          },
+        ],
+        links: [
+          {
+            rel: 'canonical',
+            href: 'http://bet.koerber.com.br/',
+          },
+        ],
+      },
+    },
+  },
   {
     path: 'authorizing',
     component: AuthorizingPage,
@@ -80,7 +141,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [MetafrenzyModule.forRoot(), RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
