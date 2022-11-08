@@ -16,19 +16,7 @@ import { BetService } from 'src/app/services/bets.service';
 @Component({
   selector: 'match-card',
   templateUrl: './match-card.component.html',
-  styles: [
-    `
-      .glass {
-        padding: 0.25rem 0.5rem;
-        background: rgba(255, 255, 255, 0.25);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-      }
-    `,
-  ],
+  styles: [],
 })
 export class MatchCardComponent implements OnInit {
   @Input() match!: Match;

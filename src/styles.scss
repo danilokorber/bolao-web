@@ -70,12 +70,37 @@ details > summary::-webkit-details-marker {
     }
   }
 
+  &.btn-wa {
+    @apply border rounded;
+
+    @apply text-slate-100;
+    @apply border-green-500 bg-green-500;
+    @apply hover:border-green-500 hover:bg-green-500;
+
+    &:disabled {
+      @apply border-none bg-opacity-20;
+    }
+  }
+
   &.btn-out {
     @apply text-qatar-900;
   }
 
   &:disabled {
     @apply text-slate-400;
+  }
+}
+
+.glass {
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  &.glass-rounded {
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
   }
 }
 

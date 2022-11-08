@@ -1,0 +1,8 @@
+.wrapper {
+  @apply flex h-screen w-screen overflow-hidden;
+  @apply bg-qatar-700 text-slate-50;
+}
+
+.complete {
+  color: green;
+}

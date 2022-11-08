@@ -16,6 +16,7 @@ import { SidebarLayoutComponent } from './layout/sidebar-layout/sidebar-layout.c
 import { RulesPage } from './pages/rules/rules.component';
 import { GetHelpComponent } from './pages/get-help/get-help.component';
 import { MetafrenzyGuard, MetafrenzyModule } from 'ngx-metafrenzy';
+import { Authorizing2Page } from './pages/authorizing/authorizing2.page';
 
 const routes: Routes = [
   {
@@ -82,7 +83,7 @@ const routes: Routes = [
   },
   {
     path: 'authorizing',
-    component: AuthorizingPage,
+    component: Authorizing2Page,
     canActivate: [AuthGuard],
     pathMatch: 'full',
   },

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Team } from 'src/app/interfaces/team';
 import { TeamsService } from 'src/app/services/teams.service';
 import {
@@ -18,6 +18,10 @@ import { BonusBet } from 'src/app/interfaces/bet';
   styleUrls: ['./bonus-bets.component.scss'],
 })
 export class BonusBetsComponent implements OnInit {
+  @Output() changed: EventEmitter<(Team | undefined)[]> = new EventEmitter<
+    (Team | undefined)[]
+  >();
+
   constructor(
     private usersService: UsersService,
     private teamsService: TeamsService,
@@ -62,6 +66,8 @@ export class BonusBetsComponent implements OnInit {
     if (this.second.length > 1) this.second.splice(1);
     if (this.third.length > 1) this.third.splice(1);
     if (this.fourth.length > 1) this.fourth.splice(1);
+
+    this.changed.emit(this.bets);
 
     this.cloneTeams();
   }
@@ -117,6 +123,7 @@ export class BonusBetsComponent implements OnInit {
         break;
       default:
     }
+    this.changed.emit(this.bets);
   }
 
   setBets(): void {

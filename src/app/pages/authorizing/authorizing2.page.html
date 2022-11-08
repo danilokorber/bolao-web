@@ -1,0 +1,110 @@
+<div class="wrapper" *transloco="let t; lang: this.language">
+  <div class="m-auto w-full md:w-6/12 overflow-hidden">
+    <nz-layout>
+      <nz-sider nzCollapsed="true" class="bg-qatar-500 h-screen md:h-160">
+        <ul
+          nz-menu
+          nzMode="inline"
+          class="mt-16 bg-qatar-500 text-slate-50"
+          style="font-size: 1.25rem"
+        >
+          <li nz-menu-item class="hover:text-slate-50">
+            <fa-icon
+              [icon]="this.completedSteps > 0 ? iconCheck : icon1"
+              nz-icon
+              size="lg"
+            ></fa-icon>
+          </li>
+          <li nz-menu-item class="hover:text-white">
+            <fa-icon
+              [icon]="this.completedSteps > 1 ? iconCheck : icon2"
+              nz-icon
+              size="lg"
+            ></fa-icon>
+          </li>
+          <li nz-menu-item class="hover:text-white">
+            <fa-icon
+              [icon]="this.completedSteps > 2 ? iconCheck : icon3"
+              nz-icon
+              size="lg"
+            ></fa-icon>
+          </li>
+          <li nz-menu-item class="hover:text-white">
+            <fa-icon
+              [icon]="this.completedSteps > 3 ? iconCheck : icon4"
+              nz-icon
+              size="lg"
+            ></fa-icon>
+          </li>
+          <li nz-menu-item class="hover:text-white">
+            <fa-icon
+              [icon]="this.completedSteps > 4 ? iconCheck : icon5"
+              nz-icon
+              size="lg"
+            ></fa-icon>
+          </li>
+        </ul>
+      </nz-sider>
+      <nz-layout class="h-screen md:h-160 overflow-y-scroll text-slate-800">
+        <nz-content class="flex flex-col">
+          <div class="flex-1 flex">
+            <authorizing-preferences
+              class="flex-1"
+              *ngIf="this.completedSteps == 0"
+            ></authorizing-preferences>
+            <authorizing-data-privacy
+              *ngIf="this.completedSteps == 1"
+            ></authorizing-data-privacy>
+            <authorizing-rules
+              *ngIf="this.completedSteps == 2"
+            ></authorizing-rules>
+            <authorizing-bonus-bets
+              *ngIf="this.completedSteps == 3"
+              (changed)="betsChanged($event)"
+            ></authorizing-bonus-bets>
+            <authorizing-payment
+              class="m-auto w-full"
+              [class.invisible]="this.isLoading"
+              *ngIf="this.completedSteps == 4"
+              (onConfirm)="paymentConfirmed()"
+              (onStart)="this.isLoading = true"
+              (onCancel)="this.isLoading = false"
+              (onError)="this.isLoading = false"
+            ></authorizing-payment>
+          </div>
+
+          <div
+            *ngIf="this.completedSteps > 0"
+            class="sticky bottom-0 z-1000 w-full glass p-4"
+          >
+            <button class="btn btn-wa" (click)="getHelp()">
+              <fa-icon [icon]="this.iconWa" size="lg"></fa-icon>
+              <span class="hidden md:inline ml-2">{{ t("menu.help") }}</span>
+            </button>
+            <button
+              *ngIf="this.completedSteps != 4"
+              class="btn btn-std float-right"
+              (click)="continue()"
+              [disabled]="this.completedSteps == 3 ? this.betsMissing : false"
+            >
+              {{ t("buttons.continue") }}
+            </button>
+            <button
+              *ngIf="this.completedSteps != 4"
+              class="btn btn-out float-right"
+              (click)="cancel()"
+            >
+              {{ t("buttons.cancel") }}</button
+            ><button
+              *ngIf="this.completedSteps == 4"
+              class="btn btn-out float-right"
+              (click)="skip()"
+            >
+              {{ t("buttons.skip") }}
+            </button>
+          </div>
+        </nz-content>
+      </nz-layout>
+    </nz-layout>
+  </div>
+</div>

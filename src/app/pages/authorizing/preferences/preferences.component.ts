@@ -38,6 +38,7 @@ export class PreferencesComponent {
         .subscribe({
           next: (profile) => {
             this.authService.profile = profile;
+            this.onAcceptPreferences.emit(this.locale);
           },
         });
     }
