@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Profile } from 'src/app/interfaces/profile';
+import { BonusBet } from 'src/app/interfaces/bet';
+import { Team } from 'src/app/interfaces/team';
 import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -58,5 +60,16 @@ export class AccountPage {
           },
         });
     }
+  }
+
+  bonusBets(): BonusBet {
+    let b: BonusBet = { first: [], second: [], third: [], fourth: [] };
+    if (this.authService.profile) {
+      b.first.push(this.authService.profile.attributes.first[0]);
+      b.second.push(this.authService.profile.attributes.second[0]);
+      b.third.push(this.authService.profile.attributes.third[0]);
+      b.fourth.push(this.authService.profile.attributes.fourth[0]);
+    }
+    return b;
   }
 }

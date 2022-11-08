@@ -1,5 +1,5 @@
 <div class="wrapper" *transloco="let t; lang: this.language">
-  <div class="m-auto w-full md:w-6/12 overflow-hidden">
+  <div class="m-auto w-full lg:w-8/12 overflow-hidden">
     <nz-layout>
       <nz-sider nzCollapsed="true" class="bg-qatar-500 h-screen md:h-160">
         <ul
@@ -59,6 +59,7 @@
               *ngIf="this.completedSteps == 2"
             ></authorizing-rules>
             <authorizing-bonus-bets
+              class="w-full"
               *ngIf="this.completedSteps == 3"
               (changed)="betsChanged($event)"
             ></authorizing-bonus-bets>

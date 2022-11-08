@@ -16,7 +16,8 @@
     "logout": "Sair"
   },
   "bonusBets": {
-    "title": "Apostas bônus"
+    "title": "Apostas bônus",
+    "description": "Arraste os países que terminarão nas 4 primeiras posições."
   },
   "payment": {
     "title": "Pagamento"

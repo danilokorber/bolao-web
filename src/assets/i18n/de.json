@@ -16,7 +16,8 @@
     "logout": "Ausloggen"
   },
   "bonusBets": {
-    "title": "Bonus Tipps"
+    "title": "Bonus Tipps",
+    "description": "Schiebe die Flaggen der 4 ersten Plätze der WM."
   },
   "payment": {
     "title": "Kasse"

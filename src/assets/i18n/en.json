@@ -16,7 +16,8 @@
     "logout": "Logout"
   },
   "bonusBets": {
-    "title": "Bonus bets"
+    "title": "Bonus bets",
+    "description": "Drag the countries that will end from 1st to 4th place."
   },
   "payment": {
     "title": "Payment"

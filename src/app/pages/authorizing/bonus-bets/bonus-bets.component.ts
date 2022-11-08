@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Team } from 'src/app/interfaces/team';
 import { TeamsService } from 'src/app/services/teams.service';
 import {
@@ -89,9 +89,28 @@ export class BonusBetsComponent implements OnInit {
   get bets(): (Team | undefined)[] {
     return [this.first[0], this.second[0], this.third[0], this.fourth[0]];
   }
+  @Input() set bonusBets(b: BonusBet) {
+    console.log(b);
+
+    let first = this.team(b.first[0]);
+    if (b.first && b.first.length == 1 && first) this.first = [first];
+
+    let second = this.team(b.second[0]);
+    if (b.second && b.second.length == 1 && second) this.second = [second];
+
+    let third = this.team(b.third[0]);
+    if (b.third && b.third.length == 1 && third) this.third = [third];
+
+    let fourth = this.team(b.fourth[0]);
+    if (b.fourth && b.fourth.length == 1 && fourth) this.fourth = [fourth];
+  }
 
   get betsMissing(): boolean {
     return this.bets.includes(undefined);
+  }
+
+  team(shortName: string): Team | undefined {
+    return this.teams.find((t) => t.shortName === shortName);
   }
 
   teamName(team: Team): string {
