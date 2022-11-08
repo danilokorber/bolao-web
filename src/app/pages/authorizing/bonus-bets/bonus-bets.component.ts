@@ -90,8 +90,6 @@ export class BonusBetsComponent implements OnInit {
     return [this.first[0], this.second[0], this.third[0], this.fourth[0]];
   }
   @Input() set bonusBets(b: BonusBet) {
-    console.log(b);
-
     let first = this.team(b.first[0]);
     if (b.first && b.first.length == 1 && first) this.first = [first];
 
@@ -157,7 +155,6 @@ export class BonusBetsComponent implements OnInit {
       this.usersService.bonusBets(this.authService.profile.id, bets).subscribe({
         next: (profile) => {
           this.authService.profile = profile;
-          console.log(this.authService.profile);
         },
       });
     }

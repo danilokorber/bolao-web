@@ -80,7 +80,6 @@ export class MatchesPage implements OnInit {
         )
       );
       let anchor = 'day' + now.toISOString().substring(0, 10);
-      console.log(anchor);
       this.scroller.scrollToAnchor(anchor);
       this.isLoadingMatches = false;
     });

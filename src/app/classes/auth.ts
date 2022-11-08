@@ -38,13 +38,8 @@ export class Auth implements OnDestroy {
   refreshProfile() {
     if (!this.isRefreshing && this.isTokenLoaded && !this.isProfileLoaded) {
       this.isRefreshing = true;
-      console.log(
-        'Token is loaded. Refreshing profile... _isRefreshing = ' +
-          this.isRefreshing
-      );
       this.usersService.getProfile().subscribe({
         next: (profile) => {
-          console.log('Profile:', profile);
           this._profile = profile;
           clearInterval(this._profileLoader);
           this.isRefreshing = false;

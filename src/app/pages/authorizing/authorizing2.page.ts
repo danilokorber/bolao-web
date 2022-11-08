@@ -146,7 +146,6 @@ export class Authorizing2Page implements OnInit {
 
   betsChanged(bets: any) {
     this._bonusBets = bets;
-    console.log(this._bonusBets);
   }
 
   get isFullyLoaded(): boolean {

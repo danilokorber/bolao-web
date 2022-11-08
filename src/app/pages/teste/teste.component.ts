@@ -55,8 +55,6 @@ export class TesteComponent {
   getSecure() {
     this.http.get('/api/v1/secure', { withCredentials: true }).subscribe({
       next: (res) => {
-        console.log(res);
-
         this.secure = res;
       },
     });
