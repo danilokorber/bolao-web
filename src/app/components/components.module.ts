@@ -17,6 +17,7 @@ import { TranslocoRootModule } from '../modules/transloco-root.module';
 import { RankingItemComponent } from './ranking-item/ranking-item.component';
 import { MatchCardComponent } from './match-card/match-card.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     BetSummaryComponent,
     RankingItemComponent,
     MatchCardComponent,
+    LoadingComponent,
   ],
   imports: [
     CommonModule,
@@ -51,6 +53,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
     NzIconModule,
     NzCardModule,
     MatchCardComponent,
+    LoadingComponent
   ],
 })
 export class ComponentsModule {}

@@ -16,6 +16,8 @@ import {
   faUserSecret,
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
+import { TranslocoService } from '@ngneat/transloco';
+import { ModalOptions, NzModalService } from 'ng-zorro-antd/modal';
 import { BonusBet } from 'src/app/interfaces/bet';
 import { Team } from 'src/app/interfaces/team';
 import { AuthService } from 'src/app/services/auth.service';
@@ -60,7 +62,9 @@ export class Authorizing2Page implements OnInit {
     private authService: AuthService,
     private usersService: UsersService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private modal: NzModalService,
+    private t: TranslocoService
   ) {}
 
   ngOnInit(): void {
@@ -141,8 +145,14 @@ export class Authorizing2Page implements OnInit {
   }
 
   skip(): void {
-    // TODO: create alert
-    this.skipPayment = true;
+    let o: ModalOptions;
+    this.modal.confirm({
+      nzTitle: this.t.translate('payment.title', {}, this.language),
+      nzContent: this.t.translate('payment.alert', {}, this.language),
+      nzOkText: this.t.translate('payment.next', {}, this.language),
+      nzCancelText: this.t.translate('payment.back', {}, this.language),
+      nzOnOk: () => (this.skipPayment = true),
+    });
   }
 
   betsChanged(bets: any) {

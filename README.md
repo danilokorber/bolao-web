@@ -5,3 +5,7 @@
 # 2022.0.2
 
 - Data privacy page
+
+# 2022.0.3
+
+- Loading spinner on start

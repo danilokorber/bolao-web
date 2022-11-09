@@ -1,3 +1,5 @@
+<bolao-loading *ngIf="!this.isFullyLoaded"></bolao-loading>
+
 <div class="wrapper" *transloco="let t; lang: this.language">
   <div class="m-auto w-full lg:w-8/12 overflow-hidden">
     <nz-layout>
@@ -74,16 +76,13 @@
             ></authorizing-payment>
           </div>
 
-          <div
-            *ngIf="this.completedSteps > 0"
-            class="sticky bottom-0 z-1000 w-full glass p-4"
-          >
+          <div class="sticky bottom-0 z-100 w-full glass p-4">
             <button class="btn btn-wa" (click)="getHelp()">
               <fa-icon [icon]="this.iconWa" size="lg"></fa-icon>
               <span class="hidden md:inline ml-2">{{ t("menu.help") }}</span>
             </button>
             <button
-              *ngIf="this.completedSteps != 4"
+              *ngIf="this.completedSteps != 4 && this.completedSteps != 0"
               class="btn btn-std float-right"
               (click)="continue()"
               [disabled]="this.completedSteps == 3 ? this.betsMissing : false"
@@ -91,7 +90,7 @@
               {{ t("buttons.continue") }}
             </button>
             <button
-              *ngIf="this.completedSteps != 4"
+              *ngIf="this.completedSteps != 4 && this.completedSteps != 0"
               class="btn btn-out float-right"
               (click)="cancel()"
             >
