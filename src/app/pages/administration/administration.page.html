@@ -1,1 +1,43 @@
-<p>administration works!</p>
+<table class="text-lg w-full m-4">
+  <tr>
+    <td>Nome</td>
+    <td>Email</td>
+    <td><fa-icon [icon]="icon1" size="lg"></fa-icon></td>
+    <td><fa-icon [icon]="icon2" size="lg"></fa-icon></td>
+    <td><fa-icon [icon]="icon3" size="lg"></fa-icon></td>
+    <td><fa-icon [icon]="icon4" size="lg"></fa-icon></td>
+    <td><fa-icon [icon]="icon5" size="lg"></fa-icon></td>
+    <td>Social</td>
+  </tr>
+  <tr *ngFor="let p of profiles">
+    <td>{{ p.firstName }} {{ p.lastName }}</td>
+    <td>{{ p.email }}</td>
+    <td>
+      <flag
+        *ngIf="p.attributes.locale != undefined && p.attributes.locale.length > 0"
+        class="m-auto drop-shadow-md hover:drop-shadow-xl cursor-pointer w-8 h-8"
+        [country]="p.attributes.locale[0]"
+        format="round"
+      ></flag>
+    </td>
+    <td>
+      {{ p.attributes.data_privacy_accepted_on != undefined &&
+      p.attributes.data_privacy_accepted_on.length > 0 ? '🟢' : '🔴' }}
+    </td>
+    <td>
+      {{ p.attributes.rules_accepted_on != undefined &&
+      p.attributes.rules_accepted_on.length > 0 ? '🟢' : '🔴' }}
+    </td>
+    <td>
+      {{ p.attributes.first != undefined && p.attributes.first.length > 0 ? '🟢'
+      : '🔴' }}
+    </td>
+    <td>
+      {{ p.attributes.payment_on != undefined && p.attributes.payment_on.length
+      > 0 ? '🟢' : '🔴' }}
+    </td>
+    <td>
+      <img [src]="p.picture" class="rounded-full w-8 h-8 my-auto" />
+    </td>
+  </tr>
+</table>

@@ -14,6 +14,10 @@ const BASE_URL = environment.configs.api.baseUrl;
 export class UsersService {
   constructor(private http: HttpClient) {}
 
+  getAll(): Observable<Profile[]> {
+    return this.http.get<Profile[]>(`${BASE_URL}${Urls.USERS_ALL}`);
+  }
+
   getProfile(): Observable<Profile> {
     return this.http.get<Profile>(`${BASE_URL}${Urls.USERS_PROFILE}`);
   }

@@ -9,3 +9,4 @@
 # 2022.0.3
 
 - Loading spinner on start
+- Administration page
