@@ -4,6 +4,7 @@ export enum Urls {
   RANKING = '/tournaments/world-cup/editions/qatar-2022/ranking',
   TEAMS = '/teams',
   USERS_SUB = '/users/guid/',
+  USERS_ALL = '/users',
   USERS_PROFILE = '/users/profile',
   USERS_ACCEPT_RULES = '/users/guid/{guid}/accept-rules',
   USERS_ACCEPT_DATA_PRIVACY = '/users/guid/{guid}/data-privacy',
