@@ -17,6 +17,7 @@ import { RulesPage } from './pages/rules/rules.component';
 import { GetHelpComponent } from './pages/get-help/get-help.component';
 import { MetafrenzyGuard, MetafrenzyModule } from 'ngx-metafrenzy';
 import { Authorizing2Page } from './pages/authorizing/authorizing2.page';
+import { DataPrivacyPage } from './pages/data-privacy/data-privacy.page';
 
 const routes: Routes = [
   {
@@ -138,6 +139,7 @@ const routes: Routes = [
       },
     ],
   },
+  { path: 'dataprivacy', component: DataPrivacyPage, pathMatch: 'full' },
   { path: 'offline', component: OfflinePage, pathMatch: 'full' },
 ];
 

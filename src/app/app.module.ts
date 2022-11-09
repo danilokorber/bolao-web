@@ -83,6 +83,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { RulesPage } from './pages/rules/rules.component';
 import { GetHelpComponent } from './pages/get-help/get-help.component';
 import { Authorizing2Page } from './pages/authorizing/authorizing2.page';
+import { DataPrivacyPage } from './pages/data-privacy/data-privacy.page';
 
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
@@ -116,6 +117,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     RulesPage,
     GetHelpComponent,
     Authorizing2Page,
+    DataPrivacyPage,
   ],
   imports: [
     BrowserModule,

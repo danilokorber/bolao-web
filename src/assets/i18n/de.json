@@ -20,7 +20,10 @@
     "description": "Schiebe die Flaggen der 4 ersten Plätze der WM."
   },
   "payment": {
-    "title": "Kasse"
+    "title": "Kasse",
+    "alert": "Während die Zahlung nicht durchgeführt wird, werden deine Tipps nicht gepunktet und dein Name erscheint auch nicht im Ranking.",
+    "next": "Weiter ohne Zahlung",
+    "back": "Zurück zur Kasse"
   },
   "dashboard": {
     "live": "Live Spiele",

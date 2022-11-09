@@ -141,6 +141,7 @@ export class Authorizing2Page implements OnInit {
   }
 
   skip(): void {
+    // TODO: create alert
     this.skipPayment = true;
   }
 

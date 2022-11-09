@@ -20,7 +20,10 @@
     "description": "Drag the countries that will end from 1st to 4th place."
   },
   "payment": {
-    "title": "Payment"
+    "title": "Payment",
+    "alert": "While payment is not completed, your tipps will not be processed and your name will not be on the ranking",
+    "next": "Continue without payment",
+    "back": "Back to payment"
   },
   "dashboard": {
     "live": "Live matches",

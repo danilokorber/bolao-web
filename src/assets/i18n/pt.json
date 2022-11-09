@@ -20,7 +20,10 @@
     "description": "Arraste os países que terminarão nas 4 primeiras posições."
   },
   "payment": {
-    "title": "Pagamento"
+    "title": "Pagamento",
+    "alert": "Enquanto o pagamento não for efetuado, nenhum palpite será pontuado e seu nome não aparecerá no ranking.",
+    "next": "Continuar sem pagamento",
+    "back": "Fazer o pagamento"
   },
   "dashboard": {
     "live": "Ao vivo",
