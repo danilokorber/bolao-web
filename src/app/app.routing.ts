@@ -88,6 +88,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     pathMatch: 'full',
   },
+  { path: 'dataprivacy', component: DataPrivacyPage, pathMatch: 'full' },
+  { path: 'offline', component: OfflinePage, pathMatch: 'full' },
   {
     path: '',
     component: SidebarLayoutComponent,
@@ -139,8 +141,6 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'dataprivacy', component: DataPrivacyPage, pathMatch: 'full' },
-  { path: 'offline', component: OfflinePage, pathMatch: 'full' },
 ];
 
 @NgModule({
