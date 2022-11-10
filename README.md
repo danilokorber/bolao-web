@@ -10,3 +10,8 @@
 
 - Loading spinner on start
 - Administration page
+
+# 2022.0.4
+
+- Included app version
+- Redesigned admin page.
