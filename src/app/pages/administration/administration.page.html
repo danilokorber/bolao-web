@@ -1,43 +1,59 @@
-<table class="text-lg w-full m-4">
+<table class="text-lg w-full m-4" description="users">
   <tr>
-    <td>Nome</td>
-    <td>Email</td>
-    <td><fa-icon [icon]="icon1" size="lg"></fa-icon></td>
-    <td><fa-icon [icon]="icon2" size="lg"></fa-icon></td>
-    <td><fa-icon [icon]="icon3" size="lg"></fa-icon></td>
-    <td><fa-icon [icon]="icon4" size="lg"></fa-icon></td>
-    <td><fa-icon [icon]="icon5" size="lg"></fa-icon></td>
-    <td>Social</td>
+    <th></th>
+    <th class="w-20 text-center">
+      <fa-icon [icon]="icon1" size="lg"></fa-icon>
+    </th>
+    <th class="w-20 text-center">
+      <fa-icon [icon]="icon2" size="lg"></fa-icon>
+    </th>
+    <th class="w-20 text-center">
+      <fa-icon [icon]="icon3" size="lg"></fa-icon>
+    </th>
+    <th class="w-20 text-center">
+      <fa-icon [icon]="icon4" size="lg"></fa-icon>
+    </th>
+    <th class="w-20 text-center">
+      <fa-icon [icon]="icon5" size="lg"></fa-icon>
+    </th>
+    <th class="text-left">Nome</th>
+    <th class="text-left hidden lg:inline">Email</th>
   </tr>
-  <tr *ngFor="let p of profiles">
-    <td>{{ p.firstName }} {{ p.lastName }}</td>
-    <td>{{ p.email }}</td>
-    <td>
+  <tr *ngFor="let p of profiles" class="h-8 align-middle hover:bg-slate-200">
+    <td class="w-20 text-center">
+      <img [src]="p.picture" class="rounded-full w-8 h-8" />
+    </td>
+    <td class="w-20 text-center">
       <flag
         *ngIf="p.attributes.locale != undefined && p.attributes.locale.length > 0"
-        class="m-auto drop-shadow-md hover:drop-shadow-xl cursor-pointer w-8 h-8"
+        class="mt-2 drop-shadow-md hover:drop-shadow-xl cursor-pointer w-5 h-5"
         [country]="p.attributes.locale[0]"
         format="round"
       ></flag>
     </td>
-    <td>
+    <td class="w-20 text-center">
       {{ p.attributes.data_privacy_accepted_on != undefined &&
       p.attributes.data_privacy_accepted_on.length > 0 ? '🟢' : '🔴' }}
     </td>
-    <td>
+    <td class="w-20 text-center">
       {{ p.attributes.rules_accepted_on != undefined &&
       p.attributes.rules_accepted_on.length > 0 ? '🟢' : '🔴' }}
     </td>
-    <td>
+    <td class="w-20 text-center">
       {{ p.attributes.first != undefined && p.attributes.first.length > 0 ? '🟢'
       : '🔴' }}
     </td>
-    <td>
+    <td class="w-20 text-center">
       {{ p.attributes.payment_on != undefined && p.attributes.payment_on.length
       > 0 ? '🟢' : '🔴' }}
     </td>
     <td>
-      <img [src]="p.picture" class="rounded-full w-8 h-8 my-auto" />
+      <span>{{ p.firstName }}</span>
+      <span class="hidden lg:inline"> {{ p.lastName }}</span>
+      <span class="inline lg:hidden">
+        {{ (p.lastName)?.substring(0, 1) }}.</span
+      >
     </td>
+    <td class="hidden lg:inline">{{ p.email }}</td>
   </tr>
 </table>

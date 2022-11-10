@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { faCircleUser } from '@fortawesome/free-regular-svg-icons';
 import {
@@ -13,12 +13,15 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { filter, map } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
+import packageInfo from '@root/package.json';
 
 @Component({
   selector: 'sidebar-layout',
   templateUrl: './sidebar-layout.component.html',
 })
 export class SidebarLayoutComponent implements OnInit {
+  appVersion = packageInfo.version;
+
   iconDashboard: IconDefinition = faGaugeHigh;
   iconMatches: IconDefinition = faFutbol;
   iconRanking: IconDefinition = faRankingStar;
