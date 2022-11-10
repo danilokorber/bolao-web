@@ -1,6 +1,6 @@
 {
   "name": "bolao",
-  "version": "2022.0.4",
+  "version": "2022.0.5 DEV",
   "jenkins": {
     "dns": {
       "host": "tippspiel",
