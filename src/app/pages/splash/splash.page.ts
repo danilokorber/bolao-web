@@ -10,6 +10,7 @@ import {
   faMicrosoft,
   faPaypal,
   faTwitter,
+  faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { KeycloakService } from 'keycloak-angular';
@@ -38,6 +39,7 @@ export class SplashPage implements OnInit, OnDestroy {
   iconGithub: IconDefinition = faGithub;
   iconPassword: IconDefinition = faLock;
   iconPaypal: IconDefinition = faPaypal;
+  iconWhatsapp: IconDefinition = faWhatsapp;
   provider = PROVIDER;
 
   //isAuthenticated: Subscription | undefined;
@@ -90,5 +92,9 @@ export class SplashPage implements OnInit, OnDestroy {
 
   next(): void {
     console.log(this.loginForm);
+  }
+
+  getHelp(): void {
+    window.open('https://wa.me/4917660876485', '_blank');
   }
 }

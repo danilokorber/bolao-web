@@ -20,3 +20,7 @@
 
 - Login with Microsoft account
 - Login with PayPal account
+
+# 2022.0.
+
+- Help on main screen

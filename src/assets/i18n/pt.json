@@ -5,6 +5,10 @@
     "cancel": "cancelar",
     "skip": "pular"
   },
+  "splash": {
+    "login": "Entrar com",
+    "help": "Preciso de ajuda!"
+  },
   "menu": {
     "dashboard": "Painel",
     "matches": "Jogos",

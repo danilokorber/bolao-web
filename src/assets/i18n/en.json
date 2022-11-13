@@ -5,6 +5,10 @@
     "cancel": "cancel",
     "skip": "skip"
   },
+  "splash": {
+    "login": "Login with",
+    "help": "I need help!"
+  },
   "menu": {
     "dashboard": "Dashboard",
     "matches": "Matches",
