@@ -2,9 +2,9 @@
   @apply border rounded;
   @apply uppercase text-lg;
   @apply py-2 px-4 flex-1;
-  @apply text-slate-100;
-  @apply border-gray-900 bg-gray-900;
-  @apply hover:border-gray-900 hover:bg-gray-900;
+  // @apply text-slate-100;
+  // @apply border-gray-900 bg-gray-900;
+  // @apply hover:border-gray-900 hover:bg-gray-900;
 
   &:disabled {
     @apply bg-slate-800 text-slate-600 border-0;

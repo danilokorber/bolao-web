@@ -1,12 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from '@env/environment';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faFacebook,
   faGithub,
   faGoogle,
   faMicrosoft,
+  faPaypal,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +21,7 @@ enum PROVIDER {
   'MICROSOFT' = 'microsoft',
   'GITHUB' = 'github',
   'SPOTIFY' = 'spotify',
+  'PAYPAL' = 'paypal',
 }
 
 @Component({
@@ -34,6 +37,7 @@ export class SplashPage implements OnInit, OnDestroy {
   iconMicrosoft: IconDefinition = faMicrosoft;
   iconGithub: IconDefinition = faGithub;
   iconPassword: IconDefinition = faLock;
+  iconPaypal: IconDefinition = faPaypal;
   provider = PROVIDER;
 
   //isAuthenticated: Subscription | undefined;

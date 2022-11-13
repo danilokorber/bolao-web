@@ -4,6 +4,7 @@ import {
 } from 'config/keycloak/config';
 
 export const environment = {
+  name: '',
   production: true,
   configs: {
     keycloak: {

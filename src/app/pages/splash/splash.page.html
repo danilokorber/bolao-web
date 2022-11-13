@@ -96,7 +96,7 @@
     <bolao-button
       class="btn-microsoft flex-1"
       (click)="logonWith(provider.MICROSOFT)"
-      *ngIf="false &&!isManualLogin"
+      *ngIf="!isManualLogin"
     >
       <fa-icon [icon]="iconMicrosoft"></fa-icon>
     </bolao-button>
@@ -106,6 +106,13 @@
       *ngIf="!isManualLogin"
     >
       <fa-icon [icon]="iconGithub"></fa-icon>
+    </bolao-button>
+    <bolao-button
+      class="btn-paypal flex-1"
+      (click)="logonWith(provider.PAYPAL)"
+      *ngIf="!isManualLogin"
+    >
+      <fa-icon [icon]="iconPaypal"></fa-icon>
     </bolao-button>
   </div>
   <bolao-button *ngIf="false" (click)="this.isManualLogin = true">

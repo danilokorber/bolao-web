@@ -32,6 +32,12 @@ input {
   @apply hover:border-purple-800 hover:bg-purple-800;
 }
 
+.btn-paypal {
+  @apply border-yellow-500 bg-yellow-500;
+  @apply text-slate-100;
+  @apply hover:border-yellow-500 hover:bg-yellow-500;
+}
+
 .btn-generic {
   @apply border-gray-900 bg-gray-900;
   @apply text-slate-100;

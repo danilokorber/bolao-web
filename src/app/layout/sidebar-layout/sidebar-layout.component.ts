@@ -14,6 +14,7 @@ import {
 import { filter, map } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import packageInfo from '@root/package.json';
+import { environment } from '@env/environment';
 
 @Component({
   selector: 'sidebar-layout',
@@ -30,6 +31,7 @@ export class SidebarLayoutComponent implements OnInit {
   iconHelp: IconDefinition = faQuestion;
   iconLogout: IconDefinition = faArrowRightFromBracket;
   iconRules: IconDefinition = faScaleBalanced;
+  env = environment.name;
 
   isCollapsed: boolean = true;
 

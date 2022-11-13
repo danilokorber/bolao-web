@@ -15,3 +15,8 @@
 
 - Included app version
 - Redesigned admin page.
+
+# 2022.0.5
+
+- Login with Microsoft account
+- Login with PayPal account
