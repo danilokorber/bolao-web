@@ -19,68 +19,53 @@ import { MetafrenzyGuard, MetafrenzyModule } from 'ngx-metafrenzy';
 import { Authorizing2Page } from './pages/authorizing/authorizing2.page';
 import { DataPrivacyPage } from './pages/data-privacy/data-privacy.page';
 
+const METAFRENZY = {
+  title: 'FIFA World Cup',
+  tags: [
+    {
+      name: 'og:title',
+      content: 'Danilo Körber - FIFA World Cup bet game',
+    },
+    {
+      name: 'og:description',
+      content: 'Make the World Cup even more exciting!',
+    },
+    {
+      name: 'og:image',
+      content: 'http://bolao.korber.com.br/assets/img/og.jpg',
+    },
+    {
+      name: 'og:image:width',
+      content: '1200',
+    },
+    {
+      name: 'og:image:height',
+      content: '630',
+    },
+    { name: 'fb:app_id', content: '4374821345951313' },
+  ],
+  links: [
+    {
+      rel: 'canonical',
+      href: 'http://bolao.korber.com.br/',
+    },
+  ],
+};
+
 const routes: Routes = [
   {
     path: '',
     component: SplashPage,
     pathMatch: 'full',
     canActivate: [MetafrenzyGuard],
-    data: {
-      metafrenzy: {
-        title: 'FIFA World Cup',
-        tags: [
-          {
-            name: 'og:title',
-            content: 'Danilo Körber - FIFA World Cup bet game',
-          },
-          {
-            name: 'og:description',
-            content: 'Make the World Cup even more exciting!',
-          },
-          {
-            name: 'og:image',
-            content: 'http://bet.koerber.com.br/assets/img/stadium.jpeg',
-          },
-        ],
-        links: [
-          {
-            rel: 'canonical',
-            href: 'http://bet.koerber.com.br/',
-          },
-        ],
-      },
-    },
+    data: { metafrenzy: METAFRENZY },
   },
   {
     path: 'login',
     component: SplashPage,
     pathMatch: 'full',
     canActivate: [MetafrenzyGuard],
-    data: {
-      metafrenzy: {
-        title: 'FIFA World Cup',
-        tags: [
-          {
-            name: 'og:title',
-            content: 'Danilo Körber - FIFA World Cup bet game',
-          },
-          {
-            name: 'og:description',
-            content: 'Make the World Cup even more exciting!',
-          },
-          {
-            name: 'og:image',
-            content: 'http://bet.koerber.com.br/assets/img/stadium.jpeg',
-          },
-        ],
-        links: [
-          {
-            rel: 'canonical',
-            href: 'http://bet.koerber.com.br/',
-          },
-        ],
-      },
-    },
+    data: { metafrenzy: METAFRENZY },
   },
   {
     path: 'authorizing',
