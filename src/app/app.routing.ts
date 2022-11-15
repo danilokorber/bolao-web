@@ -39,13 +39,21 @@ const routes: Routes = [
           },
           {
             name: 'og:image',
-            content: 'http://bet.koerber.com.br/assets/img/stadium.jpeg',
+            content: 'http://bolao.korber.com.br/assets/img/og.jpg',
+          },
+          {
+            name: 'og:image:width',
+            content: '1200',
+          },
+          {
+            name: 'og:image:height ',
+            content: '630',
           },
         ],
         links: [
           {
             rel: 'canonical',
-            href: 'http://bet.koerber.com.br/',
+            href: 'http://bolao.korber.com.br/',
           },
         ],
       },
@@ -70,13 +78,21 @@ const routes: Routes = [
           },
           {
             name: 'og:image',
-            content: 'http://bet.koerber.com.br/assets/img/stadium.jpeg',
+            content: 'http://bolao.korber.com.br/assets/img/og.jpg',
+          },
+          {
+            name: 'og:image:width',
+            content: '1200',
+          },
+          {
+            name: 'og:image:height ',
+            content: '630',
           },
         ],
         links: [
           {
             rel: 'canonical',
-            href: 'http://bet.koerber.com.br/',
+            href: 'http://bolao.korber.com.br/',
           },
         ],
       },
