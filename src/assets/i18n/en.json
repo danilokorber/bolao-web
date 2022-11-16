@@ -45,7 +45,8 @@
     "language": "Language",
     "finalPlacement": "Final placement",
     "rankingPosition": "Current position",
-    "payment": "Payment"
+    "payment": "Payment",
+    "comments": "A PayPal account is not mandatory. You can use your credit card to make the payment."
   },
   "matches": {
     "finishedMatches": "Closed bets"

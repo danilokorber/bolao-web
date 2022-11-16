@@ -45,7 +45,8 @@
     "language": "Língua",
     "finalPlacement": "Colocaçao final",
     "rankingPosition": "Posição atual",
-    "payment": "Pagamento"
+    "payment": "Pagamento",
+    "comments": "Uma conta no PayPal não é obrigatória. Também é possível pagar usando apenas o cartão de crédito."
   },
   "matches": {
     "finishedMatches": "Apostas finalizadas"

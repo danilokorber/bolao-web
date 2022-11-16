@@ -27,7 +27,8 @@
     "title": "Kasse",
     "alert": "Während die Zahlung nicht durchgeführt wird, werden deine Tipps nicht gepunktet und dein Name erscheint auch nicht im Ranking.",
     "next": "Weiter ohne Zahlung",
-    "back": "Zurück zur Kasse"
+    "back": "Zurück zur Kasse",
+    "comments": "Ein PayPal Konto ist nicht zwingend. Du kannst entweder über Lastschrift oder Kredirkarte bezahlen."
   },
   "dashboard": {
     "live": "Live Spiele",

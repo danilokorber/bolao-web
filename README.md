@@ -21,6 +21,10 @@
 - Login with Microsoft account
 - Login with PayPal account
 
-# 2022.0.
+# 2022.0.6
 
 - Help on main screen
+
+# 2022.0.7
+
+- Added message to payment
