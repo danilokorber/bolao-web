@@ -15,7 +15,6 @@ import { RankingComponent } from './pages/ranking/ranking.component';
 import { SidebarLayoutComponent } from './layout/sidebar-layout/sidebar-layout.component';
 import { RulesPage } from './pages/rules/rules.component';
 import { GetHelpComponent } from './pages/get-help/get-help.component';
-import { MetafrenzyGuard, MetafrenzyModule } from 'ngx-metafrenzy';
 import { Authorizing2Page } from './pages/authorizing/authorizing2.page';
 import { DataPrivacyPage } from './pages/data-privacy/data-privacy.page';
 
@@ -92,7 +91,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [MetafrenzyModule.forRoot(), RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
