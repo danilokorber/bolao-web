@@ -27,7 +27,8 @@
     "title": "Payment",
     "alert": "While payment is not completed, your tipps will not be processed and your name will not be on the ranking",
     "next": "Continue without payment",
-    "back": "Back to payment"
+    "back": "Back to payment",
+    "comments": "A Paypal account is not mandatory. You can pay by just using your credit card.."
   },
   "dashboard": {
     "live": "Live matches",

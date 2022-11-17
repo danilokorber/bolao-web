@@ -27,7 +27,8 @@
     "title": "Pagamento",
     "alert": "Enquanto o pagamento não for efetuado, nenhum palpite será pontuado e seu nome não aparecerá no ranking.",
     "next": "Continuar sem pagamento",
-    "back": "Fazer o pagamento"
+    "back": "Fazer o pagamento",
+    "comments": "Uma conta no PayPal não é obrigatória. Você pode fazer o pagamento apenas com o cartão de crédito."
   },
   "dashboard": {
     "live": "Ao vivo",
