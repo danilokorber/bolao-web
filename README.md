@@ -35,6 +35,6 @@
 - Live match cover
 - Fixed ranking
 
-# 2022.0.9
+# 2022.0.10
 
 - Fixed bugs
