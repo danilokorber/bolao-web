@@ -19,6 +19,10 @@ export class MatchesService {
     return this.http.get<Match[]>(`${BASE_URL}${Urls.MATCHES}`);
   }
 
+  getById(id: number): Observable<Match> {
+    return this.http.get<Match>(`${BASE_URL}${Urls.MATCHES_ID}/${id}`);
+  }
+
   getNext(next: number): Observable<Match[]> {
     return this.http.get<Match[]>(`${BASE_URL}${Urls.MATCHES}`, {
       params: new HttpParams().set('next', next),

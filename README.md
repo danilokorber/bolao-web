@@ -28,3 +28,9 @@
 # 2022.0.7
 
 - Added message to payment
+
+# 2022.0.8
+
+- New icon for ranking
+- Live match cover
+- Fixed ranking

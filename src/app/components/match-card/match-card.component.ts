@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
   faPencil,
@@ -8,6 +8,7 @@ import {
   faEllipsis,
   faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
+import { MatchesService } from '@services/matches.service';
 import { Bet } from 'src/app/interfaces/bet';
 import { Match } from 'src/app/interfaces/match';
 import { AuthService } from 'src/app/services/auth.service';
@@ -18,7 +19,7 @@ import { BetService } from 'src/app/services/bets.service';
   templateUrl: './match-card.component.html',
   styles: [],
 })
-export class MatchCardComponent implements OnInit {
+export class MatchCardComponent implements OnInit, OnDestroy {
   @Input() match!: Match;
 
   iconEdit: IconDefinition = faPencil;
@@ -31,13 +32,31 @@ export class MatchCardComponent implements OnInit {
   isLoadingBets = true;
   allBets: Bet[] = [];
 
+  updateScore$!: any;
+
   constructor(
     private authService: AuthService,
-    private betService: BetService
+    private betService: BetService,
+    private matchesService: MatchesService
   ) {}
 
   ngOnInit() {
     this.initForm();
+    this.updateScore$ = setInterval(() => {
+      if (this.match.live) {
+        this.matchesService.getById(this.match.id).subscribe({
+          next: (m) => {
+            this.match.scoreHome = m.scoreHome;
+            this.match.scoreAway = m.scoreAway;
+            this.match.live = m.live;
+          },
+        });
+      }
+    }, 10_000);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.updateScore$);
   }
 
   initForm(): void {

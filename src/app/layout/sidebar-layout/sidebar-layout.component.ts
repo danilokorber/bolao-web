@@ -10,6 +10,7 @@ import {
   faArrowRightFromBracket,
   faScaleBalanced,
   faQuestion,
+  faTrophy,
 } from '@fortawesome/free-solid-svg-icons';
 import { filter, map } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
@@ -25,7 +26,7 @@ export class SidebarLayoutComponent implements OnInit {
 
   iconDashboard: IconDefinition = faGaugeHigh;
   iconMatches: IconDefinition = faFutbol;
-  iconRanking: IconDefinition = faRankingStar;
+  iconRanking: IconDefinition = faTrophy;
   iconAccount: IconDefinition = faCircleUser;
   iconAdmin: IconDefinition = faGear;
   iconHelp: IconDefinition = faQuestion;

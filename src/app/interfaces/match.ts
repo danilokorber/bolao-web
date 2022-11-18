@@ -16,4 +16,5 @@ export interface Match {
   psoAway?: number;
   url: string;
   bets: Bet[];
+  live: boolean;
 }

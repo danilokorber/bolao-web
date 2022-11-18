@@ -1,7 +1,9 @@
 export enum Urls {
   MATCHES = '/tournaments/world-cup/editions/qatar-2022/matches',
+  MATCHES_ID = '/matches',
   MATCHES_LIVE = '/tournaments/world-cup/editions/qatar-2022/matches/live',
-  RANKING = '/tournaments/world-cup/editions/qatar-2022/ranking',
+  RANKING = '/ranking',
+  // RANKING = '/tournaments/world-cup/editions/qatar-2022/ranking',
   TEAMS = '/teams',
   USERS_SUB = '/users/guid/',
   USERS_ALL = '/users',
