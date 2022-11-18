@@ -34,3 +34,7 @@
 - New icon for ranking
 - Live match cover
 - Fixed ranking
+
+# 2022.0.9
+
+- Fixed bugs
