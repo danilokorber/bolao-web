@@ -38,3 +38,7 @@
 # 2022.0.10
 
 - Fixed bugs
+
+# 2022.0.11
+
+- Fixed bug (Closed bets for the day before game start)

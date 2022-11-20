@@ -6,7 +6,7 @@
     <fa-icon [icon]="faLoading" [spin]="true" [size]="'4x'"></fa-icon>
   </div>
 
-  <details *ngIf="!this.isLoadingMatches">
+  <!-- <details *ngIf="!this.isLoadingMatches">
     <summary>{{ t("matches.finishedMatches") }}</summary>
 
     <div
@@ -26,11 +26,16 @@
         ></match-card>
       </div>
     </div>
-  </details>
+  </details> -->
 
   <div *ngIf="!this.isLoadingMatches">
-    <div
+    <!-- <div
       *ngFor="let day of matches | pastOrFuture:1"
+      class="mb-4 grid grid-cols-1 md:"
+      [id]="'day' + dateToString(day.date)"
+    > -->
+    <div
+      *ngFor="let day of matches"
       class="mb-4 grid grid-cols-1 md:"
       [id]="'day' + dateToString(day.date)"
     >
