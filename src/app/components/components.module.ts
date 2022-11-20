@@ -18,6 +18,7 @@ import { RankingItemComponent } from './ranking-item/ranking-item.component';
 import { MatchCardComponent } from './match-card/match-card.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { LoadingComponent } from './loading/loading.component';
+import { LoadingSimpleComponent } from './loading-simple/loading-simple.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LoadingComponent } from './loading/loading.component';
     RankingItemComponent,
     MatchCardComponent,
     LoadingComponent,
+    LoadingSimpleComponent,
   ],
   imports: [
     CommonModule,
@@ -53,7 +55,8 @@ import { LoadingComponent } from './loading/loading.component';
     NzIconModule,
     NzCardModule,
     MatchCardComponent,
-    LoadingComponent
+    LoadingComponent,
+    LoadingSimpleComponent,
   ],
 })
 export class ComponentsModule {}

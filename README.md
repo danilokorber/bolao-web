@@ -42,3 +42,7 @@
 # 2022.0.11
 
 - Fixed bug (Closed bets for the day before game start)
+
+# 2022.0.12
+
+- Improved live coverage

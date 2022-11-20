@@ -46,9 +46,7 @@ export class MatchCardComponent implements OnInit, OnDestroy {
       if (this.match.live) {
         this.matchesService.getById(this.match.id).subscribe({
           next: (m) => {
-            this.match.scoreHome = m.scoreHome;
-            this.match.scoreAway = m.scoreAway;
-            this.match.live = m.live;
+            this.match = m;
           },
         });
       }
