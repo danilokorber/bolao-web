@@ -46,3 +46,7 @@
 # 2022.0.12
 
 - Improved live coverage
+
+# 2022.0.13
+
+- Fix layout on language flags

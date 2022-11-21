@@ -31,6 +31,8 @@ export class DashboardPage implements OnInit, OnDestroy {
   }
 
   private liveMatchesLoader: any;
+  private liveRankingLoader: any;
+  private livePositionLoader: any;
   private _nextMatches: Match[] = [];
   public get nextMatches(): Match[] {
     return this._nextMatches;
@@ -57,7 +59,9 @@ export class DashboardPage implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.initLiveMatches();
-    this.liveMatchesLoader = setInterval(() => this.initLiveMatches(), 60_000);
+    this.liveMatchesLoader = setInterval(() => this.initLiveMatches(), 20_000);
+    this.liveRankingLoader = setInterval(() => this.initRanking(), 20_000);
+    this.livePositionLoader = setInterval(() => this.getPosition(), 20_000);
     this.initNextMatches();
     this.initRanking();
     this.getPosition();
@@ -65,6 +69,8 @@ export class DashboardPage implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     clearInterval(this.liveMatchesLoader);
+    clearInterval(this.liveRankingLoader);
+    clearInterval(this.livePositionLoader);
   }
 
   initLiveMatches(): void {
