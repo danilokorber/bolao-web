@@ -17,7 +17,7 @@ import { BetService } from 'src/app/services/bets.service';
 @Component({
   selector: 'match-card',
   templateUrl: './match-card.component.html',
-  styles: [],
+  styleUrls: ['./match-card.component.scss'],
 })
 export class MatchCardComponent implements OnInit, OnDestroy {
   @Input() match!: Match;
@@ -190,6 +190,22 @@ export class MatchCardComponent implements OnInit, OnDestroy {
       }
     } else {
       return 'bg-slate-200';
+    }
+  }
+
+  public get argentinaLost(): boolean {
+    if (
+      this.match.home.shortName == 'ARG' &&
+      (this.match.scoreAway ?? 0) > (this.match.scoreHome ?? 0)
+    ) {
+      return true;
+    } else if (
+      this.match.away.shortName == 'ARG' &&
+      (this.match.scoreAway ?? 0) < (this.match.scoreHome ?? 0)
+    ) {
+      return true;
+    } else {
+      return false;
     }
   }
 }

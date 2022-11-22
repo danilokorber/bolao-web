@@ -50,3 +50,7 @@
 # 2022.0.13
 
 - Fix layout on language flags
+
+# 2022.0.14
+
+- Fix layout on language flags

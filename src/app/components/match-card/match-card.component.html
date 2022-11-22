@@ -21,6 +21,7 @@
 
   <ng-template #bodyTemplate>
     <div *ngIf="!isMatchStarted" class="flex flex-col gap-2">
+      <!-- <div class="firework"></div> -->
       <span class="text-xl mx-auto">{{ t("match.betTitle") }}</span>
       <form
         [formGroup]="formBet"
@@ -42,6 +43,8 @@
       </form>
     </div>
     <div *ngIf="isMatchStarted" class="flex flex-col gap-2">
+      <div *ngIf="argentinaLost" class="firework"></div>
+      <div *ngIf="argentinaLost" class="firework"></div>
       <span class="text-xl mx-auto">
         <div
           class="my-auto w-12 text-center text-white font-bold text-xl rounded-full"
