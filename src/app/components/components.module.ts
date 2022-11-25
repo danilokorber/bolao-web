@@ -19,6 +19,7 @@ import { MatchCardComponent } from './match-card/match-card.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { LoadingComponent } from './loading/loading.component';
 import { LoadingSimpleComponent } from './loading-simple/loading-simple.component';
+import { FourFlagsComponent } from './four-flags/four-flags.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { LoadingSimpleComponent } from './loading-simple/loading-simple.componen
     MatchCardComponent,
     LoadingComponent,
     LoadingSimpleComponent,
+    FourFlagsComponent,
   ],
   imports: [
     CommonModule,
@@ -57,6 +59,7 @@ import { LoadingSimpleComponent } from './loading-simple/loading-simple.componen
     MatchCardComponent,
     LoadingComponent,
     LoadingSimpleComponent,
+    FourFlagsComponent,
   ],
 })
 export class ComponentsModule {}

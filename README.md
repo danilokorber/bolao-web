@@ -59,3 +59,7 @@
 
 - Fixed thumbnails
 - Fixed bonus bet change
+
+# 2022.0.16
+
+- Show alert for bonus bets

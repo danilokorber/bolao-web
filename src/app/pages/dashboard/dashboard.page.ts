@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { Profile } from '@interfaces/profile';
 import { Match } from 'src/app/interfaces/match';
 import { Position, Ranking } from 'src/app/interfaces/ranking';
 import { AuthService } from 'src/app/services/auth.service';
@@ -16,7 +18,8 @@ export class DashboardPage implements OnInit, OnDestroy {
   constructor(
     private matchesService: MatchesService,
     private rankingService: RankingService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   isLoadingMatches = true;
@@ -95,6 +98,10 @@ export class DashboardPage implements OnInit, OnDestroy {
     });
   }
 
+  goToAccount(): void {
+    this.router.navigate(['/account']);
+  }
+
   getPosition(): void {
     this.rankingService.getPosition().subscribe({
       next: (p) => (this.position = p),
@@ -108,5 +115,15 @@ export class DashboardPage implements OnInit, OnDestroy {
   get wcStarted(): boolean {
     let now = new Date();
     return now > new Date('2022-11-20T16:00:00.000+00:00');
+  }
+
+  get isRoundThreeNotStarted(): boolean {
+    let now = new Date();
+    let limit = new Date('2022-11-29T14:00:00Z');
+    return limit.getTime() > now.getTime();
+  }
+
+  get profile(): Profile | undefined {
+    return this.authService.profile;
   }
 }

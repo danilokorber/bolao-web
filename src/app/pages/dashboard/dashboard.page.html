@@ -12,6 +12,21 @@
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6" *ngIf="wcStarted">
+    <nz-card
+      (click)="goToAccount()"
+      *ngIf="isRoundThreeNotStarted && this.profile"
+      class="col-span-3 cursor-pointer bg-qatar-500 text-slate-100 font-semibold"
+    >
+      <div class="flex flex-row w-full">
+        <div class="flex-1 my-auto text-sm md:text-xl">
+          {{ t('dashboard.bonusBetAlert') }}
+        </div>
+        <div class="my-auto ml-2">
+          <four-flags></four-flags>
+        </div>
+      </div>
+    </nz-card>
+
     <nz-card [nzTitle]="t('dashboard.leaders')" [nzExtra]="rankingMore">
       <div
         class="flex flex-col gap-2 w-full h-full"

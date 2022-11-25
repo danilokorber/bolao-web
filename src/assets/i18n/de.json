@@ -36,7 +36,8 @@
     "position": "Meine Platzierung",
     "details": "Details",
     "points": "Meine Punkte",
-    "leaders": "Leaders"
+    "leaders": "Leaders",
+    "bonusBetAlert": "Zeit um Bonustipps zu bearbeiten. Mache das bevor der 3. Spieltag anfängt."
   },
   "ranking": {
     "name": "Name",

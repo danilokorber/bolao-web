@@ -36,7 +36,8 @@
     "position": "My position",
     "details": "Details",
     "points": "My points",
-    "leaders": "Leaders"
+    "leaders": "Leaders",
+    "bonusBetAlert": "Time to review your bonus bets. You can do this until the start of the third round."
   },
   "ranking": {
     "name": "Name",

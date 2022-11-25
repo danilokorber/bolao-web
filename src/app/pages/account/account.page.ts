@@ -43,7 +43,7 @@ export class AccountPage {
 
   get isRoundThreeStarted(): boolean {
     let now = new Date();
-    let limit = new Date('2022-12-03T15:00:00Z');
+    let limit = new Date('2022-11-29T14:00:00Z');
     return limit.getTime() > now.getTime();
   }
 

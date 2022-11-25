@@ -36,7 +36,8 @@
     "position": "Minha posição",
     "details": "Detalhes",
     "points": "Meus pontos",
-    "leaders": "Ranking"
+    "leaders": "Ranking",
+    "bonusBetAlert": "Hora de rever os palpites bônus. Faça isso até o começo da terceira rodada."
   },
   "ranking": {
     "name": "Nome",
