@@ -10,7 +10,7 @@ Die Zahlung des Beitrags erfolgt ausschließlich über PayPal.
 
 Tipps können bis zur Startzeit des jeweiligen Spieles angegeben werden. Ab dann sind die Tipps aller Spieler öffentlich.
 
-Bonustipps für die 4 ersten Plätze der WM können bis dem Start der zweiten Gruppenrunde abgegeben werden. Bonus Tipps werden ab Schließung der Tippabgabe veröffentlicht.
+Bonustipps für die 4 ersten Plätze der WM können bis dem Start der dritten Gruppenrunde abgegeben werden. Bonus Tipps werden ab Schließung der Tippabgabe veröffentlicht.
 
 Ab der 2. Phase wird nur die normale Spielzeit + evtl. Verlängerung (120 Minuten) berücksichtigt. Elfmeter Schießen wird nicht berücksichtigt.
 

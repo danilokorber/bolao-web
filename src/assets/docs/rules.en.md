@@ -10,7 +10,7 @@ The payment of the fee is only possible via PayPal.
 
 Tips can be entered until the kickoff time of the respective match. From then on the tips of all players are public.
 
-Bonus tips for the top 4 places in the World Cup can be entered until the start of the second group round. Bonus tips will be published from the closing of the betting.
+Bonus tips for the top 4 places in the World Cup can be entered until the start of the third group round. Bonus tips will be published from the closing of the betting.
 
 From the 2nd phase onwards, only normal match time + possible extra time (120 minutes) will be taken into account. Penalty shoot-outs will not be taken into account.
 

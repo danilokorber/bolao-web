@@ -58,3 +58,4 @@
 # 2022.0.15
 
 - Fixed thumbnails
+- Fixed bonus bet change

@@ -43,6 +43,7 @@ export class BonusBetsComponent implements OnInit {
       next: (teams: Team[]) => {
         this.teamsBackup = teams;
         this.cloneTeams();
+        this.loadBets();
       },
     });
   }
@@ -68,6 +69,7 @@ export class BonusBetsComponent implements OnInit {
     if (this.fourth.length > 1) this.fourth.splice(1);
 
     this.changed.emit(this.bets);
+    this.setBets();
 
     this.cloneTeams();
   }
@@ -89,18 +91,24 @@ export class BonusBetsComponent implements OnInit {
   get bets(): (Team | undefined)[] {
     return [this.first[0], this.second[0], this.third[0], this.fourth[0]];
   }
-  @Input() set bonusBets(b: BonusBet) {
-    let first = this.team(b.first[0]);
-    if (b.first && b.first.length == 1 && first) this.first = [first];
+  @Input() bonusBets!: BonusBet;
 
-    let second = this.team(b.second[0]);
-    if (b.second && b.second.length == 1 && second) this.second = [second];
+  loadBets() {
+    let first = this.team(this.bonusBets.first[0]);
+    if (this.bonusBets.first && this.bonusBets.first.length == 1 && first)
+      this.first = [first];
 
-    let third = this.team(b.third[0]);
-    if (b.third && b.third.length == 1 && third) this.third = [third];
+    let second = this.team(this.bonusBets.second[0]);
+    if (this.bonusBets.second && this.bonusBets.second.length == 1 && second)
+      this.second = [second];
 
-    let fourth = this.team(b.fourth[0]);
-    if (b.fourth && b.fourth.length == 1 && fourth) this.fourth = [fourth];
+    let third = this.team(this.bonusBets.third[0]);
+    if (this.bonusBets.third && this.bonusBets.third.length == 1 && third)
+      this.third = [third];
+
+    let fourth = this.team(this.bonusBets.fourth[0]);
+    if (this.bonusBets.fourth && this.bonusBets.fourth.length == 1 && fourth)
+      this.fourth = [fourth];
   }
 
   get betsMissing(): boolean {
@@ -140,23 +148,34 @@ export class BonusBetsComponent implements OnInit {
         break;
       default:
     }
+
     this.changed.emit(this.bets);
+    this.setBets();
   }
 
   setBets(): void {
-    let bets: BonusBet = {
-      first: [this.first[0].shortName],
-      second: [this.second[0].shortName],
-      third: [this.third[0].shortName],
-      fourth: [this.fourth[0].shortName],
-    };
+    if (
+      this.first.length > 0 &&
+      this.second.length > 0 &&
+      this.third.length > 0 &&
+      this.fourth.length > 0
+    ) {
+      let bets: BonusBet = {
+        first: [this.first[0].shortName],
+        second: [this.second[0].shortName],
+        third: [this.third[0].shortName],
+        fourth: [this.fourth[0].shortName],
+      };
 
-    if (this.authService.profile) {
-      this.usersService.bonusBets(this.authService.profile.id, bets).subscribe({
-        next: (profile) => {
-          this.authService.profile = profile;
-        },
-      });
+      if (this.authService.profile) {
+        this.usersService
+          .bonusBets(this.authService.profile.id, bets)
+          .subscribe({
+            next: (profile) => {
+              this.authService.profile = profile;
+            },
+          });
+      }
     }
   }
 }

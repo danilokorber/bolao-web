@@ -41,6 +41,12 @@ export class AccountPage {
     return this.authService.language;
   }
 
+  get isRoundThreeStarted(): boolean {
+    let now = new Date();
+    let limit = new Date('2022-12-03T15:00:00Z');
+    return limit.getTime() > now.getTime();
+  }
+
   select(locale: string): void {
     this.locale = locale;
     this.acceptPreferences();

@@ -10,7 +10,7 @@ O pagamento será aceito exclusivamente por PayPal.
 
 Palpites para cada jogo podem ser dados até o horário inicial da partida. A partir deste momento os palpites serão públicos e poderão ser visualizados por todos os participantes
 
-Palpites bônus para os 4 primeiros colocados podem ser dados até o início da segunda rodada. Eles serão públicos a partir do fechamento das apostas.
+Palpites bônus para os 4 primeiros colocados podem ser dados até o início da terceira rodada. Eles serão públicos a partir do fechamento das apostas.
 
 Na fase eliminatória o resultado para efeitos de contabilização é o dos 90 minutos + eventual prorrogação. Disputas de pênaltis não são consideradas.
 
