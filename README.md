@@ -53,4 +53,8 @@
 
 # 2022.0.14
 
-- Fix layout on language flags
+- Fireworks
+
+# 2022.0.15
+
+- Fixed thumbnails

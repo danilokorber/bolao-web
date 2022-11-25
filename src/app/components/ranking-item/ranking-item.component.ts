@@ -33,4 +33,10 @@ export class RankingItemComponent implements OnInit {
   occurences(bets: Bet[], points: number): number {
     return bets.filter((bet) => bet.points == points).length;
   }
+
+  get picture(): string {
+    return (
+      this.rankingInfo.user.attributes?.picture[0] ?? '/assets/img/al-rihla.png'
+    );
+  }
 }
