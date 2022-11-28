@@ -73,6 +73,8 @@
     "save": "Save",
     "cancel": "Cancel",
     "moreInfo": "More info",
-    "points": "points"
+    "points": "points",
+    "in_play": "Live",
+    "paused": "Interval"
   }
 }

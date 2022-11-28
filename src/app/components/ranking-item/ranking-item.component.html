@@ -33,6 +33,9 @@
           ).toUpperCase()
         }}
       </div>
+      <div class="my-auto w-32 text-center">
+        <four-flags *ngIf="false"></four-flags>
+      </div>
       <div
         class="my-auto w-12 text-center text-xl rounded-full bg-slate-800 text-slate-50"
         [class.bg-red-500]="rankingInfo.user.id == this.userId"

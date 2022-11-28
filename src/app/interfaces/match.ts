@@ -17,4 +17,17 @@ export interface Match {
   url: string;
   bets: Bet[];
   live: boolean;
+  status?: MatchStatus;
+}
+
+export enum MatchStatus {
+  SCHEDULED = 'SCHEDULED',
+  TIMED = 'TIMED',
+  IN_PLAY = 'IN_PLAY',
+  PAUSED = 'PAUSED',
+  FINISHED = 'FINISHED',
+  SUSPENDED = 'SUSPENDED',
+  POSTPONED = 'POSTPONED',
+  CANCELLED = 'CANCELLED',
+  AWARDED = 'AWARDED',
 }

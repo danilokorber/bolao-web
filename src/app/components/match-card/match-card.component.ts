@@ -10,7 +10,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { MatchesService } from '@services/matches.service';
 import { Bet } from 'src/app/interfaces/bet';
-import { Match } from 'src/app/interfaces/match';
+import { Match, MatchStatus } from 'src/app/interfaces/match';
 import { AuthService } from 'src/app/services/auth.service';
 import { BetService } from 'src/app/services/bets.service';
 
@@ -47,6 +47,8 @@ export class MatchCardComponent implements OnInit, OnDestroy {
         this.matchesService.getById(this.match.id).subscribe({
           next: (m) => {
             this.match = m;
+            console.log(this.match);
+            // STATUS: PAUSED, IN_PLAY, FINISHED, TIMED
           },
         });
       }
@@ -207,5 +209,12 @@ export class MatchCardComponent implements OnInit, OnDestroy {
     } else {
       return false;
     }
+  }
+
+  public get isInPlay(): boolean {
+    return (
+      this.match.status == MatchStatus.IN_PLAY ||
+      this.match.status == MatchStatus.PAUSED
+    );
   }
 }

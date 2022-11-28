@@ -63,3 +63,7 @@
 # 2022.0.16
 
 - Show alert for bonus bets
+
+# 2022.0.17
+
+- Live badge

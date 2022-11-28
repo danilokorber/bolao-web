@@ -72,6 +72,8 @@
     "save": "Speichern",
     "cancel": "Abbrechen",
     "moreInfo": "Mehr info",
-    "points": "Punkte"
+    "points": "Punkte",
+    "in_play": "Live",
+    "paused": "Halbzeit"
   }
 }
