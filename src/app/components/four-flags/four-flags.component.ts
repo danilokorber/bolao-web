@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Profile } from '@interfaces/profile';
+import { Component, Input } from '@angular/core';
+import { Profile, ProfileAttributes } from '@interfaces/profile';
 import { AuthService } from '@services/auth.service';
 
 @Component({
@@ -8,6 +8,9 @@ import { AuthService } from '@services/auth.service';
   styles: [],
 })
 export class FourFlagsComponent {
+  @Input() small: boolean = false;
+  @Input() attributes: ProfileAttributes | undefined;
+
   constructor(private authService: AuthService) {}
 
   get profile(): Profile | undefined {

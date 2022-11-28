@@ -1,9 +1,13 @@
 <div class="flex flex-col p-4" *transloco="let t; lang: this.language">
   <div class="flex flex-row gap-x-2 py-1">
     <div class="w-8 my-auto">&nbsp;</div>
-    <div class="mx-4 my-auto w-10 text-right font-bold text-xl"></div>
+    <div
+      class="mx-4 my-auto w-10 text-right font-bold text-xl hidden md:block"
+    ></div>
     <div class="my-auto flex-1 font-bold text-xl">{{ t("ranking.name") }}</div>
-    <div class="my-auto w-32 text-center font-bold text-xl"></div>
+    <div
+      class="my-auto w-32 text-center font-bold text-xl hidden md:block"
+    ></div>
     <div class="my-auto w-12 text-center font-bold text-xl">
       {{ t("ranking.points") }}
     </div>

@@ -1,22 +1,30 @@
 <div *ngIf="this.profile">
   <flag
-    class="drop-shadow-md w-8 h-8 z-50"
-    [country]="this.profile.attributes.first[0]"
+    class="drop-shadow-md z-50"
+    [class]="small ? 'w-6 h-6' : 'w-8 h-8'"
+    *ngIf="this.attributes"
+    [country]="this.attributes.first[0]"
     format="round"
   ></flag>
   <flag
-    class="drop-shadow-md w-8 h-8 z-40 -ml-1"
-    [country]="this.profile.attributes.second[0]"
+    class="drop-shadow-md z-40 -ml-1"
+    [class]="small ? 'w-6 h-6' : 'w-8 h-8'"
+    *ngIf="this.attributes"
+    [country]="this.attributes.second[0]"
     format="round"
   ></flag>
   <flag
-    class="drop-shadow-md w-8 h-8 z-30 -ml-1"
-    [country]="this.profile.attributes.third[0]"
+    class="drop-shadow-md z-30 -ml-1"
+    [class]="small ? 'w-6 h-6' : 'w-8 h-8'"
+    *ngIf="this.attributes"
+    [country]="this.attributes.third[0]"
     format="round"
   ></flag>
   <flag
-    class="drop-shadow-md w-8 h-8 z-20 -ml-1"
-    [country]="this.profile.attributes.fourth[0]"
+    class="drop-shadow-md z-20 -ml-1"
+    [class]="small ? 'w-6 h-6' : 'w-8 h-8'"
+    *ngIf="this.attributes"
+    [country]="this.attributes.fourth[0]"
     format="round"
   ></flag>
 </div>

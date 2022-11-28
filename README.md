@@ -67,3 +67,7 @@
 # 2022.0.17
 
 - Live badge
+
+# 2022.0.18
+
+- Show bonus tipps

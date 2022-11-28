@@ -4,7 +4,10 @@
       class="flex flex-row gap-x-2 p-1.5 cursor-pointer"
       [class.hover:bg-slate-100]="position > 2"
     >
-      <img [src]="picture" class="rounded-full w-8 h-8 my-auto" />
+      <img
+        [src]="picture"
+        class="rounded-full w-8 h-8 my-auto hidden md:block"
+      />
       <div
         class="mx-4 my-auto w-10 text-center text-xl font-bold rounded-full"
         [class.text-red-500]="rankingInfo.user.id == this.userId"
@@ -33,8 +36,12 @@
           ).toUpperCase()
         }}
       </div>
-      <div class="my-auto w-32 text-center">
-        <four-flags *ngIf="false"></four-flags>
+      <div class="my-auto w-32 text-center hidden md:block">
+        <four-flags
+          *ngIf="rankingInfo.user.attributes"
+          [small]="true"
+          [attributes]="rankingInfo.user.attributes"
+        ></four-flags>
       </div>
       <div
         class="my-auto w-12 text-center text-xl rounded-full bg-slate-800 text-slate-50"
