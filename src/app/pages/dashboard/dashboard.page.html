@@ -22,7 +22,7 @@
           {{ t('dashboard.bonusBetAlert') }}
         </div>
         <div class="my-auto ml-2">
-          <four-flags></four-flags>
+          <four-flags [attributes]="profile.attributes"></four-flags>
         </div>
       </div>
     </nz-card>
@@ -85,7 +85,7 @@
           class="mx-auto text-8xl text-qatar-500 font-black"
           *ngIf="position"
         >
-          {{ position?.position }}
+          {{ position.position }}
         </span>
         <div class="flex w-full h-full" *ngIf="!position">
           <bolao-loading-simple size="2x"></bolao-loading-simple>
@@ -103,7 +103,7 @@
           class="mx-auto text-8xl text-qatar-500 font-black"
           *ngIf="position"
         >
-          {{ position?.ranking?.points }}
+          {{ position.ranking.points }}
         </span>
         <div class="flex w-full h-full" *ngIf="!position">
           <bolao-loading-simple size="2x"></bolao-loading-simple>
