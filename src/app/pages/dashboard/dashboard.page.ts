@@ -23,6 +23,7 @@ export class DashboardPage implements OnInit, OnDestroy {
   ) {}
 
   isLoadingMatches = true;
+  isHistoryLoaded = false;
   faLoading: IconDefinition = faSpinner;
 
   private _liveMatches: Match[] = [];
@@ -68,6 +69,7 @@ export class DashboardPage implements OnInit, OnDestroy {
     this.initNextMatches();
     this.initRanking();
     this.getPosition();
+    this.getHistory();
   }
 
   ngOnDestroy(): void {
@@ -108,6 +110,23 @@ export class DashboardPage implements OnInit, OnDestroy {
     });
   }
 
+  getHistory(): void {
+    this.rankingService.getHistory().subscribe({
+      next: (h) => {
+        this.lineStylesData.labels = [];
+        this.lineStylesData.datasets[0].data = [];
+
+        for (let key in h) {
+          let value = h[key];
+          this.lineStylesData.labels.push(key);
+          this.lineStylesData.datasets[0].data.push(value);
+        }
+        console.log(this.lineStylesData);
+        this.isHistoryLoaded = true;
+      },
+    });
+  }
+
   get language(): string {
     return this.authService.language;
   }
@@ -126,4 +145,40 @@ export class DashboardPage implements OnInit, OnDestroy {
   get profile(): Profile | undefined {
     return this.authService.profile;
   }
+
+  lineStylesData = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [
+      {
+        data: [12, 51, 62, 33, 21, 62, 45],
+        fill: true,
+        borderColor: 'rgba(134, 20, 54, 0.6)',
+        tension: 0.4,
+        backgroundColor: 'rgba(134, 20, 54, 0.2)',
+      },
+    ],
+  };
+
+  basicOptions = {
+    title: { display: false },
+    labels: { display: false },
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      x: {
+        display: false,
+      },
+      y: {
+        display: false,
+      },
+    },
+    elements: {
+      point: {
+        radius: 0,
+      },
+    },
+  };
 }

@@ -1,0 +1,56 @@
+<div class="flex flex-row gap-x-2 py-1">
+  <div class="my-auto flex-1 flex flex-row font-bold text-sm">&nbsp;</div>
+  <div
+    class="my-auto flex flex-row font-bold text-sm border-b border-b-slate-200"
+  >
+    {{ bet.scoreHome }}
+    <span
+      class="my-auto mx-2 w-12 text-center text-sm rounded-full bg-slate-800 text-slate-50"
+    >
+      {{ bet.scoreHome + " : " + bet.scoreAway }}
+    </span>
+    {{ bet.scoreAway }}
+  </div>
+  <div
+    class="ml-4 my-auto w-12 text-center font-bold text-sm rounded-full bg-opacity-40 border-b border-b-slate-200"
+    [class.bg-rainbow-2000]="bet.points == 20"
+  >
+    {{ bet.points == 20 ? bet.scoreHome + " : " + bet.scoreAway : "" }}
+  </div>
+  <div
+    class="my-auto w-12 text-center font-bold text-sm rounded-full bg-opacity-40 border-b border-b-slate-200"
+    [class.bg-rainbow-1000]="bet.points == 10"
+  >
+    {{ bet.points == 10 ? bet.scoreHome + " : " + bet.scoreAway : "" }}
+  </div>
+  <div
+    class="my-auto w-12 text-center font-bold text-sm rounded-full bg-opacity-40 border-b border-b-slate-200"
+    [class.bg-rainbow-700]="bet.points == 7"
+  >
+    {{ bet.points == 7 ? bet.scoreHome + " : " + bet.scoreAway : "" }}
+  </div>
+  <div
+    class="my-auto w-12 text-center font-bold text-sm rounded-full bg-opacity-40 border-b border-b-slate-200"
+    [class.bg-rainbow-400]="bet.points == 4"
+  >
+    {{ bet.points == 4 ? bet.scoreHome + " : " + bet.scoreAway : "" }}
+  </div>
+  <div
+    class="my-auto w-12 text-center font-bold text-sm rounded-full bg-opacity-40 border-b border-b-slate-200"
+    [class.bg-rainbow-200]="bet.points == 2"
+  >
+    {{ bet.points == 2 ? bet.scoreHome + " : " + bet.scoreAway : "" }}
+  </div>
+  <div
+    class="my-auto w-12 text-center font-bold text-sm rounded-full bg-opacity-40 border-b border-b-slate-200"
+    [class.bg-rainbow-100]="bet.points == 1"
+  >
+    {{ bet.points == 1 ? bet.scoreHome + " : " + bet.scoreAway : "" }}
+  </div>
+  <div
+    class="my-auto w-12 text-center font-bold text-sm rounded-full bg-opacity-40 border-b border-b-slate-200"
+    [class.bg-rainbow-50]="bet.points == 0"
+  >
+    {{ bet.points == 0 ? bet.scoreHome + " : " + bet.scoreAway : "" }}
+  </div>
+</div>

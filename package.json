@@ -1,6 +1,6 @@
 {
   "name": "bolao",
-  "version": "2022.0.19",
+  "version": "2022.0.22",
   "jenkins": {
     "dns": {
       "host": "tippspiel",
@@ -84,6 +84,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@ngneat/transloco": "^4.1.1",
+    "chart.js": "^4.0.1",
     "hammerjs": "^2.0.8",
     "jwt-decode": "^3.1.2",
     "keycloak-angular": "^12.1.0",
@@ -93,6 +94,7 @@
     "ngx-flags": "^14.0.4",
     "ngx-markdown": "^14.0.1",
     "ngx-paypal": "^10.1.0",
+    "primeng": "^14.2.2",
     "rxjs": "^7.5.7",
     "tslib": "^2.4.1",
     "zone.js": "^0.11.8"

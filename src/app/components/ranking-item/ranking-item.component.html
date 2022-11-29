@@ -87,5 +87,7 @@
     </div>
   </summary>
 
-  <div class="flex flex-row pl-32"></div>
+  <div class="flex flex-col pl-32" *ngIf="false">
+    <bet-detail *ngFor="let bet of bets" [bet]="bet"></bet-detail>
+  </div>
 </details>

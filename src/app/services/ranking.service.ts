@@ -19,4 +19,7 @@ export class RankingService {
   getPosition(): Observable<Position> {
     return this.http.get<Position>(`${BASE_URL}${Urls.USERS_RANKING}`);
   }
+  getHistory(): Observable<any> {
+    return this.http.get<any>(`${BASE_URL}${Urls.USERS_HISTORY}`);
+  }
 }

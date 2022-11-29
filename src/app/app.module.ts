@@ -85,6 +85,8 @@ import { GetHelpComponent } from './pages/get-help/get-help.component';
 import { Authorizing2Page } from './pages/authorizing/authorizing2.page';
 import { DataPrivacyPage } from './pages/data-privacy/data-privacy.page';
 
+import { ChartModule } from 'primeng/chart';
+
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
   override = <any>{
@@ -138,6 +140,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     NzIconModule.forRoot(icons),
     MarkdownModule.forRoot(),
     NzMenuModule,
+    ChartModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable

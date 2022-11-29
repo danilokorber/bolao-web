@@ -10,6 +10,7 @@ import { Profile } from 'src/app/interfaces/profile';
 export class BetSummaryComponent {
   @Input() bet!: Bet;
   @Input() language: string = 'en';
+  @Input() listVersion: boolean = false;
 
   isVisible = false;
   constructor() {}

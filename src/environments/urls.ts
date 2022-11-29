@@ -17,6 +17,7 @@ export enum Urls {
   USERS_CONFIRM_PAYMENT = '/users/guid/{guid}/payment',
   // USERS_RANKING = '/tournaments/world-cup/editions/qatar-2022/ranking/position',
   USERS_RANKING = '/ranking/position',
+  USERS_HISTORY = '/ranking/history',
   BETS_CREATE = '/bets',
   BETS_GET_BY_MATCH = '/bets/matches',
 }

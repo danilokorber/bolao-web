@@ -1,6 +1,11 @@
 <div class="flex flex-row gap-2 text-lg cursor-pointer" (click)="showModal()">
-  <img [src]="bet.user.picture" class="rounded-full w-8 h-8 my-auto" />
+  <img
+    *ngIf="!listVersion"
+    [src]="bet.user.picture"
+    class="rounded-full w-8 h-8 my-auto"
+  />
   <div
+    *ngIf="!listVersion"
     class="my-auto flex-1 truncate"
     [title]="(bet.user.firstName + ' ' + bet.user.lastName).toUpperCase()"
     [class.text-red-500]="bet.user.id == this.userId"

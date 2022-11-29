@@ -97,8 +97,15 @@
       <a routerLink="/ranking">{{ t('dashboard.details') }}</a>
     </ng-template>
 
-    <nz-card [nzTitle]="t('dashboard.points')">
-      <div class="flex w-full h-full">
+    <nz-card [nzTitle]="t('dashboard.points')" [nzBodyStyle]="{'padding': '0'}">
+      <p-chart
+        *ngIf="isHistoryLoaded"
+        class="w-full h-full"
+        type="line"
+        [data]="lineStylesData"
+        [options]="basicOptions"
+      ></p-chart>
+      <div class="absolute top-20 z-50 flex w-full h-full">
         <span
           class="mx-auto text-8xl text-qatar-500 font-black"
           *ngIf="position"

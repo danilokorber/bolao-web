@@ -20,6 +20,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { LoadingComponent } from './loading/loading.component';
 import { LoadingSimpleComponent } from './loading-simple/loading-simple.component';
 import { FourFlagsComponent } from './four-flags/four-flags.component';
+import { BetDetailComponent } from './bet-detail/bet-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { FourFlagsComponent } from './four-flags/four-flags.component';
     LoadingComponent,
     LoadingSimpleComponent,
     FourFlagsComponent,
+    BetDetailComponent,
   ],
   imports: [
     CommonModule,
