@@ -71,3 +71,7 @@
 # 2022.0.18
 
 - Show bonus tipps
+
+# 2022.0.19
+
+- Fixed time for bonus tipps
