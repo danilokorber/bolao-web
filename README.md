@@ -79,3 +79,7 @@
 # 2022.0.22
 
 - Points chart
+
+# 2022.0.23
+
+- Position chart

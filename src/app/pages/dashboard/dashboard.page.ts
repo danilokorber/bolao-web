@@ -113,15 +113,28 @@ export class DashboardPage implements OnInit, OnDestroy {
   getHistory(): void {
     this.rankingService.getHistory().subscribe({
       next: (h) => {
-        this.lineStylesData.labels = [];
-        this.lineStylesData.datasets[0].data = [];
+        this.historyData.labels = [];
+        this.historyData.datasets[0].data = [];
+        this.historyData.datasets[1].data = [];
+        this.positionData.labels = [];
+        this.positionData.datasets[0].data = [];
+        this.positionData.datasets[1].data = [];
 
-        for (let key in h) {
-          let value = h[key];
-          this.lineStylesData.labels.push(key);
-          this.lineStylesData.datasets[0].data.push(value);
+        for (let key in h.first.history) {
+          let points = h.first.history[key];
+          let position = h.first.position[key];
+          this.historyData.labels.push(key);
+          this.positionData.labels.push(key);
+          this.historyData.datasets[0].data.push(points);
+          this.positionData.datasets[0].data.push(21 - position);
         }
-        console.log(this.lineStylesData);
+        for (let key in h.my.history) {
+          let points = h.my.history[key];
+          let position = h.my.position[key];
+          this.historyData.datasets[1].data.push(points);
+          this.positionData.datasets[1].data.push(21 - position);
+        }
+        console.log(this.historyData);
         this.isHistoryLoaded = true;
       },
     });
@@ -146,9 +159,16 @@ export class DashboardPage implements OnInit, OnDestroy {
     return this.authService.profile;
   }
 
-  lineStylesData = {
+  positionData = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
+      {
+        data: [12, 51, 62, 33, 21, 62, 45],
+        fill: false,
+        borderColor: 'rgba(71, 85, 105, 0.6)',
+        tension: 0.4,
+        borderDash: [4, 2],
+      },
       {
         data: [12, 51, 62, 33, 21, 62, 45],
         fill: true,
@@ -159,7 +179,53 @@ export class DashboardPage implements OnInit, OnDestroy {
     ],
   };
 
-  basicOptions = {
+  historyData = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [
+      {
+        data: [12, 51, 62, 33, 21, 62, 45],
+        fill: false,
+        borderColor: 'rgba(71, 85, 105, 0.6)',
+        tension: 0.4,
+        borderDash: [4, 2],
+      },
+      {
+        data: [12, 51, 62, 33, 21, 62, 45],
+        fill: true,
+        borderColor: 'rgba(134, 20, 54, 0.6)',
+        tension: 0.4,
+        backgroundColor: 'rgba(134, 20, 54, 0.2)',
+      },
+    ],
+  };
+
+  positionOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    title: { display: false },
+    labels: { display: false },
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      x: {
+        display: false,
+      },
+      y: {
+        display: false,
+      },
+    },
+    elements: {
+      point: {
+        radius: 0,
+      },
+    },
+  };
+  pointsOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
     title: { display: false },
     labels: { display: false },
     plugins: {
