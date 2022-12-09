@@ -86,7 +86,7 @@ export class DashboardPage implements OnInit, OnDestroy {
 
   initNextMatches(): void {
     this.isLoadingMatches = true;
-    this.matchesService.getNext(6).subscribe({
+    this.matchesService.getNext(8).subscribe({
       next: (m) => {
         this.nextMatches = m;
         this.isLoadingMatches = false;
@@ -101,7 +101,7 @@ export class DashboardPage implements OnInit, OnDestroy {
   }
 
   goToAccount(): void {
-    this.router.navigate(['/account']);
+    this.router.navigate(['/survey']);
   }
 
   getPosition(): void {

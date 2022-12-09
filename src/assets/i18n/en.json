@@ -17,7 +17,8 @@
     "account": "Account",
     "help": "Help",
     "admin": "Administration",
-    "logout": "Logout"
+    "logout": "Logout",
+    "survey": "Survey"
   },
   "bonusBets": {
     "title": "Bonus bets",
@@ -76,5 +77,113 @@
     "points": "points",
     "in_play": "Live",
     "paused": "Interval"
+  },
+  "survey": {
+    "title": "Survey",
+    "alert": "Please fill out a survey for this bet game. I promise it's quick...",
+    "questions": [
+      {
+        "questionId": 1,
+        "question": "How much you think is a adequate participation fee?",
+        "type": "slider",
+        "group": "payment",
+        "options": ["-", "5€", "10€", "15€", "20€", "+"],
+        "demandCommentOptions": [0, 5]
+      },
+      {
+        "questionId": 2,
+        "question": "Is the prize distribution adequate?",
+        "type": "radio",
+        "group": "rules",
+        "options": [
+          "There shoud be more winners",
+          "It's fine",
+          "Too many are winning."
+        ],
+        "commentPlaceholder": "Please explain how it could be better...",
+        "demandCommentOptions": [0, 2]
+      },
+      {
+        "questionId": 3,
+        "question": "Is the point system fair?",
+        "type": "radio",
+        "group": "rules",
+        "options": [
+          "Yes",
+          "Not bad, but with some flaws",
+          "Could be way better...",
+          "Not at all"
+        ],
+        "commentPlaceholder": "What could be better?",
+        "demandCommentOptions": [1, 2, 3]
+      },
+      {
+        "questionId": 4,
+        "question": "Do you want to place more bonus bets?",
+        "type": "checkbox",
+        "group": "rules",
+        "options": [
+          "End position in each group",
+          "Classified to K.O. rounds",
+          "Full K.O. phase bracket",
+          "Man of the match",
+          "Top scorer",
+          "Best player",
+          "Team with most goals scored",
+          "Referee in final match"
+        ],
+        "commentPlaceholder": "Other suggestions?"
+      },
+      {
+        "questionId": 5,
+        "question": "Would you be interested in participate again in four years?",
+        "type": "radio",
+        "group": "general",
+        "options": ["Yes", "No"]
+      },
+      {
+        "questionId": 6,
+        "question": "How was your experience in the app?",
+        "type": "checkbox",
+        "group": "app",
+        "options": [
+          "Navigation is confusing",
+          "Design could be better",
+          "I need other payment options",
+          "I had other problems"
+        ],
+        "commentPlaceholder": "Please comment what was not good."
+      },
+      {
+        "questionId": 7,
+        "question": "Did you follow your points in real time during the matches?",
+        "type": "radio",
+        "group": "general",
+        "options": ["Yes", "Sometimes", "No", "Didn't know this was possible."]
+      },
+      {
+        "questionId": 8,
+        "question": "What other features do you want to have in the app?",
+        "type": "checkbox",
+        "group": "app",
+        "options": [
+          "Invite friends",
+          "Share results on social media",
+          "More information and news about the matches",
+          "Live ticker",
+          "Interaction with other participants",
+          "I missed somethig else"
+        ],
+        "commentPlaceholder": "What else do you want to see in the app?"
+      },
+      {
+        "questionId": 9,
+        "question": "What was your main platform for accessing the game?",
+        "type": "radio",
+        "group": "general",
+        "options": ["Mobile phone", "Computer"],
+        "commentPlaceholder": "Did you have any problems?"
+      }
+    ]
   }
 }

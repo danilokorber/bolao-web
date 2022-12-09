@@ -83,3 +83,7 @@
 # 2022.0.23
 
 - Position chart
+
+# 2022.1.0
+
+- Survey

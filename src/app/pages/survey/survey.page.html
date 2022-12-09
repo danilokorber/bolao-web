@@ -1,0 +1,18 @@
+<div *ngIf="this.profile">
+  <div
+    class="mx-auto flex flex-col p-4"
+    *transloco="let t; lang: this.language"
+  >
+    <h1 class="mt-6">{{ t('survey.title') }}</h1>
+
+    <div
+      *ngIf="questions.length > 0"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+    >
+      <bolao-survey-card
+        *ngFor="let q of questions"
+        [question]="q"
+      ></bolao-survey-card>
+    </div>
+  </div>
+</div>

@@ -14,15 +14,11 @@
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6" *ngIf="wcStarted">
     <nz-card
       (click)="goToAccount()"
-      *ngIf="isRoundThreeNotStarted && this.profile"
       class="col-span-3 cursor-pointer bg-qatar-500 text-slate-100 font-semibold"
     >
       <div class="flex flex-row w-full">
         <div class="flex-1 my-auto text-sm md:text-xl">
-          {{ t('dashboard.bonusBetAlert') }}
-        </div>
-        <div class="my-auto ml-2">
-          <four-flags [attributes]="profile.attributes"></four-flags>
+          {{ t('survey.alert') }}
         </div>
       </div>
     </nz-card>
@@ -92,7 +88,7 @@
       ></p-chart>
       <div class="absolute top-20 flex w-full">
         <span
-          class="mx-auto text-8xl text-qatar-500 font-black"
+          class="mx-auto text-8xl text-qatar-500 font-black drop-shadow-md"
           *ngIf="position"
         >
           {{ position.position }}
@@ -117,7 +113,7 @@
       ></p-chart>
       <div class="absolute top-20 flex w-full">
         <span
-          class="mx-auto text-8xl text-qatar-500 font-black"
+          class="mx-auto text-8xl text-qatar-500 font-black drop-shadow-md"
           *ngIf="position"
         >
           {{ position.ranking.points }}

@@ -1,0 +1,25 @@
+<form
+  class="flex flex-col"
+  [formGroup]="form"
+  *ngIf="this.question.options.length > 1"
+>
+  <nz-checkbox-wrapper class="flex flex-col" (nzOnChange)="click($event)">
+    <label
+      class="ml-0"
+      nz-checkbox
+      *ngFor="let o of question.options"
+      [nzValue]="o"
+      [nzChecked]="isChecked(o)"
+      >{{ o }}</label
+    ></nz-checkbox-wrapper
+  >
+
+  <textarea
+    #comments
+    class="mt-6 w-full resize-none"
+    nz-input
+    [placeholder]="this.question.commentPlaceholder ?? 'Comments'"
+    nzAutosize
+    formControlName="comments"
+  ></textarea>
+</form>

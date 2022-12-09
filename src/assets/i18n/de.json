@@ -17,7 +17,8 @@
     "account": "Konto",
     "help": "Hilfe",
     "admin": "Verwaltung",
-    "logout": "Ausloggen"
+    "logout": "Ausloggen",
+    "survey": "Umfrage"
   },
   "bonusBets": {
     "title": "Bonus Tipps",
@@ -75,5 +76,114 @@
     "points": "Punkte",
     "in_play": "Live",
     "paused": "Halbzeit"
+  },
+  "survey": {
+    "title": "Umfrage",
+    "alert": "Ich habe eine kleine Umfrage über das Tippspiel. Ich verspreche, es ist schnell auszufüllen...",
+    "questions": [
+      {
+        "questionId": 1,
+        "question": "Wie hoch wäre eine gute Teilnahmegebühr?",
+        "type": "slider",
+        "group": "payment",
+        "options": ["-", "5€", "10€", "15€", "20€", "+"],
+        "demandCommentOptions": [0, 5]
+      },
+      {
+        "questionId": 2,
+        "question": "Wird der Preis richtig ausgeteilt?",
+        "type": "radio",
+        "group": "rules",
+        "options": ["Mehr Gewinner wäre gut", "Ist in Ordnung", "Zu viele ."],
+        "commentPlaceholder": "Wie könnte es besser sein?",
+        "demandCommentOptions": [0, 2]
+      },
+      {
+        "questionId": 3,
+        "question": "Ist das Punktesystem fair?",
+        "type": "radio",
+        "group": "rules",
+        "options": [
+          "Ja",
+          "Kleinigkeiten könnten gebessert werden",
+          "Vieles sollte geändert werden...",
+          "Katastrophe!"
+        ],
+        "commentPlaceholder": "Wie könnte es besser sein?",
+        "demandCommentOptions": [1, 2, 3]
+      },
+      {
+        "questionId": 4,
+        "question": "Würdest du mehr Bonus Tipps haben wollen?",
+        "type": "checkbox",
+        "group": "rules",
+        "options": [
+          "Endposition in jeder Gruppe",
+          "Angabe der Teams die es zur KO Phase schaffen",
+          "Ganze KO phase im Voraus tippen",
+          "Man of the match",
+          "Torschütze",
+          "Best Spieler der WM",
+          "Team mit meisten Tores",
+          "Schiedsrichter der Finale"
+        ],
+        "commentPlaceholder": "Andere Vorschläge?"
+      },
+      {
+        "questionId": 5,
+        "question": "Bis du wieder dabei in 2026?",
+        "type": "radio",
+        "group": "general",
+        "options": ["Ja", "Nein"]
+      },
+      {
+        "questionId": 6,
+        "question": "Wie ging es dir in der App?",
+        "type": "checkbox",
+        "group": "app",
+        "options": [
+          "Navigation is verwirrend",
+          "Design könnte besser sein",
+          "Andere Zahlungsmethoden",
+          "Ich hatte andere Probleme"
+        ],
+        "commentPlaceholder": "Was ist nicht gut gelaufen?"
+      },
+      {
+        "questionId": 7,
+        "question": "Hast du die Punkte in Echtzeit verfolgt?",
+        "type": "radio",
+        "group": "general",
+        "options": [
+          "Ja",
+          "Manchmal",
+          "Nein",
+          "Wusste gar nicht, dass das geht."
+        ]
+      },
+      {
+        "questionId": 8,
+        "question": "Was würdest du sonst in der App sehen wollen?",
+        "type": "checkbox",
+        "group": "app",
+        "options": [
+          "Freunde einladen",
+          "Ergebnisse in Sozial Medien teilen",
+          "Mehr Infos über die Spiele",
+          "Live ticker",
+          "Interation mit anderen Teilnehmer",
+          "Etwas anderes"
+        ],
+        "commentPlaceholder": "Was willst du noch sehen??"
+      },
+      {
+        "questionId": 9,
+        "question": "Wie hast du gettippt??",
+        "type": "radio",
+        "group": "general",
+        "options": ["Handy", "Computer"],
+        "commentPlaceholder": "Probleme?"
+      }
+    ]
   }
 }

@@ -47,8 +47,6 @@ export class MatchCardComponent implements OnInit, OnDestroy {
         this.matchesService.getById(this.match.id).subscribe({
           next: (m) => {
             this.match = m;
-            console.log(this.match);
-            // STATUS: PAUSED, IN_PLAY, FINISHED, TIMED
           },
         });
       }

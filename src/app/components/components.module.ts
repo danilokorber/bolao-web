@@ -7,11 +7,15 @@ import { MatchComponent } from './match/match.component';
 import { NgxFlagsModule } from 'ngx-flags';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzSliderModule } from 'ng-zorro-antd/slider';
 //import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzStepsModule } from 'ng-zorro-antd/steps';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzModalModule } from 'ng-zorro-antd/modal';
-import { ReactiveFormsModule } from '@angular/forms';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BetSummaryComponent } from './bet/bet-summary.component';
 import { TranslocoRootModule } from '../modules/transloco-root.module';
 import { RankingItemComponent } from './ranking-item/ranking-item.component';
@@ -21,6 +25,10 @@ import { LoadingComponent } from './loading/loading.component';
 import { LoadingSimpleComponent } from './loading-simple/loading-simple.component';
 import { FourFlagsComponent } from './four-flags/four-flags.component';
 import { BetDetailComponent } from './bet-detail/bet-detail.component';
+import { SurveyCardComponent } from './survey-card/survey-card.component';
+import { SurveyCardSliderComponent } from './survey-card/survey-card-slider/survey-card-slider.component';
+import { SurveyCardRadioComponent } from './survey-card/survey-card-radio/survey-card-radio.component';
+import { SurveyCardCheckboxComponent } from './survey-card/survey-card-checkbox/survey-card-checkbox.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +43,14 @@ import { BetDetailComponent } from './bet-detail/bet-detail.component';
     LoadingSimpleComponent,
     FourFlagsComponent,
     BetDetailComponent,
+    SurveyCardComponent,
+    SurveyCardSliderComponent,
+    SurveyCardRadioComponent,
+    SurveyCardCheckboxComponent,
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ReactiveFormsModule,
     NgxFlagsModule,
     FontAwesomeModule,
@@ -47,6 +60,10 @@ import { BetDetailComponent } from './bet-detail/bet-detail.component';
     NzIconModule,
     NzModalModule,
     NzCardModule,
+    NzSliderModule,
+    NzInputModule,
+    NzRadioModule,
+    NzCheckboxModule,
     TranslocoRootModule,
   ],
   exports: [
@@ -62,6 +79,7 @@ import { BetDetailComponent } from './bet-detail/bet-detail.component';
     LoadingComponent,
     LoadingSimpleComponent,
     FourFlagsComponent,
+    SurveyCardComponent,
   ],
 })
 export class ComponentsModule {}

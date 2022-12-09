@@ -17,6 +17,7 @@ import { RulesPage } from './pages/rules/rules.component';
 import { GetHelpComponent } from './pages/get-help/get-help.component';
 import { Authorizing2Page } from './pages/authorizing/authorizing2.page';
 import { DataPrivacyPage } from './pages/data-privacy/data-privacy.page';
+import { SurveyPage } from '@pages/survey/survey.page';
 
 const routes: Routes = [
   {
@@ -71,6 +72,12 @@ const routes: Routes = [
         component: AccountPage,
         pathMatch: 'full',
         data: { title: 'Konto' },
+      },
+      {
+        path: 'survey',
+        component: SurveyPage,
+        pathMatch: 'full',
+        data: { title: 'Umfrage' },
       },
       {
         path: 'administration',

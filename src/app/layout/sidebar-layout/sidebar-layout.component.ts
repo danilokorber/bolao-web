@@ -11,6 +11,7 @@ import {
   faScaleBalanced,
   faQuestion,
   faTrophy,
+  faSquarePollHorizontal,
 } from '@fortawesome/free-solid-svg-icons';
 import { filter, map } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
@@ -32,6 +33,7 @@ export class SidebarLayoutComponent implements OnInit {
   iconHelp: IconDefinition = faQuestion;
   iconLogout: IconDefinition = faArrowRightFromBracket;
   iconRules: IconDefinition = faScaleBalanced;
+  iconSurvey: IconDefinition = faSquarePollHorizontal;
   env = environment.name;
 
   isCollapsed: boolean = true;

@@ -1,0 +1,44 @@
+<div *transloco="let t; lang: this.language">
+  <nz-card
+    class="hover:shadow-2xl bg-opacity-20"
+    [class.bg-green-300]="isStored"
+    [class.bg-qatar-300]="isValid === false && isDirty === true"
+    [nzActions]="[actionSave]"
+  >
+    <nz-card-meta [nzDescription]="bodyTemplate"></nz-card-meta>
+  </nz-card>
+
+  <ng-template #bodyTemplate>
+    <div class="text-xl font-bold text-slate-900 mb-4">
+      {{ question.question }}
+    </div>
+    <bolao-survey-card-slider
+      *ngIf="question.type == surveyType.SLIDER && question.options"
+      [question]="question"
+      (formChanged)="onFormChange($event)"
+    ></bolao-survey-card-slider>
+
+    <bolao-survey-card-radio
+      *ngIf="question.type == surveyType.RADIO && question.options"
+      [question]="question"
+      (formChanged)="onFormChange($event)"
+    ></bolao-survey-card-radio>
+
+    <bolao-survey-card-checkbox
+      *ngIf="question.type == surveyType.CHECKBOX && question.options"
+      [question]="question"
+      (formChanged)="onFormChange($event)"
+    ></bolao-survey-card-checkbox>
+  </ng-template>
+
+  <ng-template #actionSave>
+    <div
+      [class.bg-qatar-500]="isValid && isDirty"
+      [class.text-slate-50]="isValid && isDirty"
+      [class.disabled]="!isValid"
+      (click)="save()"
+    >
+      <fa-icon [icon]="iconSave"></fa-icon>
+    </div>
+  </ng-template>
+</div>

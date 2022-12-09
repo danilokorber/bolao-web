@@ -17,7 +17,8 @@
     "account": "Conta",
     "help": "Ajuda",
     "admin": "Administração",
-    "logout": "Sair"
+    "logout": "Sair",
+    "survey": "Pesquisa"
   },
   "bonusBets": {
     "title": "Apostas bônus",
@@ -76,5 +77,112 @@
     "points": "pontos",
     "in_play": "Ao vivo",
     "paused": "Intervalo"
+  },
+  "survey": {
+    "title": "Pesquisa",
+    "alert": "Por favor preencha a pesquisa sobre o bolão. Eu prometo que é rápido...",
+    "questions": [
+      {
+        "questionId": 1,
+        "question": "Qual é um valor adequado para um bolão desses?",
+        "type": "slider",
+        "group": "payment",
+        "options": ["-", "5€", "10€", "15€", "20€", "+"],
+        "demandCommentOptions": [0, 5]
+      },
+      {
+        "questionId": 2,
+        "question": "A distribuição do prêmio é justa?",
+        "type": "radio",
+        "group": "rules",
+        "options": [
+          "Deveria haver mais premiados",
+          "Achei adequado",
+          "Tem gente demais ganhando."
+        ],
+        "commentPlaceholder": "O que pode ser melhorado...",
+        "demandCommentOptions": [0, 2]
+      },
+      {
+        "questionId": 3,
+        "question": "A forma de pontuação é adequada?",
+        "type": "radio",
+        "group": "rules",
+        "options": [
+          "Sim",
+          "Mudaria uma ou outra coisa",
+          "Precisa várias mudanças...",
+          "Tudo errado"
+        ],
+        "commentPlaceholder": "Como pode ser melhor?",
+        "demandCommentOptions": [1, 2, 3]
+      },
+      {
+        "questionId": 4,
+        "question": "Você gostaria que houvesse mais palpites b<onus?",
+        "type": "checkbox",
+        "group": "rules",
+        "options": [
+          "Posição final do grupo",
+          "Classificados para a fase eliminatória",
+          "Montar as chaves eliminatórias",
+          "Man of the match",
+          "Artilheiro",
+          "Melhor jogador",
+          "Seleção com mais gols marcados",
+          "Árbitro da final"
+        ],
+        "commentPlaceholder": "Outras sugestões?"
+      },
+      {
+        "questionId": 5,
+        "question": "Você quer participar de novo em 2026?",
+        "type": "radio",
+        "group": "general",
+        "options": ["Sim", "Não"]
+      },
+      {
+        "questionId": 6,
+        "question": "Como foi sua experiência no bolão?",
+        "type": "checkbox",
+        "group": "app",
+        "options": [
+          "Navegação confusa",
+          "Design poderia ser melhor",
+          "Mais opções de pagamento",
+          "Tive problemas"
+        ],
+        "commentPlaceholder": "Comente o que não foi bom."
+      },
+      {
+        "questionId": 7,
+        "question": "Você acompanhou os pontos em tempo real durante os jogos?",
+        "type": "radio",
+        "group": "general",
+        "options": ["Sim", "Às vezes", "Não", "Nem sabia que era possível."]
+      },
+      {
+        "questionId": 8,
+        "question": "Que recursos faltaram no bolão?",
+        "type": "checkbox",
+        "group": "app",
+        "options": [
+          "Convidar amigos",
+          "Compartilhar resultados nas redes sociais",
+          "Mais informações e notícias sobre os jogos",
+          "Lance a lance em tempo real",
+          "Interação com outros participantes"
+        ],
+        "commentPlaceholder": "Mais alguma coisa faltou?"
+      },
+      {
+        "questionId": 9,
+        "question": "Como você acessava o bolão?",
+        "type": "radio",
+        "group": "general",
+        "options": ["Celular", "Computador"],
+        "commentPlaceholder": "Teve algum problema?"
+      }
+    ]
   }
 }

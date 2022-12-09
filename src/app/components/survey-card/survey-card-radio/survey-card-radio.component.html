@@ -1,0 +1,23 @@
+<form
+  class="flex flex-col"
+  [formGroup]="form"
+  *ngIf="this.question.options.length > 1"
+>
+  <nz-radio-group formControlName="answer">
+    <label
+      class="block"
+      nz-radio
+      [nzValue]="o"
+      *ngFor="let o of this.question.options"
+      >{{ o }}</label
+    >
+  </nz-radio-group>
+  <textarea
+    #comments
+    class="mt-6 w-full resize-none"
+    nz-input
+    [placeholder]="this.question.commentPlaceholder ?? 'Comments'"
+    nzAutosize
+    formControlName="comments"
+  ></textarea>
+</form>

@@ -86,6 +86,7 @@ import { Authorizing2Page } from './pages/authorizing/authorizing2.page';
 import { DataPrivacyPage } from './pages/data-privacy/data-privacy.page';
 
 import { ChartModule } from 'primeng/chart';
+import { SurveyPage } from './pages/survey/survey.page';
 
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
@@ -120,6 +121,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     GetHelpComponent,
     Authorizing2Page,
     DataPrivacyPage,
+    SurveyPage,
   ],
   imports: [
     BrowserModule,

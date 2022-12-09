@@ -20,4 +20,6 @@ export enum Urls {
   USERS_HISTORY = '/ranking/history',
   BETS_CREATE = '/bets',
   BETS_GET_BY_MATCH = '/bets/matches',
+  SURVEY_GET = '/surveys',
+  SURVEY_PUT = '/surveys',
 }

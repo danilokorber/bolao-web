@@ -1,0 +1,24 @@
+<form
+  [formGroup]="form"
+  class="flex flex-col"
+  *ngIf="this.question.options.length > 1"
+>
+  <nz-slider
+    class="mx-4"
+    [nzMin]="0"
+    [nzMax]="this.question.options.length - 1"
+    [nzTooltipVisible]="'never'"
+    [nzIncluded]="false"
+    [nzMarks]="marks"
+    formControlName="answer"
+  ></nz-slider>
+
+  <textarea
+    #comments
+    class="mt-2 w-full resize-none"
+    nz-input
+    [placeholder]="this.question.commentPlaceholder ?? 'Comments'"
+    nzAutosize
+    formControlName="comments"
+  ></textarea>
+</form>
