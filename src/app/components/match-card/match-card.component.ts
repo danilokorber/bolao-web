@@ -182,8 +182,7 @@ export class MatchCardComponent implements OnInit, OnDestroy {
     if (this.isMatchStarted) {
       if (this.bet) {
         return (
-          'bg-opacity-20 bg-rainbow-' +
-          (this.bet.points == 0 ? 50 : this.bet.points + '00')
+          'bg-rainbow-' + (this.bet.points == 0 ? 50 : this.bet.points + '00')
         );
       } else {
         return 'bg-opacity-20 bg-rainbow-50';
