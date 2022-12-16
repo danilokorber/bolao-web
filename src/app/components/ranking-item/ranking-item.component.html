@@ -50,7 +50,12 @@
         {{ this.rankingInfo.points }}
       </div>
       <div
-        class="ml-4 my-auto w-12 text-center font-bold text-xl rounded-full bg-rainbow-2000 hidden md:block"
+        class="ml-4 my-auto w-12 text-center font-bold text-xl rounded-full bg-slate-700 text-slate-50 hidden md:block"
+      >
+        {{ this.rankingInfo.bonusPoints }}
+      </div>
+      <div
+        class="my-auto w-12 text-center font-bold text-xl rounded-full bg-rainbow-2000 hidden md:block"
       >
         {{ occurences(this.rankingInfo.bets, 20) }}
       </div>

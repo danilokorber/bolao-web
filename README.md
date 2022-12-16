@@ -87,3 +87,7 @@
 # 2022.1.0
 
 - Survey
+
+# 2022.1.2
+
+- Bonus points

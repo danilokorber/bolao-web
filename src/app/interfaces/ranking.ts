@@ -5,6 +5,7 @@ export interface Ranking {
   user: Partial<Profile>;
   bets: Bet[];
   points: number;
+  bonusPoints: number;
 }
 
 export interface Position {
