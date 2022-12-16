@@ -12,6 +12,7 @@ import { RankingService } from 'src/app/services/ranking.service';
 export class RankingItemComponent implements OnInit {
   @Input() rankingInfo!: Ranking;
   @Input() position: number = 0;
+  @Input() last: Ranking | undefined;
 
   constructor(private rankingService: RankingService) {}
 

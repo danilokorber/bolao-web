@@ -17,7 +17,9 @@
     >
       B
     </div>
-    <div class="my-auto w-12 text-center font-bold text-xl hidden md:block">
+    <div
+      class="ml-4 my-auto w-12 text-center font-bold text-xl hidden md:block"
+    >
       20
     </div>
     <div class="my-auto w-12 text-center font-bold text-xl hidden md:block">
@@ -44,5 +46,6 @@
     *ngFor="let r of this.ranking; let i = index"
     [rankingInfo]="r"
     [position]="i"
+    [last]="last"
   ></ranking-item>
 </div>
