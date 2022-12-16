@@ -9,7 +9,7 @@
         class="rounded-full w-8 h-8 my-auto hidden md:block"
       />
       <div
-        class="mx-4 my-auto w-10 text-center text-xl font-bold rounded-full"
+        class="mx-4 my-auto w-10 text-center text-xl font-bold rounded-full border"
         [class.text-red-500]="rankingInfo.user.id == this.userId"
         [class.bg-gold-400]="position == 0"
         [class.bg-slate-300]="position == 1"
@@ -20,6 +20,7 @@
         [class.text-slate-50]="
           last ? last.user.id == rankingInfo.user.id : false
         "
+        [class.border-qatar-500]="isQualifiedForLast"
       >
         {{ position + 1 }}
       </div>
