@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from '@services/auth.service';
 import { Bet } from 'src/app/interfaces/bet';
 import { Profile } from 'src/app/interfaces/profile';
 import { Ranking } from 'src/app/interfaces/ranking';
@@ -14,12 +15,23 @@ export class RankingItemComponent implements OnInit {
   @Input() position: number = 0;
   @Input() last: Ranking | undefined;
 
-  constructor(private rankingService: RankingService) {}
+  constructor(
+    private rankingService: RankingService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {}
 
   get bets(): Bet[] {
     return this.rankingInfo ? this.rankingInfo.bets : [];
+  }
+
+  get language(): string {
+    return this.authService.language;
+  }
+
+  get isLast(): boolean {
+    return this.last ? this.last.user.id == this.rankingInfo.user.id : false;
   }
 
   get userId(): string {
@@ -31,10 +43,26 @@ export class RankingItemComponent implements OnInit {
     return '';
   }
 
+  private _firstStage: number = 0;
+  public get firstStage(): number {
+    return this._firstStage;
+  }
+  public set firstStage(value: number) {
+    this._firstStage = value;
+  }
+
+  private _koStages: number = 0;
+  public get koStages(): number {
+    return this._koStages;
+  }
+  public set koStages(value: number) {
+    this._koStages = value;
+  }
+
   get isQualifiedForLast(): boolean {
-    let firstStage: Bet[] = this.bets.filter((bet: Bet) => bet.matchId <= 48);
-    let koStage: Bet[] = this.bets.filter((bet: Bet) => bet.matchId >= 49);
-    return firstStage.length >= 40 && koStage.length >= 14;
+    this.firstStage = this.bets.filter((bet: Bet) => bet.matchId <= 48).length;
+    this.koStages = this.bets.filter((bet: Bet) => bet.matchId >= 49).length;
+    return this.firstStage >= 40 && this.koStages >= 14;
   }
 
   occurences(bets: Bet[], points: number): number {

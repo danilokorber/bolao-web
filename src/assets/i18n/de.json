@@ -42,7 +42,14 @@
   },
   "ranking": {
     "name": "Name",
-    "points": "Pkt"
+    "points": "Pkt",
+    "tags": {
+      "last": "Last place",
+      "lastQualified": "Last place qualified",
+      "firstStage": "Gruppenphase",
+      "knockout": "Knockout",
+      "bets": "Tipps"
+    }
   },
   "account": {
     "language": "Sprache",

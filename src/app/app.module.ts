@@ -48,6 +48,7 @@ import { PreferencesComponent } from './pages/authorizing/preferences/preference
 import { BonusBetsComponent } from './pages/authorizing/bonus-bets/bonus-bets.component';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -142,6 +143,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     NzIconModule.forRoot(icons),
     MarkdownModule.forRoot(),
     NzMenuModule,
+    NzTagModule,
     ChartModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

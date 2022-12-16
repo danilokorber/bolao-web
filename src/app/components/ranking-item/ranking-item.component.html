@@ -1,4 +1,4 @@
-<details>
+<details *transloco="let t; lang: this.language">
   <summary>
     <div
       class="flex flex-row gap-x-2 p-1.5 cursor-pointer"
@@ -14,12 +14,8 @@
         [class.bg-gold-400]="position == 0"
         [class.bg-slate-300]="position == 1"
         [class.bg-gold-700]="position == 2"
-        [class.bg-qatar-500]="
-          last ? last.user.id == rankingInfo.user.id : false
-        "
-        [class.text-slate-50]="
-          last ? last.user.id == rankingInfo.user.id : false
-        "
+        [class.bg-qatar-500]="isLast"
+        [class.text-slate-50]="isLast"
         [class.border-qatar-500]="isQualifiedForLast"
       >
         {{ position + 1 }}
@@ -35,13 +31,27 @@
           ).toUpperCase()
         "
       >
-        {{
-          (
-            this.rankingInfo.user.firstName +
-            " " +
-            this.rankingInfo.user.lastName
-          ).toUpperCase()
-        }}
+        <span class="mr-4">
+          {{
+            (
+              this.rankingInfo.user.firstName +
+              " " +
+              this.rankingInfo.user.lastName
+            ).toUpperCase()
+          }}</span
+        >
+        <nz-tag
+          class="mr-2 my-auto invisible md:visible"
+          [nzColor]="firstStage >= 40 ? 'green' : 'red'"
+          >{{ t("ranking.tags.firstStage") }}: {{ firstStage }}
+          {{ t("ranking.tags.bets") }}</nz-tag
+        >
+        <nz-tag
+          class="mr-2 my-auto invisible md:visible"
+          [nzColor]="koStages >= 14 ? 'green' : 'red'"
+          >{{ t("ranking.tags.knockout") }}: {{ koStages }}
+          {{ t("ranking.tags.bets") }}</nz-tag
+        >
       </div>
       <div class="my-auto w-32 text-center hidden md:block">
         <four-flags

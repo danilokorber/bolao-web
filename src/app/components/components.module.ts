@@ -29,6 +29,7 @@ import { SurveyCardComponent } from './survey-card/survey-card.component';
 import { SurveyCardSliderComponent } from './survey-card/survey-card-slider/survey-card-slider.component';
 import { SurveyCardRadioComponent } from './survey-card/survey-card-radio/survey-card-radio.component';
 import { SurveyCardCheckboxComponent } from './survey-card/survey-card-checkbox/survey-card-checkbox.component';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { SurveyCardCheckboxComponent } from './survey-card/survey-card-checkbox/
     NzInputModule,
     NzRadioModule,
     NzCheckboxModule,
+    NzTagModule,
     TranslocoRootModule,
   ],
   exports: [
