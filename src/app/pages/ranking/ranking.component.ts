@@ -61,7 +61,7 @@ export class RankingComponent implements OnInit {
         firstStage.length,
         koStage.length
       );
-      if (firstStage.length >= 40 && koStage.length >= 14) last = r;
+      if (firstStage.length >= 40 && koStage.length >= 15) last = r;
     });
 
     this.last = last;
