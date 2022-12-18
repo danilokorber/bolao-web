@@ -62,7 +62,7 @@ export class RankingItemComponent implements OnInit {
   get isQualifiedForLast(): boolean {
     this.firstStage = this.bets.filter((bet: Bet) => bet.matchId <= 48).length;
     this.koStages = this.bets.filter((bet: Bet) => bet.matchId >= 49).length;
-    return this.firstStage >= 40 && this.koStages >= 15;
+    return this.firstStage >= 40 && this.koStages >= 16;
   }
 
   occurences(bets: Bet[], points: number): number {
